@@ -19,7 +19,7 @@ body {
 /* HERO */
 .hero {
   background: url('assets/Always seeking new opportunities Network and DataCenter Specialist Reliability  Connectivity  Precision.png') center/cover no-repeat;
-  min-height:600px;
+  min-height:400px;
   display:flex;
   justify-content:center;
   align-items:center;
