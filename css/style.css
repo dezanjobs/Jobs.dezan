@@ -55,7 +55,7 @@ body {
 
 .hero-sub {
   display: block;
-  margin: 0.4rem 0;
+  margin: 0.6rem 0;
   color: var(--muted);
   font-size: 1.1rem;
 }
