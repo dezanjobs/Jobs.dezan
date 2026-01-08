@@ -54,8 +54,12 @@ body {
 }
 
 .hero-sub {
-  color:var(--muted);
-  margin: 0.6rem 0;
+  display: block;
+  margin: 0.4rem 0;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
   margin-bottom:2rem;
 }
 
