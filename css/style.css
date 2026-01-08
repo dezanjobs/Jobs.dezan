@@ -39,13 +39,12 @@ body {
 }
 
 .logo {
+  background: url('assets/erasebg-transformed.png') center/cover no-repeat;
   max-width:500px;
   max-height:500px;
-  background: url('assets/erasebg-transformed.png')center/cover no-repeat;
   display:flex;
   justify-content:center;
   align-items:center;
-  margin-bottom:1rem;
 }
 
 .hero-title {
