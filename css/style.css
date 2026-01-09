@@ -1,114 +1,39 @@
-:root {
-  --bg:#ffffff;
-  --text:#1F2A33;
-  --accent:#F5B301;
-  --muted:#6B7280;
+html {
+  scroll-behavior: smooth;
 }
 
-* {
-  box-sizing:border-box;
+/* Navbar */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
 }
 
-body {
-  margin:0;
-  font-family:'Inter',sans-serif;
-  background:var(--bg);
-  color:var(--text);
+.nav-inner {
+  max-width: 1000px;
+  margin: auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* HERO */
-.hero {
-  background: url('assets/Always seeking new opportunities Network and DataCenter Specialist Reliability  Connectivity  Precision.png') center/cover no-repeat;
-  min-height:600px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
-.overlay {
-  position:absolute;
-  inset:0;
-  background:rgba(255,255,255,0.85);
-}
-
-.hero-content {
-  position:relative;
-  text-align:center;
-  padding:2rem;
-  max-width:1000px;
-}
-
-.logo {
-  background: url('assets/erasebg-transformed.png') center/cover no-repeat;
-  max-width:500px;
-  max-height:500px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  margin-bottom:1rem;
-}
-
-.hero-title {
-  font-size:2rem;
-  margin:.3rem 0;
-}
-
-.hero-sub {
-  display: block;
-  margin: 0.6rem 0;
+.nav a {
+  margin-left: 1.2rem;
+  text-decoration: none;
   color: var(--muted);
-  font-size: 1.1rem;
+  font-weight: 500;
 }
 
-  margin-bottom:2rem;
+.nav a:hover {
+  color: var(--accent);
 }
 
-/* BUTTONS */
-.btn {
-  display:inline-block;
-  padding:.8rem 1.6rem;
-  border-radius:4px;
-  text-decoration:none;
-  font-weight:500;
-  margin:.5rem;
-  transition:.3s;
-}
-
-.primary {
-  background:var(--accent);
-  color:#fff;
-}
-
-.primary:hover { opacity:.9; }
-
-.secondary {
-  border:2px solid var(--accent);
-  color:var(--accent);
-}
-
-.secondary:hover {
-  background:var(--accent);
-  color:#fff;
-}
-
-/* SOCIAL */
-.socials {
-  margin-top:2rem;
-}
-
-.socials a {
-  margin:0 .6rem;
-  text-decoration:none;
-  color:var(--muted);
-  font-size:.9rem;
-}
-
-.socials a:hover {
-  color:var(--accent);
-}
-
-/* MOBILE */
-@media (max-width:600px) {
-  .hero-title { font-size:2.2rem; }
-  .logo { width:65px; }
+/* Offset scroll for fixed navbar */
+.section, .hero {
+  scroll-margin-top: 80px;
 }
