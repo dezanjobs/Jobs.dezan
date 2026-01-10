@@ -3,9 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Network & Data Center Specialist</title>
+    <title>Network & Data Center Specialist | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* --- VARIABLES --- */
+        :root {
+            --bg-light: #f2f2f2;
+            --rack-dark: #3f494d;
+            --connector-gold: #c6a85c;
+            --led-amber: #fdb201;
+            --white: #ffffff;
+            --text-muted: #666;
+        }
+
+        /* --- RESET & BASE --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--rack-dark); line-height: 1.6; }
+        .mono { font-family: 'Roboto Mono', monospace; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        a { text-decoration: none; color: inherit; }
+
+        /* --- HERO SECTION WITH VIDEO --- */
+        .hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            color: var(--white);
+        }
+
+        .video-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -2;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.65); /* Overlay gelap agar teks tajam */
+            z-index: -1;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0;
+            z-index: 10;
+        }
+
+        .logo img { height: 45px; filter: brightness(0) invert(1); } /* Putihkan logo untuk hero */
+
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { font-size: 0.9rem; transition: 0.3s; color: rgba(255,255,255,0.8); }
+        .nav-links a:hover { color: var(--led-amber); }
+        .cv-btn { color: var(--led-amber) !important; font-weight: bold; }
+
+        /* --- HERO CONTENT --- */
+        .hero-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .status-tag { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--led-amber); margin-bottom: 1.5rem; letter-spacing: 2px; }
+        .blink { width: 8px; height: 8px; background: var(--led-amber); border-radius: 50%; animation: pulse 1.5s infinite; }
+
+        .hero-content h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; margin-bottom: 1rem; max-width: 900px; line-height: 1.2; }
+        .tagline { font-size: 1.2rem; opacity: 0.8; margin-bottom: 3rem; }
+
+        .hero-btns { display: flex; gap: 1rem; }
+        .btn { padding: 12px 30px; border: 1px solid var(--white); transition: 0.3s; font-weight: 600; }
+        .btn:hover { background: var(--white); color: #000; }
+        .btn-gold { border-color: var(--led-amber); color: var(--led-amber); }
+        .btn-gold:hover { background: var(--led-amber); color: #000; }
+
+        /* --- WORK HISTORY SECTION --- */
+        .section-padding { padding: 6rem 0; }
+        .label { color: var(--connector-gold); font-weight: bold; font-size: 0.9rem; margin-bottom: 2rem; display: block; }
+        
+        .work-grid { display: flex; flex-direction: column; }
+        .work-item { 
+            display: grid; 
+            grid-template-columns: 250px 1fr; 
+            padding: 2.5rem 0; 
+            border-top: 1px solid #ddd; 
+            transition: 0.4s;
+        }
+        .work-item:hover { background: rgba(0,0,0,0.02); padding-left: 1rem; }
+        .year { color: var(--text-muted); font-weight: bold; }
+        .work-info h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .company { color: var(--connector-gold); font-weight: 600; display: block; margin-bottom: 1rem; }
+
+        /* --- SKILLS GRID --- */
+        .skills-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 1.5rem; 
+        }
+        .skill-card { 
+            background: var(--white); 
+            padding: 2.5rem; 
+            border-bottom: 4px solid var(--rack-dark); 
+            transition: 0.3s;
+        }
+        .skill-card:hover { border-bottom-color: var(--led-amber); transform: translateY(-5px); }
+        .skill-card h4 { margin-bottom: 1rem; color: var(--connector-gold); letter-spacing: 1px; }
+
+        /* --- FOOTER --- */
+        footer { background: var(--rack-dark); color: var(--white); padding: 4rem 0; text-align: center; }
+        .footer-info { opacity: 0.6; font-size: 0.8rem; }
+
+        /* --- ANIMATIONS --- */
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .work-item { grid-template-columns: 1fr; gap: 0.5rem; }
+            .nav-links { display: none; } /* Mobile menu simplified */
+            .hero-content h1 { font-size: 2.2rem; }
+        }
+    </style>
 </head>
 <body>
 
@@ -13,7 +150,6 @@
         <video autoplay muted loop playsinline class="video-bg">
             <source src="assets/Always seeking new opportuniti..." type="video/mp4">
         </video>
-        
         <div class="overlay"></div>
 
         <nav class="container">
@@ -21,50 +157,79 @@
                 <img src="assets/erasebg-transformed.png" alt="Logo">
             </div>
             <ul class="nav-links mono">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#work">History</a></li>
-                <li><a href="#skills">Tools</a></li>
-                <li class="lang-selector">EN ▾</li>
+                <li><a href="#">.home()</a></li>
+                <li><a href="#work">.history()</a></li>
+                <li><a href="#skills">.tools()</a></li>
+                <li><a href="assets/CV English 3.0 ATS-compressed..." target="_blank" class="cv-btn">.cv()</a></li>
             </ul>
         </nav>
 
         <div class="hero-content container">
-            <p class="subtitle mono">Always seeking new opportunities</p>
+            <div class="status-tag mono"><span class="blink"></span> uptime: 99.9%</div>
+            <p class="mono" style="color: var(--connector-gold); letter-spacing: 3px; margin-bottom: 1rem;">ALWAYS SEEKING OPPORTUNITIES</p>
             <h1>Network and DataCenter Specialist</h1>
             <p class="tagline">Reliability | Connectivity | Precision</p>
             
-            <div class="hero-btns">
-                <a href="mailto:emailanda@example.com" class="btn">Get In Touch</a>
-                <a href="assets/CV English 3.0 ATS-compressed..." target="_blank" class="btn btn-outline">Download CV</a>
+            <div class="hero-btns mono">
+                <a href="mailto:emailanda@example.com" class="btn btn-gold">Get In Touch</a>
+                <a href="#work" class="btn">View Portfolio</a>
             </div>
         </div>
     </header>
 
-    <main class="container content-section" id="work">
-        <span class="section-label mono">// work_history</span>
+    <section id="work" class="container section-padding">
+        <span class="label mono">// work_history</span>
         <div class="work-grid">
+            
             <div class="work-item">
-                <div class="work-year mono">2021 — Sekarang</div>
+                <div class="year mono">2021 — SEKARANG</div>
                 <div class="work-info">
                     <h3>Senior Data Center Engineer</h3>
                     <span class="company">PT. Teknologi Awan Indonesia</span>
-                    <p>Bertanggung jawab atas operasional 24/7 dan optimasi PUE.</p>
+                    <p>Mengelola ekosistem rak server skala besar, optimasi sistem pendingin (PACU), dan memastikan uptime infrastruktur kritikal.</p>
                 </div>
             </div>
+
             <div class="work-item">
-                <div class="work-year mono">2018 — 2021</div>
+                <div class="year mono">2018 — 2021</div>
                 <div class="work-info">
                     <h3>DC Facilities Technician</h3>
                     <span class="company">Global Connect Data</span>
-                    <p>Fokus pada instalasi rak dan structured cabling.</p>
+                    <p>Instalasi perangkat jaringan, manajemen kabel fiber optik, dan pemeliharaan rutin sistem UPS serta PDU.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills" style="background: #ececec;">
+        <div class="container section-padding">
+            <span class="label mono">// technical_stack</span>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h4 class="mono">Infrastruktur</h4>
+                    <p>Rack & Stack, Fiber Splicing, Cooling Management, Power PDU.</p>
+                </div>
+                <div class="skill-card">
+                    <h4 class="mono">Monitoring</h4>
+                    <p>Zabbix, SNMP, DCIM, Environmental Monitoring Systems.</p>
+                </div>
+                <div class="skill-card">
+                    <h4 class="mono">Hardware</h4>
+                    <p>Cisco UCS, Dell EMC, HP ProLiant, APC/Schneider UPS.</p>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
     <footer>
-        <div class="container footer-flex">
-            <p class="mono">uptime: 99.9% | built_by: yourname.sys</p>
+        <div class="container">
+            <p class="mono">system_status: operational</p>
+            <div style="margin: 2rem 0;">
+                <a href="#" style="margin: 0 15px; color: var(--led-amber)">LinkedIn</a>
+                <a href="#" style="margin: 0 15px; color: var(--led-amber)">GitHub</a>
+            </div>
+            <p class="footer-info mono">&copy; 2026 yourname.sys - Built for high availability</p>
         </div>
     </footer>
 
