@@ -37,7 +37,7 @@
             </div>
             <p class="subtitle mono" data-key="hero_sub">Operasional Infrastruktur IT & Data Center</p>
             <h1 class="hero-title" data-key="hero_title">Dezan Sanubari</h1>
-            <p class="tagline" data-key="hero_tagline">Keandalan | Konektivitas | Presisi <br> Selalu mencari peluang baru — Pengalaman 12+ Tahun</p>
+            <p class="tagline" data-key="hero_tagline">Keandalan | Konektivitas | Presisi <br> Selalu mencari peluang baru</p>
             
             <div class="hero-btns">
                 <a href="mailto:Jobs.Dezan@gmail.com" class="btn btn-main" data-key="btn_contact">Hubungi Saya</a>
@@ -54,9 +54,7 @@
             <div class="about-text">
                 <span class="section-label mono">// executive_summary</span>
                 <p data-key="about_desc">
-                    Spesialis Infrastruktur IT dengan pengalaman lebih dari 12 tahun dalam mengelola operasional Data Center kritis. 
-                    Ahli dalam menjaga uptime sistem melalui manajemen kelistrikan (UPS/Genset), virtualisasi VMware, 
-                    dan troubleshooting jaringan tingkat lanjut.
+                    Spesialis Infrastruktur IT dengan pengalaman lebih dari 12 tahun...
                 </p>
             </div>
         </div>
@@ -64,12 +62,14 @@
 
     <main class="container content-section" id="history">
         <span class="section-label mono" data-key="label_history">// professional_experience</span>
-        <div class="work-grid" id="work-content"></div>
+        <div class="work-grid" id="work-content">
+            </div>
     </main>
 
     <section id="tools" class="container content-section">
         <span class="section-label mono" data-key="label_tools">// technical_stack</span>
-        <div class="skills-container" id="skills-content"></div>
+        <div class="skills-container" id="skills-content">
+            </div>
     </section>
 
     <footer id="contact">
@@ -92,15 +92,6 @@
                     </div>
                 </div>
             </a>
-            <a href="https://wa.me/6285156739343" target="_blank" class="footer-card">
-                <div class="card-inner">
-                    <i class="fab fa-whatsapp"></i>
-                    <div class="text-group">
-                        <h4 class="mono">WhatsApp</h4>
-                        <p>+62 851-5673-9343</p>
-                    </div>
-                </div>
-            </a>
         </div>
         <div class="footer-bottom-bar container mono">
             <span>© 2026 DEZAN SANUBARI</span>
@@ -113,7 +104,7 @@
             ID: {
                 hero_title: "Dezan Sanubari",
                 hero_sub: "Operasional Infrastruktur IT & Data Center",
-                hero_tagline: "Keandalan | Konektivitas | Presisi | Selalu mencari peluang baru — Pengalaman 12+ Tahun",
+                hero_tagline: "Keandalan | Konektivitas | Presisi <br> Selalu mencari peluang baru — Pengalaman 12+ Tahun",
                 about_desc: "Spesialis Infrastruktur IT dengan pengalaman lebih dari 12 tahun dalam mengelola operasional Data Center kritis. Ahli dalam menjaga uptime sistem melalui manajemen kelistrikan (UPS/Genset), virtualisasi VMware, dan troubleshooting jaringan tingkat lanjut.",
                 btn_contact: "Hubungi Saya", 
                 btn_cv: "Unduh CV",
@@ -142,7 +133,7 @@
             EN: {
                 hero_title: "Dezan Sanubari",
                 hero_sub: "IT Infrastructure & Data Center Operations",
-                hero_tagline: "Reliability | Connectivity | Precision | Always seeking new opportunities - 12+ Years Experience",
+                hero_tagline: "Reliability | Connectivity | Precision <br> Always seeking new opportunities - 12+ Years Experience",
                 about_desc: "IT Infrastructure Specialist with over 12 years of experience in managing critical Data Center operations. Expert in maintaining system uptime through power management (UPS/Genset), VMware virtualization, and advanced network troubleshooting.",
                 btn_contact: "Get In Touch", 
                 btn_cv: "Download CV",
@@ -171,7 +162,8 @@
         };
 
         const languages = [
-            {code: 'ID', name: 'Indonesian'}, {code: 'EN', name: 'English'}
+            {code: 'ID', name: 'Indonesian'}, 
+            {code: 'EN', name: 'English'}
         ];
 
         function initLangMenu() {
@@ -182,7 +174,10 @@
                 const a = document.createElement('a');
                 a.href = "javascript:void(0)";
                 a.innerText = l.name;
-                a.onclick = () => changeLang(l.code);
+                a.onclick = (e) => {
+                    e.preventDefault();
+                    changeLang(l.code);
+                };
                 menu.appendChild(a);
             });
         }
@@ -191,17 +186,17 @@
             const data = translations[langCode];
             if (!data) return;
 
-            // 1. Update elemen statis
+            // 1. Update Teks Statis
             document.querySelectorAll('[data-key]').forEach(element => {
                 const key = element.getAttribute('data-key');
                 if (data[key]) {
-                    element.innerHTML = data[key]; // Gunakan innerHTML agar <br> berfungsi
+                    element.innerHTML = data[key];
                 }
             });
 
             // 2. Update Riwayat Kerja
             const workContent = document.getElementById('work-content');
-            if (workContent && data.jobs) {
+            if (workContent) {
                 workContent.innerHTML = data.jobs.map(j => `
                     <div class="work-item">
                         <div class="work-year mono">${j.year}</div>
@@ -215,7 +210,7 @@
 
             // 3. Update Keahlian
             const skillsContent = document.getElementById('skills-content');
-            if (skillsContent && data.skills) {
+            if (skillsContent) {
                 skillsContent.innerHTML = data.skills.map(s => `
                     <div class="skill-card">
                         <h4 class="mono">${s.title}</h4>
@@ -223,10 +218,8 @@
                     </div>`).join('');
             }
 
-            // 4. Update UI Bahasa
-            const currentLangText = document.getElementById('current-lang');
-            if (currentLangText) currentLangText.innerText = langCode;
-            document.body.style.direction = (langCode === 'AR') ? 'rtl' : 'ltr';
+            // 4. Update UI
+            document.getElementById('current-lang').innerText = langCode;
             localStorage.setItem('selectedLang', langCode);
         }
 
@@ -237,7 +230,7 @@
 
             const video = document.querySelector('.video-bg');
             if (video) {
-                video.play().catch(() => console.log("Autoplay ditunda"));
+                video.play().catch(() => console.log("Autoplay ditunda browser"));
             }
         };
     </script>
