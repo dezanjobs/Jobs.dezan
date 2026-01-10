@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dezan Sanubari | Portfolio</title>
+    <title>Dezan Sanubari | IT Infrastructure & DC Specialist</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -12,7 +12,7 @@
 
     <header class="hero" id="home">
         <video autoplay muted loop playsinline class="video-bg">
-            <source src="assets/Always seeking new opportuniti..." type="video/mp4">
+            <source src="assets/video_bg.mp4" type="video/mp4">
         </video>
         <div class="overlay"></div>
 
@@ -33,9 +33,8 @@
 
         <div class="hero-content container">
             <p class="subtitle mono" data-key="hero_sub">IT Infrastructure & Data Center Operations</p>
-            <h1 data-key="hero_name">Dezan Sanubari</h1>
+            <h1>Dezan Sanubari</h1>
             <p class="tagline" data-key="hero_tagline">Reliability | Connectivity | Precision — 12+ Years Experience</p>
-            
             <div class="hero-btns">
                 <a href="mailto:Jobs.Dezan@gmail.com" class="btn" data-key="btn_contact">Get In Touch</a>
                 <a href="assets/CV English 3.0 ATS-compressed_2.pdf" target="_blank" class="btn btn-outline" data-key="btn_cv">Download CV</a>
@@ -44,22 +43,42 @@
     </header>
 
     <main class="container content-section" id="history">
-        <span class="section-label mono" data-key="label_history">// work_history</span>
-        <div class="work-grid" id="work-content">
-            </div>
+        <span class="section-label mono" data-key="label_history">// work_history_full_data</span>
+        <div class="work-grid" id="work-content"></div>
     </main>
 
     <section id="tools" class="container content-section">
-        <span class="section-label mono" data-key="label_tools">// technical_stack_&_edu</span>
-        <div class="skills-container" id="skills-content">
-            </div>
+        <span class="section-label mono" data-key="label_tools">// technical_stack_&_education</span>
+        <div class="skills-container" id="skills-content"></div>
     </section>
 
-    <footer>
-        <div class="container footer-flex">
-            <div class="mono" data-key="footer_status">uptime: 12y_experience | dezan.sys</div>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/dezansanubari/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <footer id="contact">
+        <div class="container">
+            <span class="section-label mono" style="color: var(--led-amber);">// connect_with_me</span>
+            <div class="footer-grid">
+                <a href="https://www.linkedin.com/in/dezansanubari/" target="_blank" class="footer-card">
+                    <i class="fab fa-linkedin"></i>
+                    <h4 class="mono">LinkedIn</h4>
+                    <p>dezansanubari</p>
+                </a>
+                <a href="mailto:Jobs.Dezan@gmail.com" class="footer-card">
+                    <i class="fas fa-envelope"></i>
+                    <h4 class="mono">Email</h4>
+                    <p>Jobs.Dezan@gmail.com</p>
+                </a>
+                <a href="https://wa.me/6285156739343" target="_blank" class="footer-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <h4 class="mono">WhatsApp</h4>
+                    <p>+62 851-5673-9343</p>
+                </a>
+                <div class="footer-card no-link">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4 class="mono">Location</h4>
+                    <p>Bandung, West Java</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="mono">© 2026 DEZAN SANUBARI | STATUS: <span class="blink-green">OPERATIONAL</span></p>
             </div>
         </div>
     </footer>
@@ -70,37 +89,37 @@
                 hero_sub: "Operasional Infrastruktur IT & Data Center",
                 hero_tagline: "Keandalan | Konektivitas | Presisi — Pengalaman 12+ Tahun",
                 btn_contact: "Hubungi Saya", btn_cv: "Unduh CV",
-                label_history: "// riwayat_kerja", label_tools: "// keahlian_&_pendidikan",
-                footer_status: "aktif: pengalaman_12_tahun | dezan.sys",
+                label_history: "// riwayat_kerja_lengkap", label_tools: "// keahlian_&_pendidikan",
                 jobs: [
-                    { year: "2016 - 2025", title: "Data Center Operations Engineer", comp: "PT ValueStream International", desc: "Monitoring harian infrastruktur kritis (Server, Network, Power, Cooling). Instalasi VMware, troubleshooting jaringan, dan koordinasi vendor ISP." },
-                    { year: "2015 - 2016", title: "Wifi Technical", comp: "Kopindosat", desc: "Instalasi radio wireless, provisioning access point, dan konfigurasi router." },
-                    { year: "2012 - 2014", title: "Senior Technical Support", comp: "PT Personal Alih Daya", desc: "Instalasi radio wireless dan support teknis onsite/remote untuk jaringan kantor." }
+                    { year: "2016 - 2025", title: "Data Center Operations Engineer", comp: "PT ValueStream International", desc: "Monitoring 24/7 infrastruktur kritis (Power, Cooling, Network). Instalasi VMware, manajemen storage Dell EMC, dan koordinasi vendor." },
+                    { year: "2015 - 2016", title: "Wifi Technical", comp: "Kopindosat", desc: "Instalasi radio wireless, provisioning AP, dan konfigurasi router." },
+                    { year: "2012 - 2014", title: "Senior Technical Support", comp: "PT Personal Alih Daya", desc: "Instalasi radio, onsite support, dan maintenance jaringan kantor." },
+                    { year: "2011", title: "Computer Technician (PKL)", comp: "PT Securindo Packatama / Media Utama", desc: "Perbaikan hardware/software dan maintenance jaringan lokal." }
                 ],
                 skills: [
-                    { title: "Networking", desc: "LAN/WAN, TCP/IP, Fiber Optic, Cisco, Mikrotik, Radio Wireless." },
-                    { title: "System & DC", desc: "VMware, Linux, Windows Server, Zabbix Monitoring, DCIM, UPS/Genset." },
-                    { title: "Pendidikan", desc: "S1 Teknik Informatika - STMIK Indonesia Mandiri. SMK TKJ - SMK Angkasa 1." }
+                    { title: "Keahlian Teknis", desc: "Networking (TCP/IP, Cisco, Mikrotik), Virtualization (VMware), OS (Linux, Windows Server), Monitoring (Zabbix, DCIM)." },
+                    { title: "Pendidikan & Sertifikasi", desc: "S1 Informatika (STMIK Mandiri), SMK TKJ (Angkasa 1). Sertifikasi: Wifi Installation & IT Salesmanship." },
+                    { title: "Karakter & Soft Skill", desc: "Troubleshooting Mindset, Kerja di Lingkungan SLA Tinggi, Critical Thinking, Berorientasi Detail." }
                 ]
             },
             EN: {
                 hero_sub: "IT Infrastructure & Data Center Operations",
                 hero_tagline: "Reliability | Connectivity | Precision — 12+ Years Experience",
                 btn_contact: "Get In Touch", btn_cv: "Download CV",
-                label_history: "// work_history", label_tools: "// skills_&_education",
-                footer_status: "uptime: 12y_experience | dezan.sys",
+                label_history: "// full_work_history", label_tools: "// skills_&_education",
                 jobs: [
-                    { year: "2016 - 2025", title: "Data Center Operations Engineer", comp: "PT ValueStream International", desc: "Daily monitoring of critical infra. VMware installation, network troubleshooting, and ISP vendor coordination." },
+                    { year: "2016 - 2025", title: "Data Center Operations Engineer", comp: "PT ValueStream International", desc: "24/7 monitoring of critical infra (Power, Cooling, Network). VMware installation, Dell EMC storage management, and vendor coordination." },
                     { year: "2015 - 2016", title: "Wifi Technical", comp: "Kopindosat", desc: "Wireless radio installation, AP provisioning, and router configuration." },
-                    { year: "2012 - 2014", title: "Senior Technical Support", comp: "PT Personal Alih Daya", desc: "Radio installation and onsite/remote technical support for office networks." }
+                    { year: "2012 - 2014", title: "Senior Technical Support", comp: "PT Personal Alih Daya", desc: "Radio installation, onsite support, and office network maintenance." },
+                    { year: "2011", title: "Computer Technician (Intern)", comp: "PT Securindo Packatama / Media Utama", desc: "Hardware/software repairs and local network maintenance." }
                 ],
                 skills: [
-                    { title: "Networking", desc: "LAN/WAN, TCP/IP, Fiber Optic, Cisco, Mikrotik, Radio Wireless." },
-                    { title: "System & DC", desc: "VMware, Linux, Windows Server, Zabbix, DCIM, UPS/Cooling." },
-                    { title: "Education", desc: "B.Sc Informatics - STMIK Indonesia Mandiri. Voc. High School - SMK Angkasa 1." }
+                    { title: "Technical Skills", desc: "Networking (TCP/IP, Cisco, Mikrotik), Virtualization (VMware), OS (Linux, Windows Server), Monitoring (Zabbix, DCIM)." },
+                    { title: "Education & Training", desc: "B.Sc Informatics (STMIK Mandiri), SMK TKJ (Angkasa 1). Training: Wifi Installation & IT Salesmanship." },
+                    { title: "Soft Skills", desc: "Troubleshooting Mindset, SLA Environment, Critical Thinking, Detail-Oriented." }
                 ]
             }
-            // Tambahkan bahasa lain (CN, JP, DE, FR, ES, PT, RU, NL, AR, KR) dengan pola yang sama...
+            // Bahasa lain (CN, DE, FR, dll) dapat ditambahkan dengan format yang sama
         };
 
         const languages = [
@@ -131,8 +150,7 @@
             });
 
             const workGrid = document.getElementById('work-content');
-            const jobs = data.jobs || translations['EN'].jobs;
-            workGrid.innerHTML = jobs.map(j => `
+            workGrid.innerHTML = (data.jobs || translations['EN'].jobs).map(j => `
                 <div class="work-item">
                     <div class="work-year mono">${j.year}</div>
                     <div class="work-info">
@@ -144,8 +162,7 @@
             `).join('');
 
             const skillsGrid = document.getElementById('skills-content');
-            const skills = data.skills || translations['EN'].skills;
-            skillsGrid.innerHTML = skills.map(s => `
+            skillsGrid.innerHTML = (data.skills || translations['EN'].skills).map(s => `
                 <div class="skill-card">
                     <h4 class="mono">${s.title}</h4>
                     <p>${s.desc}</p>
