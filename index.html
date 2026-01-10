@@ -207,15 +207,56 @@
             });
         }
 
-function changeLang(lang) {
+function changeLang(langCode) {
+    const data = translations[langCode];
+    if (!data) return;
+
+    // 1. Update elemen statis (yang punya data-key)
     document.querySelectorAll('[data-key]').forEach(element => {
         const key = element.getAttribute('data-key');
-        if (translations[lang][key]) {
-            element.innerText = translations[lang][key];
+        if (data[key]) {
+            element.innerText = data[key];
         }
     });
-    // Simpan pilihan bahasa ke storage agar tidak reset saat refresh
-    localStorage.setItem('selectedLang', lang);
+
+    // 2. Update Label Section (History & Tools)
+    const labelHistory = document.querySelector('[data-key="label_history"]');
+    const labelTools = document.querySelector('[data-key="label_tools"]');
+    if (labelHistory) labelHistory.innerText = data.label_history;
+    if (labelTools) labelTools.innerText = data.label_tools;
+
+    // 3. Update Riwayat Kerja (Dinamis)
+    const workContent = document.getElementById('work-content');
+    if (workContent && data.jobs) {
+        workContent.innerHTML = data.jobs.map(j => `
+            <div class="work-item">
+                <div class="work-year mono">${j.year}</div>
+                <div class="work-info">
+                    <h3>${j.title}</h3>
+                    <span class="company">${j.comp}</span>
+                    <p>${j.desc}</p>
+                </div>
+            </div>`).join('');
+    }
+
+    // 4. Update Keahlian (Dinamis)
+    const skillsContent = document.getElementById('skills-content');
+    if (skillsContent && data.skills) {
+        skillsContent.innerHTML = data.skills.map(s => `
+            <div class="skill-card">
+                <h4 class="mono">${s.title}</h4>
+                <p>${s.desc}</p>
+            </div>`).join('');
+    }
+
+    // 5. Update teks tombol bahasa yang aktif
+    const currentLangText = document.getElementById('current-lang');
+    if (currentLangText) currentLangText.innerText = langCode;
+
+    // 6. Pengaturan arah teks (untuk bahasa Arab)
+    document.body.style.direction = (langCode === 'AR') ? 'rtl' : 'ltr';
+
+    localStorage.setItem('selectedLang', langCode);
 }
             document.getElementById('work-content').innerHTML = data.jobs.map(j => `
                 <div class="work-item">
