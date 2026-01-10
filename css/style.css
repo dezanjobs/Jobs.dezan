@@ -41,105 +41,107 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 .skill-card { background: white; padding: 2.5rem; border-bottom: 4px solid var(--rack-dark); transition: 0.3s; }
 .skill-card:hover { transform: translateY(-10px); border-color: var(--led-amber); }
 
-/* --- FOOTER STYLE (DARK THEME - NO BLUE/PURPLE) --- */
+/* --- FOOTER FULL RECONSTRUCTION (IMAGE-MATCHED) --- */
 footer {
-    padding: 6rem 0 3rem 0;
-    background-color: #0a0a0a; /* Hitam pekat */
-    color: var(--white);
-    border-top: 1px solid #222;
+    background-color: #050505; /* Hitam sangat pekat untuk kontras */
+    padding: 4rem 0 2rem 0;
+    width: 100%;
+    border-top: 1px solid #1a1a1a;
 }
 
+/* Container agar lebar kartu konsisten */
+.container-fluid {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Grid Layout: Menyamakan dengan gambar (4 kolom seimbang) */
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1rem;
+    grid-template-columns: repeat(4, 1fr); /* 4 kolom sejajar seperti di gambar */
+    gap: 1px; /* Memberi jarak garis antar kartu */
+    background-color: #1a1a1a; /* Warna garis pembatas */
+    border: 1px solid #1a1a1a;
+    margin-top: 2rem;
 }
 
+/* Gaya Kartu (Tanpa warna biru/ungu sama sekali) */
 .footer-card {
-    background: #151515; /* Abu-abu sangat tua */
-    padding: 2rem;
+    background-color: #0d0d0d; /* Warna kartu abu-abu sangat gelap */
+    padding: 3rem 2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.card-inner {
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    text-decoration: none;
-    color: var(--white);
-    border: 1px solid #222;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.footer-card .card-icon {
+.footer-card i {
     font-size: 1.8rem;
-    color: var(--led-amber);
-    background: rgba(253, 178, 1, 0.05); /* Glow amber tipis */
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
+    color: var(--led-amber); /* Hanya menggunakan warna Amber/Gold */
 }
 
 .footer-card h4 {
-    font-size: 1rem;
+    color: #ffffff;
+    font-size: 0.9rem;
     margin-bottom: 0.3rem;
-    color: var(--white);
+    letter-spacing: 1px;
 }
 
 .footer-card p {
-    font-size: 0.85rem;
-    color: #777;
-    word-break: break-all;
+    color: #666;
+    font-size: 0.8rem;
 }
 
-/* Hover State */
+/* Hover Effect: Mengikuti gaya gambar tapi warna Amber */
 .footer-card:hover {
-    background: #1a1a1a;
-    border-color: var(--led-amber);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background-color: #111;
 }
 
-.footer-card.no-link:hover {
-    transform: none;
-    border-color: #222;
-    cursor: default;
+.footer-card:hover i {
+    transform: scale(1.1);
 }
 
-/* Footer Bottom Section */
-.footer-bottom {
-    margin-top: 5rem;
-    padding-top: 2rem;
-    border-top: 1px solid #222;
-}
-
-.footer-info {
+/* Baris Bawah Footer */
+.footer-bottom-bar {
     display: flex;
     justify-content: space-between;
-    font-size: 0.75rem;
+    padding: 2rem 0;
     color: #444;
-    letter-spacing: 1px;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
+
+.status-group {
+    display: flex;
+    gap: 2rem;
 }
 
 .blink-green {
     color: #00ff00;
-    font-weight: bold;
     animation: simple-blink 2s infinite;
 }
 
 @keyframes simple-blink {
-    0%, 100% { opacity: 1; }
     50% { opacity: 0.3; }
 }
 
-/* Responsive penyesuaian untuk mobile */
-@media (max-width: 768px) {
-    .footer-info {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-    }
+/* Responsive: Jika layar kecil (Tablet/HP) */
+@media (max-width: 1024px) {
     .footer-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr); /* Jadi 2 kolom di tablet */
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-grid {
+        grid-template-columns: 1fr; /* Jadi 1 kolom di HP */
     }
 }
