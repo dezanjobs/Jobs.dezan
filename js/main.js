@@ -34,7 +34,7 @@ const translations = {
     PT: { hero_sub: "Infraestrutura de TI & Data Center", hero_title: "Dezan Sanubari", hero_tagline: "Confiabilidade | Precisão <br> Sempre buscando oportunidades", btn_contact: "Contato", btn_cv: "Baixar CV", label_history: "// Experiência", jobs: [{ year: "2020 - 2025", title: "Suporte TI", comp: "PT. ValueStream", desc: "Manutenção UPS, VMware, logs." }, { year: "2016 - 2020", title: "Especialista DC", comp: "PT. ValueStream", desc: "Monitoramento 24/7." }, { year: "2015 - 2016", title: "Engenheiro Wi-Fi", comp: "Indosat", desc: "Instalação AP Aruba/Ruckus." }, { year: "2012 - 2014", title: "Suporte Técnico", comp: "PT. Persada", desc: "Redes sem fio." }] },
     RU: { hero_sub: "IT-инфраструктура и ЦОД", hero_title: "Дезан Санубари", hero_tagline: "Надежность | Точность <br> Всегда в поиске новых возможностей", btn_contact: "Контакт", btn_cv: "Скачать CV", label_history: "// Опыт", jobs: [{ year: "2020 - 2025", title: "IT-поддержка", comp: "PT. ValueStream", desc: "Обслуживание ИБП, VMware." }, { year: "2016 - 2020", title: "Специалист ЦОД", comp: "PT. ValueStream", desc: "Мониторинг 24/7." }, { year: "2015 - 2016", title: "Wi-Fi инженер", comp: "Indosat", desc: "Установка точек доступа." }, { year: "2012 - 2014", title: "Техподдержка", comp: "PT. Persada", desc: "Беспроводные сети." }] },
     NL: { hero_sub: "IT Infrastructuur & Datacenter", hero_title: "Dezan Sanubari", hero_tagline: "Betrouwbaarheid | Precisie <br> Altijd op zoek naar kansen", btn_contact: "Contact", btn_cv: "Download CV", label_history: "// Ervaring", jobs: [{ year: "2020 - 2025", title: "IT Support", comp: "PT. ValueStream", desc: "UPS onderhoud, VMware." }, { year: "2016 - 2020", title: "DC Specialist", comp: "PT. ValueStream", desc: "24/7 monitoring." }, { year: "2015 - 2016", title: "Wi-Fi Engineer", comp: "Indosat", desc: "Aruba/Ruckus installatie." }, { year: "2012 - 2014", title: "Technical Support", comp: "PT. Persada", desc: "Bedrijfsnetwerken." }] },
-    IT: { hero_sub: "Infrastruttura IT & Data Center", hero_title: "Dezan Sanubari", hero_tagline: "Affidabilità | Precisione <br> Sempre alla ricerca di opportunità", btn_contact: "Contatto", btn_cv: "Scarica CV", label_history: "// Esperienza", jobs: [{ year: "2020 - 2025", title: "Supporto IT", comp: "PT. ValueStream", desc: "Manutenzione UPS, VMware." }, { year: "2016 - 2020", title: "Specialista DC", comp: "PT. ValueStream", desc: "Monitoraggio 24/7." }, { year: "2015 - 2016", title: "Ingegnere Wi-Fi", comp: "Indosat", desc: "Installazione AP." }, { year: "2012 - 2014", title: "Supporto Tecnico", comp: "PT. Persada", desc: "Reti wireless." }] },
+    IT: { hero_sub: "Infrastruttura IT & Data Center", hero_title: "Dezan Sanubari", hero_tagline: "Affidabilità | Precisione <br> Sempre alla ricerca di opportunità", btn_contact: "Contatto", btn_cv: "Scarica CV", label_history: "// Esperienza", jobs: [{ year: "2020 - 2025", title: "Supporto IT", comp: "PT. ValueStream", desc: "Manutenzione UPS, VMware." }, { year: "2016 - 2020", title: "Specialista DC", comp: "PT. ValueStream", desc: "Monitoraggio 24/7." }, { year: "2015 - 2016", title: "Ingegnere Wi-Fi", comp: "Indosat", desc: "Installazione AP." }, { year: "2012 - 2014", title: "Supporto Técnico", comp: "PT. Persada", desc: "Reti wireless." }] },
     AR: { hero_sub: "بنية تكنولوجيا المعلومات والبيانات", hero_title: "ديزان سنوباري", hero_tagline: "الموثوقية | الدقة <br> البحث دائما عن فرص جديدة", btn_contact: "اتصل بي", btn_cv: "السيرة الذاتية", label_history: "// الخبرة", jobs: [{ year: "2020 - 2025", title: "دعم العمليات", comp: "PT. ValueStream", desc: "صيانة المولدات و VMware." }, { year: "2016 - 2020", title: "أخصائي مركز البيانات", comp: "PT. ValueStream", desc: "مراقبة على مدار الساعة." }, { year: "2015 - 2016", title: "مهندس Wi-Fi", comp: "Indosat", desc: "تركيب نقاط وصول." }, { year: "2012 - 2014", title: "الدعم الفني", comp: "PT. Persada", desc: "شبكات لاسلكية." }] }
 };
 
@@ -45,20 +45,19 @@ const languages = [
     {id:'RU', n:'Russian'}, {id:'NL', n:'Dutch'}, {id:'IT', n:'Italian'}, {id:'AR', n:'Arabic'}
 ];
 
-// FUNGSI UTAMA UNTUK UPDATE BAHASA
-function updateContent(langID) {
-    const data = translations[langID] || translations.ID;
+function changeLang(l) {
+    const d = translations[l] || translations.ID;
     
-    // Update teks hero
+    // Update Teks
     document.querySelectorAll('[data-key]').forEach(el => {
-        const key = el.getAttribute('data-key');
-        if (data[key]) el.innerHTML = data[key];
+        const k = el.getAttribute('data-key');
+        if(d[k]) el.innerHTML = d[k];
     });
 
-    // Update list riwayat kerja
+    // Update Riwayat Kerja
     const workBox = document.getElementById('work-content');
     if (workBox) {
-        workBox.innerHTML = data.jobs.map(j => `
+        workBox.innerHTML = d.jobs.map(j => `
             <div class="work-item">
                 <div class="work-year mono">${j.year}</div>
                 <div class="work-info">
@@ -69,32 +68,27 @@ function updateContent(langID) {
             </div>`).join('');
     }
 
-    // Update label dropdown & arah teks
-    document.getElementById('current-lang').innerText = langID;
-    document.body.style.direction = (langID === 'AR') ? 'rtl' : 'ltr';
-    localStorage.setItem('selectedLang', langID);
+    // Update UI
+    document.getElementById('current-lang').innerText = l;
+    document.body.style.direction = (l === 'AR') ? 'rtl' : 'ltr';
+    localStorage.setItem('selectedLang', l);
 }
 
-// INISIALISASI MENU
-function initMenu() {
-    const menu = document.getElementById('lang-menu');
-    if (menu) {
-        menu.innerHTML = languages.map(l => `
-            <a href="javascript:void(0)" class="lang-option" data-id="${l.id}">${l.n}</a>
-        `).join('');
+// Ekspos ke window agar bisa dipanggil onclick dari HTML
+window.changeLang = changeLang;
 
-        // Event listener klik untuk setiap opsi bahasa
-        document.querySelectorAll('.lang-option').forEach(btn => {
-            btn.addEventListener('click', () => {
-                updateContent(btn.getAttribute('data-id'));
-            });
-        });
+function initMenu() {
+    const m = document.getElementById('lang-menu');
+    if (m) {
+        m.innerHTML = languages.map(l => `
+            <a href="javascript:void(0)" onclick="changeLang('${l.id}')">${l.n}</a>
+        `).join('');
     }
 }
 
-// JALANKAN SAAT LOAD
 document.addEventListener('DOMContentLoaded', () => {
     initMenu();
-    const saved = localStorage.getItem('selectedLang') || 'ID';
-    updateContent(saved);
+    const s = localStorage.getItem('selectedLang') || 'ID';
+    changeLang(s);
+    console.log("Dezan Portfolio Loaded with 13 Languages 🚀");
 });
