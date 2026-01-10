@@ -1,19 +1,52 @@
+/* --- VARIABLES & BASE --- */
 :root {
-    --bg-light: #f4f4f4;
+    --bg-light: #f8f9fa;
     --dark: #0a0a0a;
     --card-bg: #0d0d0d;
     --border: #1a1a1a;
-    --amber: #fdb201;
-    --gold: #c6a85c;
+    --amber: #fdb201; /* Warna utama aksen */
+    --gold: #c6a85c;  /* Warna untuk label & border */
+    --text-main: #333;
+    --text-muted: #666;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; background: var(--bg-light); color: #333; line-height: 1.6; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-.mono { font-family: 'Roboto Mono', monospace; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    scroll-behavior: smooth; 
+}
 
-/* HERO (STYLE V3 KEDUA) */
-.hero { position: relative; height: 100vh; color: white; display: flex; flex-direction: column; overflow: hidden;background: transparent !important; align-items: center; z-index: 10 !important;}
+body { 
+    font-family: 'Inter', sans-serif; 
+    background: var(--bg-light); 
+    color: var(--text-main); 
+    line-height: 1.6; 
+    overflow-x: hidden;
+}
+
+.container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 2rem; 
+}
+
+.mono { 
+    font-family: 'Roboto Mono', monospace; 
+}
+
+/* --- HERO SECTION (VIDEO BACKGROUND) --- */
+.hero { 
+    position: relative; 
+    height: 100vh; 
+    color: white; 
+    display: flex; 
+    flex-direction: column; 
+    overflow: hidden;
+    align-items: center; 
+    z-index: 1;
+}
+
 .video-bg {
     position: absolute;
     top: 50%;
@@ -22,10 +55,9 @@ body { font-family: 'Inter', sans-serif; background: var(--bg-light); color: #33
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: 2 !important; /* Pastikan ini yang paling belakang */
+    z-index: -2;
     transform: translate(-50%, -50%);
     object-fit: cover;
-    display: block !important;
 }
 
 .overlay {
@@ -34,285 +66,340 @@ body { font-family: 'Inter', sans-serif; background: var(--bg-light); color: #33
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5) !important; /* Transparan gelap */
-    z-index: -1; /* Berada di depan video, tapi di belakang teks */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.4), rgba(0,0,0,0.8));
+    z-index: -1;
 }
 
-nav { display: flex; justify-content: space-between; align-items: center; padding: 2rem 0; z-index: 9999 !important; }
-.logo img { height: 45px; filter: brightness(0) invert(1); }
-.nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
-.nav-links a { text-decoration: none; color: white; font-size: 0.9rem; opacity: 0.8; transition: 0.3s; }
-.nav-links a:hover { color: var(--amber); opacity: 1; }
-
-.lang-menu, .lang-current, .lang-dropdown {
-    z-index: 10000 !important;
-    cursor: pointer;
+/* --- NAVIGATION --- */
+nav { 
+    width: 100%;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 1.5rem 2rem; 
+    position: absolute;
+    top: 0;
+    z-index: 100;
 }
 
-.hero-content { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; z-index: 10; color: #fff; }
-.status-tag { background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 20px; font-size: 0.7rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.2); }
-.status-blink { width: 8px; height: 8px; background: #00ff00; border-radius: 50%; animation: blink 1.5s infinite; box-shadow: 0 0 8px #00ff00; }
-.hero-title { font-size: clamp(2.5rem, 6vw, 4.5rem); margin: 10px 0; font-weight: 700; }
-.subtitle { color: var(--amber); letter-spacing: 3px; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; }
-.tagline { opacity: 0.7; margin-bottom: 3rem; font-size: 1.1rem; }
+.logo img { 
+    height: 40px; 
+    filter: brightness(0) invert(1); 
+}
 
-.btn { padding: 1rem 2rem; text-decoration: none; font-weight: bold; transition: 0.3s; border: 1px solid white; display: inline-block; font-size: 0.85rem; }
-.btn-main { background: white; color: black; }
-.btn-outline { color: var(--amber); border-color: var(--amber); margin-left: 1rem; }
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+    gap: 2rem; 
+    align-items: center; 
+}
 
-/* DROPDOWN */
+.nav-links a { 
+    text-decoration: none; 
+    color: white; 
+    font-size: 0.85rem; 
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8; 
+    transition: 0.3s; 
+}
+
+.nav-links a:hover { 
+    color: var(--amber); 
+    opacity: 1; 
+}
+
+/* --- LANGUAGE DROPDOWN --- */
 .dropdown { position: relative; }
-.dropdown-content { display: none; position: absolute; background: #111; right: 0; min-width: 160px; max-height: 300px; overflow-y: auto; z-index: 1000; border: 1px solid var(--gold); }
-.dropdown-content a { color: white; padding: 12px; display: block; font-size: 0.8rem; text-decoration: none; border-bottom: 1px solid #222; }
+
+.lang-current {
+    background: rgba(255,255,255,0.1);
+    padding: 6px 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: var(--amber);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: #0f0f0f;
+    min-width: 160px;
+    max-height: 350px;
+    overflow-y: auto;
+    border: 1px solid #333;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.dropdown-content a {
+    color: #ccc;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.8rem;
+    transition: 0.2s;
+    border-bottom: 1px solid #222;
+}
+
+.dropdown-content a:hover {
+    background: #1a1a1a;
+    color: var(--amber);
+    padding-left: 20px;
+}
+
 .dropdown:hover .dropdown-content { display: block; }
 
-/* SECTIONS */
-.content-section { padding: 6rem 0; }
-.section-label { color: var(--gold); display: block; margin-bottom: 2rem; font-weight: bold; font-size: 0.9rem; }
-.work-item { display: grid; grid-template-columns: 220px 1fr; padding: 2.5rem 0; border-top: 1px solid #ddd; }
-.work-year { color: #888; font-weight: bold; font-size: 0.9rem; }
-.company { color: var(--gold); font-weight: bold; display: block; margin: 5px 0; font-size: 1rem; }
-.work-info h3 { font-size: 1.3rem; }
-.work-info p { font-size: 0.95rem; color: #555; max-width: 800px; }
+/* Scrollbar untuk dropdown */
+.dropdown-content::-webkit-scrollbar { width: 4px; }
+.dropdown-content::-webkit-scrollbar-thumb { background: var(--amber); }
 
-.skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-.skill-card { background: white; padding: 2.5rem; border-bottom: 3px solid var(--dark); transition: 0.3s; }
-.skill-card:hover { transform: translateY(-5px); }
-
-/* FOOTER (3 KOLOM GRID) */
-footer { background: #050505; color: white; }
-.footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--border); gap: 1px; }
-.footer-card { background: var(--card-bg); padding: 3rem 1.5rem; text-decoration: none; color: white; display: flex; align-items: center; transition: 0.3s; }
-.footer-card:hover { background: #111; }
-.card-inner { display: flex; align-items: center; gap: 1.2rem; }
-.footer-card i { font-size: 1.6rem; color: var(--amber); }
-.footer-card h4 { font-size: 0.85rem; letter-spacing: 1px; }
-.footer-card p { font-size: 0.75rem; color: #666; }
-.footer-bottom-bar { display: flex; justify-content: space-between; padding: 2rem 0; font-size: 0.7rem; color: #444; letter-spacing: 1px; }
-.blink-green { color: #00ff00; }
-
-@keyframes blink { 50% { opacity: 0.3; } }
-@media (max-width: 1024px) { 
-    .footer-grid { grid-template-columns: 1fr; } 
-    .work-item { grid-template-columns: 1fr; gap: 10px; } 
-    .btn-outline { margin-left: 0; margin-top: 10px; } 
-    .hero-btns { display: flex; flex-direction: column; } 
+/* --- HERO CONTENT --- */
+.hero-content { 
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    padding-top: 60px;
 }
-.about-section {
-    padding: 8rem 0 4rem 0; /* Memberi ruang setelah hero video */
+
+.status-tag { 
+    background: rgba(255,255,255,0.05); 
+    padding: 8px 16px; 
+    border-radius: 30px; 
+    font-size: 0.75rem; 
+    margin-bottom: 1rem; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    border: 1px solid rgba(255,255,255,0.15); 
+    backdrop-filter: blur(5px);
 }
+
+.status-blink { 
+    width: 8px; 
+    height: 8px; 
+    background: #00ff00; 
+    border-radius: 50%; 
+    animation: blink 1.5s infinite; 
+    box-shadow: 0 0 10px #00ff00; 
+}
+
+.hero-title { 
+    font-size: clamp(2.5rem, 8vw, 5rem); 
+    font-weight: 800; 
+    margin: 10px 0;
+    line-height: 1.1;
+}
+
+.subtitle.mono { 
+    color: var(--amber) !important; 
+    letter-spacing: 4px; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.tagline { 
+    max-width: 700px;
+    opacity: 0.8; 
+    margin-bottom: 3rem; 
+    font-size: 1.2rem; 
+    font-weight: 300;
+}
+
+/* --- BUTTONS --- */
+.hero-btns { display: flex; gap: 1rem; }
+
+.btn { 
+    padding: 1rem 2.5rem; 
+    text-decoration: none; 
+    font-weight: 700; 
+    transition: 0.4s; 
+    font-size: 0.8rem; 
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+
+.btn-main { background: white; color: black; border: 1px solid white; }
+.btn-main:hover { background: var(--amber); border-color: var(--amber); color: white; }
+
+.btn-outline { color: var(--amber); border: 1px solid var(--amber); }
+.btn-outline:hover { background: var(--amber); color: white; }
+
+/* --- ABOUT SECTION --- */
+.about-section { padding: 8rem 0; background: white; }
 
 .about-grid {
     display: grid;
-    grid-template-columns: 320px 1fr; /* Kolom kiri untuk foto, kanan untuk teks */
-    gap: 4rem;
+    grid-template-columns: 350px 1fr;
+    gap: 5rem;
     align-items: center;
 }
 
 .about-photo img {
     width: 100%;
-    height: auto;
-    filter: grayscale(1); /* Efek hitam putih profesional */
-    border: 1px solid var(--gold); /* Bingkai warna emas */
-    padding: 10px;
+    filter: grayscale(1) contrast(1.1);
+    border: 1px solid var(--gold);
+    padding: 12px;
     background: white;
+    box-shadow: 15px 15px 0px var(--dark);
     transition: 0.5s ease;
-    box-shadow: 10px 10px 0px var(--dark); /* Efek bayangan tegas modern */
 }
 
 .about-photo img:hover {
-    filter: grayscale(0); /* Berwarna kembali saat disentuh mouse */
-    transform: translateY(-5px);
-    box-shadow: 15px 15px 0px var(--amber);
+    filter: grayscale(0);
+    transform: translate(-5px, -5px);
+    box-shadow: 20px 20px 0px var(--amber);
 }
 
 .about-text p {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     line-height: 1.8;
     color: #444;
     font-weight: 300;
-}
-
-/* Responsif untuk HP */
-@media (max-width: 768px) {
-    .about-grid {
-        grid-template-columns: 1fr; /* Foto dan teks menumpuk vertikal */
-        text-align: center;
-        gap: 2rem;
-    }
-    
-    .about-photo {
-        max-width: 250px;
-        margin: 0 auto;
-    }
-    
-    .about-text p {
-        font-size: 1.1rem;
-    }
-}
-/* --- PERBAIKAN & FITUR BARU --- */
-
-/* 1. Warna Subtitle (Oranye & Tebal) */
-.subtitle.mono { 
-    color: #ffa500 !important; 
-    font-weight: bold; 
-    margin-bottom: 10px; 
-    display: block; 
-}
-
-/* 2. Indikator Uptime Berkedip (Green Dot) */
-.status-blink { 
-    height: 10px; 
-    width: 10px; 
-    background-color: #00ff00; 
-    border-radius: 50%; 
-    display: inline-block; 
-    margin-right: 8px; 
-    animation: blink 1.2s infinite; 
-}
-
-@keyframes blink { 
-    0% { opacity: 1; transform: scale(1); } 
-    50% { opacity: 0.4; transform: scale(0.9); } 
-    100% { opacity: 1; transform: scale(1); } 
-}
-
-/* 3. Dropdown Menu untuk 13 Bahasa */
-/* Supaya daftar bahasa tidak kepanjangan ke bawah layar */
-.dropdown-content {
-    display: none; 
-    position: absolute; 
-    right: 0; 
-    background-color: #0f0f0f;
-    min-width: 160px; 
-    box-shadow: 0px 8px 20px rgba(0,0,0,0.9); 
-    z-index: 9999;
-    border: 1px solid #333; 
-    max-height: 350px; /* Batasi tinggi menu */
-    overflow-y: auto;  /* Tambahkan scrollbar internal */
-    border-radius: 4px;
-}
-
-.dropdown-content a { 
-    color: #ccc; 
-    padding: 12px 16px; 
-    text-decoration: none; 
-    display: block; 
-    font-size: 13px; 
-    font-family: 'Roboto Mono', monospace;
-    border-bottom: 1px solid #222;
-}
-
-.dropdown-content a:last-child {
-    border-bottom: none;
-}
-
-.dropdown-content a:hover { 
-    background-color: #1a1a1a; 
-    color: #00ff00; 
-}
-
-/* Menampilkan dropdown saat hover */
-.dropdown:hover .dropdown-content { 
-    display: block; 
-}
-
-/* 4. Perbaikan Responsif untuk Tagline */
-.tagline {
-    line-height: 1.6;
-    margin-top: 15px;
-}
-
-.about-photo img {
-    width: 100%;
-    filter: grayscale(1) contrast(1.1); /* Menambah sedikit kontras */
-    mix-blend-mode: luminosity; /* Membuat foto menyatu dengan background gelap web */
-
-    /* --- TAMBAHAN UNTUK DATA BARU & MULTI-BAHASA --- */
-
-/* 1. Perbaikan Teks About Me agar nyaman dibaca */
-.about-text p {
-    text-align: justify; /* Membuat teks rata kiri-kanan */
-    hyphens: auto;       /* Memotong kata otomatis jika di HP */
-    max-width: 900px;
     margin-bottom: 1.5rem;
+    text-align: justify;
 }
 
-/* 2. Styling untuk Tag Skill agar rapi */
-#skill-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
+/* --- WORK & EDUCATION ITEMS --- */
+.content-section { padding: 6rem 0; border-top: 1px solid #eee; }
+
+.section-label { 
+    color: var(--gold); 
+    display: block; 
+    margin-bottom: 3rem; 
+    font-weight: 700; 
+    font-size: 1rem; 
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.work-item { 
+    display: grid; 
+    grid-template-columns: 250px 1fr; 
+    padding: 3rem 0; 
+    border-top: 1px solid #eee; 
+}
+
+.work-item:first-of-type { border-top: none; }
+
+.work-year { color: #999; font-weight: 700; font-size: 0.9rem; }
+
+.work-info h3 { font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--dark); }
+
+.company { 
+    color: var(--gold); 
+    font-weight: 700; 
+    display: inline-block; 
+    margin-bottom: 1rem; 
+    font-size: 0.95rem; 
+}
+
+.work-info p { color: var(--text-muted); max-width: 850px; }
+
+/* --- SKILLS TAGS --- */
+#skill-content { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 12px; 
 }
 
 .skill-tag {
-    background: #e0e0e0;
-    padding: 6px 14px;
+    background: #f0f0f0;
+    padding: 8px 18px;
     border-radius: 4px;
-    font-size: 0.8rem;
-    font-weight: bold;
+    font-size: 0.85rem;
+    font-weight: 600;
     color: var(--dark);
-    border: 1px solid #ccc;
-    transition: 0.3s;
+    border: 1px solid #ddd;
+    transition: 0.3s ease;
 }
 
 .skill-tag:hover {
-    background: var(--amber);
-    border-color: var(--amber);
-    transform: translateY(-2px);
+    background: var(--dark);
+    color: white;
+    border-color: var(--dark);
+    transform: translateY(-3px);
 }
 
-/* 3. Penyesuaian untuk Bahasa Arab (RTL) */
-/* Kode ini otomatis aktif saat JS mendeteksi bahasa AR */
+/* --- FOOTER --- */
+footer { background: #050505; color: white; padding-top: 4rem; }
+
+.footer-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    background: #1a1a1a; 
+    gap: 1px; 
+    border: 1px solid #1a1a1a;
+}
+
+.footer-card { 
+    background: var(--card-bg); 
+    padding: 3.5rem 2rem; 
+    text-decoration: none; 
+    color: white; 
+    transition: 0.3s; 
+}
+
+.footer-card:hover { background: #111; }
+
+.card-inner { display: flex; align-items: center; gap: 1.5rem; }
+
+.footer-card i { font-size: 2rem; color: var(--amber); }
+
+.footer-card h4 { font-size: 0.9rem; letter-spacing: 1px; margin-bottom: 4px; text-transform: uppercase; }
+
+.footer-card p { font-size: 0.75rem; color: #777; }
+
+.footer-bottom-bar { 
+    display: flex; 
+    justify-content: space-between; 
+    padding: 2.5rem 0; 
+    font-size: 0.75rem; 
+    color: #555; 
+    letter-spacing: 1px; 
+}
+
+/* --- ARABIC (RTL) SUPPORT --- */
 body[style*="direction: rtl"] {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font lebih cocok untuk Arab */
+    font-family: 'Tahoma', sans-serif;
     text-align: right;
 }
 
-body[style*="direction: rtl"] .about-grid {
-    grid-template-columns: 1fr 320px; /* Tukar posisi foto dan teks */
+body[style*="direction: rtl"] .about-grid { grid-template-columns: 1fr 350px; }
+body[style*="direction: rtl"] .nav-links { flex-direction: row-reverse; }
+body[style*="direction: rtl"] .work-item { grid-template-columns: 1fr 250px; }
+body[style*="direction: rtl"] .card-inner { flex-direction: row-reverse; text-align: right; }
+
+/* --- ANIMATIONS --- */
+@keyframes blink { 
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.2); }
 }
 
-body[style*="direction: rtl"] .work-item {
-    border-left: none;
-    border-right: 1px solid #ddd;
-    padding-left: 0;
-    padding-right: 2.5rem;
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+    .about-photo { max-width: 300px; margin: 0 auto; }
+    .about-text p { text-align: center; }
+    .work-item { grid-template-columns: 1fr; gap: 0.5rem; padding: 2rem 0; }
+    .footer-grid { grid-template-columns: 1fr; }
 }
 
-body[style*="direction: rtl"] .nav-links {
-    flex-direction: row-reverse;
-}
-
-/* 4. Scrollbar Halus untuk Dropdown Bahasa */
-.dropdown-content::-webkit-scrollbar {
-    width: 5px;
-}
-
-.dropdown-content::-webkit-scrollbar-track {
-    background: #111;
-}
-
-.dropdown-content::-webkit-scrollbar-thumb {
-    background: var(--gold);
-    border-radius: 10px;
-}
-
-/* 5. Perbaikan Section Pendidikan agar tidak menempel */
-#school-content .work-item {
-    border-top: 1px solid #eee;
-}
-
-#school-content .work-item:first-child {
-    border-top: none;
-}
-
-/* 6. Animasi Hover Link Navigasi Bahasa */
-.dropdown-content a {
-    transition: all 0.2s ease-in-out;
-}
-
-.dropdown-content a:hover {
-    padding-left: 20px; /* Efek geser saat hover */
+@media (max-width: 768px) {
+    nav { padding: 1rem; }
+    .nav-links { display: none; } /* Sembunyikan link di mobile untuk kesederhanaan */
+    .hero-title { font-size: 3rem; }
+    .hero-btns { flex-direction: column; width: 100%; padding: 0 2rem; }
+    .btn-outline { margin: 0; }
 }
