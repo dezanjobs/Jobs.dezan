@@ -3,84 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio | Data Center Engineer</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    
+    <title>Network & Data Center Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <div class="container">
-        <nav>
-            <div class="logo-container">
-                <img src="assets/erasebg-transformed.png" alt="Logo" class="site-logo">
-                <span class="mono">engineer@work:~$</span>
+    <header class="hero">
+        <video autoplay muted loop playsinline class="video-bg">
+            <source src="assets/Always seeking new opportuniti..." type="video/mp4">
+        </video>
+        
+        <div class="overlay"></div>
+
+        <nav class="container">
+            <div class="logo">
+                <img src="assets/erasebg-transformed.png" alt="Logo">
             </div>
-            <div class="nav-links mono">
-                <a href="#work">.history()</a>
-                <a href="#skills">.tools()</a>
-                <a href="assets/CV English 3.0 ATS-compressed..." target="_blank" class="cv-link">.download_cv()</a>
-            </div>
+            <ul class="nav-links mono">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#work">History</a></li>
+                <li><a href="#skills">Tools</a></li>
+                <li class="lang-selector">EN ▾</li>
+            </ul>
         </nav>
 
-        <header class="hero">
-            <div class="status mono"><span class="status-blink"></span> uptime: 99.9%</div>
-            <h1>Halo, saya [Nama Kamu].<br>Saya membangun & mengelola infrastruktur data center.</h1>
-            <p>Spesialis operasional Data Center dengan fokus pada efisiensi termal, manajemen rak, dan ketersediaan sistem kritis.</p>
-        </header>
-
-        <section id="work" class="section-padding">
-            <span class="section-label mono">// work_history</span>
-            <div class="work-grid">
-                
-                <div class="work-item">
-                    <div class="work-year">2021 — Sekarang</div>
-                    <div class="work-info">
-                        <h3>Senior Data Center Engineer</h3>
-                        <span class="company">PT. Teknologi Awan Indonesia</span>
-                        <p>Mengelola kapasitas daya dan pendinginan untuk 500+ rak server serta memimpin proyek migrasi infrastruktur.</p>
-                    </div>
-                </div>
-
-                <div class="work-item">
-                    <div class="work-year">2018 — 2021</div>
-                    <div class="work-info">
-                        <h3>DC Facilities Technician</h3>
-                        <span class="company">Global Connect Data</span>
-                        <p>Fokus pada rack-and-stack, structured cabling (fiber/copper), dan pemeliharaan rutin perangkat UPS/PACU.</p>
-                    </div>
-                </div>
-
+        <div class="hero-content container">
+            <p class="subtitle mono">Always seeking new opportunities</p>
+            <h1>Network and DataCenter Specialist</h1>
+            <p class="tagline">Reliability | Connectivity | Precision</p>
+            
+            <div class="hero-btns">
+                <a href="mailto:emailanda@example.com" class="btn">Get In Touch</a>
+                <a href="assets/CV English 3.0 ATS-compressed..." target="_blank" class="btn btn-outline">Download CV</a>
             </div>
-        </section>
+        </div>
+    </header>
 
-        <section id="skills" class="section-padding">
-            <span class="section-label mono">// technical_stack</span>
-            <div class="skills-container">
-                <div class="skill-card">
-                    <h4 class="mono">Infrastruktur</h4>
-                    <p>Rack & Stack, Fiber Splicing, Cooling Management, Power PDU.</p>
-                </div>
-                <div class="skill-card">
-                    <h4 class="mono">Monitoring</h4>
-                    <p>Zabbix, SNMP, DCIM, Environmental Monitoring.</p>
-                </div>
-                <div class="skill-card">
-                    <h4 class="mono">Hardware</h4>
-                    <p>Dell EMC, Cisco UCS, HP ProLiant, APC/Schneider UPS.</p>
+    <main class="container content-section" id="work">
+        <span class="section-label mono">// work_history</span>
+        <div class="work-grid">
+            <div class="work-item">
+                <div class="work-year mono">2021 — Sekarang</div>
+                <div class="work-info">
+                    <h3>Senior Data Center Engineer</h3>
+                    <span class="company">PT. Teknologi Awan Indonesia</span>
+                    <p>Bertanggung jawab atas operasional 24/7 dan optimasi PUE.</p>
                 </div>
             </div>
-        </section>
-    </div>
+            <div class="work-item">
+                <div class="work-year mono">2018 — 2021</div>
+                <div class="work-info">
+                    <h3>DC Facilities Technician</h3>
+                    <span class="company">Global Connect Data</span>
+                    <p>Fokus pada instalasi rak dan structured cabling.</p>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <footer>
         <div class="container footer-flex">
-            <div class="mono">status: operational</div>
-            <div class="nav-links mono">
-                <a href="#" style="color: var(--led-amber)">LinkedIn</a>
-                <a href="#" style="color: var(--led-amber)">GitHub</a>
-            </div>
+            <p class="mono">uptime: 99.9% | built_by: yourname.sys</p>
         </div>
     </footer>
 
