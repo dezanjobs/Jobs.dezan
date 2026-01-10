@@ -227,3 +227,92 @@ footer { background: #050505; color: white; }
     width: 100%;
     filter: grayscale(1) contrast(1.1); /* Menambah sedikit kontras */
     mix-blend-mode: luminosity; /* Membuat foto menyatu dengan background gelap web */
+
+    /* --- TAMBAHAN UNTUK DATA BARU & MULTI-BAHASA --- */
+
+/* 1. Perbaikan Teks About Me agar nyaman dibaca */
+.about-text p {
+    text-align: justify; /* Membuat teks rata kiri-kanan */
+    hyphens: auto;       /* Memotong kata otomatis jika di HP */
+    max-width: 900px;
+    margin-bottom: 1.5rem;
+}
+
+/* 2. Styling untuk Tag Skill agar rapi */
+#skill-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.skill-tag {
+    background: #e0e0e0;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--dark);
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+.skill-tag:hover {
+    background: var(--amber);
+    border-color: var(--amber);
+    transform: translateY(-2px);
+}
+
+/* 3. Penyesuaian untuk Bahasa Arab (RTL) */
+/* Kode ini otomatis aktif saat JS mendeteksi bahasa AR */
+body[style*="direction: rtl"] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font lebih cocok untuk Arab */
+    text-align: right;
+}
+
+body[style*="direction: rtl"] .about-grid {
+    grid-template-columns: 1fr 320px; /* Tukar posisi foto dan teks */
+}
+
+body[style*="direction: rtl"] .work-item {
+    border-left: none;
+    border-right: 1px solid #ddd;
+    padding-left: 0;
+    padding-right: 2.5rem;
+}
+
+body[style*="direction: rtl"] .nav-links {
+    flex-direction: row-reverse;
+}
+
+/* 4. Scrollbar Halus untuk Dropdown Bahasa */
+.dropdown-content::-webkit-scrollbar {
+    width: 5px;
+}
+
+.dropdown-content::-webkit-scrollbar-track {
+    background: #111;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 10px;
+}
+
+/* 5. Perbaikan Section Pendidikan agar tidak menempel */
+#school-content .work-item {
+    border-top: 1px solid #eee;
+}
+
+#school-content .work-item:first-child {
+    border-top: none;
+}
+
+/* 6. Animasi Hover Link Navigasi Bahasa */
+.dropdown-content a {
+    transition: all 0.2s ease-in-out;
+}
+
+.dropdown-content a:hover {
+    padding-left: 20px; /* Efek geser saat hover */
+}
