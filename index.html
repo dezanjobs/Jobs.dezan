@@ -207,13 +207,16 @@
             });
         }
 
-        function changeLang(langCode) {
-            document.getElementById('current-lang').innerText = langCode;
-            const data = translations[langCode] || translations['EN'];
-            document.querySelectorAll('[data-key]').forEach(el => {
-                const key = el.getAttribute('data-key');
-                if (data[key]) el.innerText = data[key];
-            });
+function changeLang(lang) {
+    document.querySelectorAll('[data-key]').forEach(element => {
+        const key = element.getAttribute('data-key');
+        if (translations[lang][key]) {
+            element.innerText = translations[lang][key];
+        }
+    });
+    // Simpan pilihan bahasa ke storage agar tidak reset saat refresh
+    localStorage.setItem('selectedLang', lang);
+}
             document.getElementById('work-content').innerHTML = data.jobs.map(j => `
                 <div class="work-item">
                     <div class="work-year mono">${j.year}</div>
