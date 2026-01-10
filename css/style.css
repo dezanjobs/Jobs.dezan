@@ -403,3 +403,100 @@ body[style*="direction: rtl"] .card-inner { flex-direction: row-reverse; text-al
     .hero-btns { flex-direction: column; width: 100%; padding: 0 2rem; }
     .btn-outline { margin: 0; }
 }
+/* --- PERBAIKAN DROPDOWN BAHASA --- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.lang-current {
+    cursor: pointer;
+    padding: 8px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.lang-current:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--amber);
+}
+
+.dropdown-content {
+    display: none; /* Sembunyi secara default */
+    position: absolute;
+    right: 0;
+    top: 110%; /* Muncul sedikit di bawah tombol */
+    background: #0d0d0d;
+    min-width: 180px;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    z-index: 99999; /* Pastikan di atas video dan elemen lain */
+    max-height: 300px;
+    overflow-y: auto;
+    border-radius: 4px;
+}
+
+/* Munculkan dropdown saat hover di pembungkusnya */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #ccc;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #1a1a1a;
+    transition: 0.2s;
+}
+
+.dropdown-content a:hover {
+    background: #1a1a1a;
+    color: var(--amber);
+    padding-left: 22px; /* Efek geser saat hover */
+}
+
+/* Scrollbar halus untuk daftar bahasa */
+.dropdown-content::-webkit-scrollbar {
+    width: 5px;
+}
+.dropdown-content::-webkit-scrollbar-thumb {
+    background: var(--amber);
+    border-radius: 10px;
+}
+
+/* --- STYLING KHUSUS WHATSAPP & FOOTER --- */
+.footer-card i.fa-whatsapp {
+    color: #25D366; /* Warna khas WhatsApp */
+}
+
+.footer-card:hover i.fa-whatsapp {
+    filter: drop-shadow(0 0 8px #25D366);
+}
+
+/* --- PERBAIKAN RESPONSIVE VIDEO HERO --- */
+.hero-content {
+    z-index: 5; /* Pastikan teks di depan overlay */
+    pointer-events: none; /* Biarkan klik tembus ke tombol */
+}
+
+.hero-btns, .nav-links, .dropdown {
+    pointer-events: auto; /* Tombol & Navigasi tetap bisa diklik */
+}
+
+/* Animasi untuk arah teks Arab (RTL) */
+body[style*="direction: rtl"] .about-grid {
+    direction: rtl;
+    text-align: right;
+}
+
+body[style*="direction: rtl"] .dropdown-content {
+    right: auto;
+    left: 0;
+}
