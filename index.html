@@ -35,42 +35,41 @@
             <div class="status-tag mono">
                 <span class="status-blink"></span> uptime: 12y_experience
             </div>
-            <p class="subtitle mono" data-key="hero_sub">IT Infrastructure & Data Center Operations</p>
-            <h1 class="hero-title">Dezan Sanubari</h1>
-            <p class="tagline" data-key="hero_tagline">Reliability | Connectivity | Precision </br> Always seeking new opportunities</p>
+            <p class="subtitle mono" data-key="hero_sub">Operasional Infrastruktur IT & Data Center</p>
+            <h1 class="hero-title" data-key="hero_title">Dezan Sanubari</h1>
+            <p class="tagline" data-key="hero_tagline">Keandalan | Konektivitas | Presisi <br> Selalu mencari peluang baru — Pengalaman 12+ Tahun</p>
             
             <div class="hero-btns">
-                <a href="mailto:Jobs.Dezan@gmail.com" class="btn btn-main" data-key="btn_contact">Get In Touch</a>
-                <a href="assets/CV English 3.0 ATS-compressed_2.pdf" target="_blank" class="btn btn-outline" data-key="btn_cv">Download CV</a>
+                <a href="mailto:Jobs.Dezan@gmail.com" class="btn btn-main" data-key="btn_contact">Hubungi Saya</a>
+                <a href="assets/CV English 3.0 ATS-compressed_2.pdf" target="_blank" class="btn btn-outline" data-key="btn_cv">Unduh CV</a>
             </div>
         </div>
     </header>
-<section class="container about-section">
-    <div class="about-grid">
-        <div class="about-photo">
-            <img src="assets/DSC04474-removebg-preview.png" alt="Dezan Sanubari">
+
+    <section class="container about-section">
+        <div class="about-grid">
+            <div class="about-photo">
+                <img src="assets/DSC04474-removebg-preview.png" alt="Dezan Sanubari">
+            </div>
+            <div class="about-text">
+                <span class="section-label mono">// executive_summary</span>
+                <p data-key="about_desc">
+                    Spesialis Infrastruktur IT dengan pengalaman lebih dari 12 tahun dalam mengelola operasional Data Center kritis. 
+                    Ahli dalam menjaga uptime sistem melalui manajemen kelistrikan (UPS/Genset), virtualisasi VMware, 
+                    dan troubleshooting jaringan tingkat lanjut.
+                </p>
+            </div>
         </div>
-        <div class="about-text">
-            <span class="section-label mono">// executive_summary</span>
-            <p data-key="about_desc">
-                Spesialis Infrastruktur IT dengan pengalaman lebih dari 12 tahun dalam mengelola operasional Data Center kritis. 
-                Ahli dalam menjaga uptime sistem melalui manajemen kelistrikan (UPS/Genset), virtualisasi VMware, 
-                dan troubleshooting jaringan tingkat lanjut. Berpengalaman dalam menjembatani kebutuhan teknis 
-                dengan stabilitas bisnis melalui analisis log transaksi dan pemeliharaan infrastruktur yang presisi.
-            </p>
-        </div>
-    </div>
-</section>
+    </section>
+
     <main class="container content-section" id="history">
         <span class="section-label mono" data-key="label_history">// professional_experience</span>
-        <div class="work-grid" id="work-content">
-            </div>
+        <div class="work-grid" id="work-content"></div>
     </main>
 
     <section id="tools" class="container content-section">
         <span class="section-label mono" data-key="label_tools">// technical_stack</span>
-        <div class="skills-container" id="skills-content">
-            </div>
+        <div class="skills-container" id="skills-content"></div>
     </section>
 
     <footer id="contact">
@@ -112,35 +111,26 @@
     <script>
         const translations = {
             ID: {
+                hero_title: "Dezan Sanubari",
                 hero_sub: "Operasional Infrastruktur IT & Data Center",
                 hero_tagline: "Keandalan | Konektivitas | Presisi | Selalu mencari peluang baru — Pengalaman 12+ Tahun",
-                about_desc: "Spesialis Infrastruktur IT dengan pengalaman lebih dari 12 tahun dalam mengelola operasional Data Center kritis. Ahli dalam menjaga uptime sistem melalui manajemen kelistrikan (UPS/Genset), virtualisasi VMware, dan troubleshooting jaringan tingkat lanjut. Berpengalaman dalam menjembatani kebutuhan teknis dengan stabilitas bisnis melalui analisis log transaksi dan pemeliharaan infrastruktur yang presisi.",
-                btn_contact: "Hubungi Saya", btn_cv: "Unduh CV",
-                label_history: "// riwayat_kerja", label_tools: "// keahlian_teknis",
+                about_desc: "Spesialis Infrastruktur IT dengan pengalaman lebih dari 12 tahun dalam mengelola operasional Data Center kritis. Ahli dalam menjaga uptime sistem melalui manajemen kelistrikan (UPS/Genset), virtualisasi VMware, dan troubleshooting jaringan tingkat lanjut.",
+                btn_contact: "Hubungi Saya", 
+                btn_cv: "Unduh CV",
+                label_history: "// riwayat_kerja", 
+                label_tools: "// keahlian_teknis",
                 jobs: [
                     {
                         year: "Feb 2020 - Feb 2025",
                         title: "IT Operations Support",
                         comp: "PT. ValueStream International",
-                        desc: "Bertanggung jawab atas operasional kritis L2: Pemeliharaan kelistrikan (UPS/Genset), monitoring link internet/biller, instalasi server fisik & VMware, analisis log transaksi (JSON/ISO8583), serta manajemen database produksi."
+                        desc: "Bertanggung jawab atas operasional kritis L2: Pemeliharaan kelistrikan (UPS/Genset), monitoring link internet/biller, instalasi server fisik & VMware."
                     },
                     {
                         year: "Apr 2016 - Feb 2020",
                         title: "Datacenter Operations Specialist",
                         comp: "PT. ValueStream International",
-                        desc: "Monitoring 24/7 infrastruktur Data Center: Server, Storage, dan Jaringan. Mengelola suhu ruang (cooling), instalasi perangkat network (Switch/Router), dan dokumentasi log harian gangguan."
-                    },
-                    {
-                        year: "Jan 2015 - Mar 2016",
-                        title: "Wi-Fi Technical Support Engineer",
-                        comp: "Koperasi Pegawai Indosat",
-                        desc: "Instalasi dan konfigurasi sistem radio, router, dan Access Point (Aruba, Ruckus) untuk proyek Indosat Super Wi-Fi guna meningkatkan cakupan jaringan di area publik dan BTS."
-                    },
-                    {
-                        year: "Okt 2012 - Des 2014",
-                        title: "Technical Support Engineer",
-                        comp: "PT. Personel Alih Daya (Persada)",
-                        desc: "Berperan dalam implementasi jaringan wireless untuk klien korporat, melakukan troubleshooting mendalam, dan pemeliharaan rutin untuk memastikan downtime minimal."
+                        desc: "Monitoring 24/7 infrastruktur Data Center: Server, Storage, dan Jaringan."
                     }
                 ],
                 skills: [
@@ -150,35 +140,26 @@
                 ]
             },
             EN: {
+                hero_title: "Dezan Sanubari",
                 hero_sub: "IT Infrastructure & Data Center Operations",
                 hero_tagline: "Reliability | Connectivity | Precision | Always seeking new opportunities - 12+ Years Experience",
-                about_desc: "IT Infrastructure Specialist with over 12 years of experience in managing critical Data Center operations. Expert in maintaining system uptime through power management (UPS/Genset), VMware virtualization, and advanced network troubleshooting. Experienced in bridging technical needs with business stability through transaction log analysis and precision infrastructure maintenance.",
-                btn_contact: "Get In Touch", btn_cv: "Download CV",
-                label_history: "// work_history", label_tools: "// technical_stack",
+                about_desc: "IT Infrastructure Specialist with over 12 years of experience in managing critical Data Center operations. Expert in maintaining system uptime through power management (UPS/Genset), VMware virtualization, and advanced network troubleshooting.",
+                btn_contact: "Get In Touch", 
+                btn_cv: "Download CV",
+                label_history: "// work_history", 
+                label_tools: "// technical_stack",
                 jobs: [
                     {
                         year: "Feb 2020 - Feb 2025",
                         title: "IT Operations Support",
                         comp: "PT. ValueStream International",
-                        desc: "Leading L2 operations: DC power maintenance (UPS/Genset), internet/biller link monitoring, physical & VMware server deployment, transaction log analysis (JSON/ISO8583), and production database management."
+                        desc: "Leading L2 operations: DC power maintenance (UPS/Genset), internet/biller link monitoring, physical & VMware server deployment."
                     },
                     {
                         year: "Apr 2016 - Feb 2020",
                         title: "Datacenter Operations Specialist",
                         comp: "PT. ValueStream International",
-                        desc: "24/7 monitoring of Data Center infrastructure (Server, Storage, Network), climate control (precision cooling), network device installation (Switch/Router), and disturbance logging."
-                    },
-                    {
-                        year: "Jan 2015 - Mar 2016",
-                        title: "Wi-Fi Technical Support Engineer",
-                        comp: "Koperasi Pegawai Indosat",
-                        desc: "Installed and configured radio systems, routers, and Access Points (Aruba, Ruckus) for the Indosat Super Wi-Fi project to enhance coverage in public areas and BTS sites."
-                    },
-                    {
-                        year: "Oct 2012 - Dec 2014",
-                        title: "Technical Support Engineer",
-                        comp: "PT. Personel Alih Daya (Persada)",
-                        desc: "Key role in wireless network implementation for enterprise clients, performing deep-dive troubleshooting and routine maintenance to ensure minimal downtime."
+                        desc: "24/7 monitoring of Data Center infrastructure (Server, Storage, Network)."
                     }
                 ],
                 skills: [
@@ -190,14 +171,13 @@
         };
 
         const languages = [
-            {code: 'ID', name: 'Indonesian'}, {code: 'EN', name: 'English'}, {code: 'CN', name: 'Chinese'},
-            {code: 'JP', name: 'Japanese'}, {code: 'KR', name: 'Korean'}, {code: 'DE', name: 'German'},
-            {code: 'FR', name: 'French'}, {code: 'ES', name: 'Spanish'}, {code: 'PT', name: 'Portuguese'},
-            {code: 'RU', name: 'Russian'}, {code: 'NL', name: 'Dutch'}, {code: 'AR', name: 'Arabic'}
+            {code: 'ID', name: 'Indonesian'}, {code: 'EN', name: 'English'}
         ];
 
         function initLangMenu() {
             const menu = document.getElementById('lang-menu');
+            if (!menu) return;
+            menu.innerHTML = '';
             languages.forEach(l => {
                 const a = document.createElement('a');
                 a.href = "javascript:void(0)";
@@ -207,85 +187,59 @@
             });
         }
 
-function changeLang(langCode) {
-    const data = translations[langCode];
-    if (!data) return;
+        function changeLang(langCode) {
+            const data = translations[langCode];
+            if (!data) return;
 
-    // 1. Update elemen statis (yang punya data-key)
-    document.querySelectorAll('[data-key]').forEach(element => {
-        const key = element.getAttribute('data-key');
-        if (data[key]) {
-            element.innerText = data[key];
-        }
-    });
+            // 1. Update elemen statis
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (data[key]) {
+                    element.innerHTML = data[key]; // Gunakan innerHTML agar <br> berfungsi
+                }
+            });
 
-    // 2. Update Label Section (History & Tools)
-    const labelHistory = document.querySelector('[data-key="label_history"]');
-    const labelTools = document.querySelector('[data-key="label_tools"]');
-    if (labelHistory) labelHistory.innerText = data.label_history;
-    if (labelTools) labelTools.innerText = data.label_tools;
+            // 2. Update Riwayat Kerja
+            const workContent = document.getElementById('work-content');
+            if (workContent && data.jobs) {
+                workContent.innerHTML = data.jobs.map(j => `
+                    <div class="work-item">
+                        <div class="work-year mono">${j.year}</div>
+                        <div class="work-info">
+                            <h3>${j.title}</h3>
+                            <span class="company">${j.comp}</span>
+                            <p>${j.desc}</p>
+                        </div>
+                    </div>`).join('');
+            }
 
-    // 3. Update Riwayat Kerja (Dinamis)
-    const workContent = document.getElementById('work-content');
-    if (workContent && data.jobs) {
-        workContent.innerHTML = data.jobs.map(j => `
-            <div class="work-item">
-                <div class="work-year mono">${j.year}</div>
-                <div class="work-info">
-                    <h3>${j.title}</h3>
-                    <span class="company">${j.comp}</span>
-                    <p>${j.desc}</p>
-                </div>
-            </div>`).join('');
-    }
+            // 3. Update Keahlian
+            const skillsContent = document.getElementById('skills-content');
+            if (skillsContent && data.skills) {
+                skillsContent.innerHTML = data.skills.map(s => `
+                    <div class="skill-card">
+                        <h4 class="mono">${s.title}</h4>
+                        <p>${s.desc}</p>
+                    </div>`).join('');
+            }
 
-    // 4. Update Keahlian (Dinamis)
-    const skillsContent = document.getElementById('skills-content');
-    if (skillsContent && data.skills) {
-        skillsContent.innerHTML = data.skills.map(s => `
-            <div class="skill-card">
-                <h4 class="mono">${s.title}</h4>
-                <p>${s.desc}</p>
-            </div>`).join('');
-    }
-
-    // 5. Update teks tombol bahasa yang aktif
-    const currentLangText = document.getElementById('current-lang');
-    if (currentLangText) currentLangText.innerText = langCode;
-
-    // 6. Pengaturan arah teks (untuk bahasa Arab)
-    document.body.style.direction = (langCode === 'AR') ? 'rtl' : 'ltr';
-
-    localStorage.setItem('selectedLang', langCode);
-}
-            document.getElementById('work-content').innerHTML = data.jobs.map(j => `
-                <div class="work-item">
-                    <div class="work-year mono">${j.year}</div>
-                    <div class="work-info">
-                        <h3>${j.title}</h3>
-                        <span class="company">${j.comp}</span>
-                        <p>${j.desc}</p>
-                    </div>
-                </div>`).join('');
-            document.getElementById('skills-content').innerHTML = data.skills.map(s => `
-                <div class="skill-card"><h4 class="mono">${s.title}</h4><p>${s.desc}</p></div>`).join('');
+            // 4. Update UI Bahasa
+            const currentLangText = document.getElementById('current-lang');
+            if (currentLangText) currentLangText.innerText = langCode;
             document.body.style.direction = (langCode === 'AR') ? 'rtl' : 'ltr';
+            localStorage.setItem('selectedLang', langCode);
         }
 
-window.onload = () => { 
-    try {
-        if (typeof initLangMenu === 'function') initLangMenu(); 
-        if (typeof changeLang === 'function') changeLang('ID'); 
-    } catch (e) {
-        console.error("Gagal memuat sistem bahasa:", e);
-    }
-    
-    // Pemutar video
-    const video = document.querySelector('.video-bg');
-    if (video) {
-        video.play().catch(error => console.log("Autoplay ditunda"));
-    }
-};
-</script>
+        window.onload = () => { 
+            initLangMenu();
+            const savedLang = localStorage.getItem('selectedLang') || 'ID';
+            changeLang(savedLang);
+
+            const video = document.querySelector('.video-bg');
+            if (video) {
+                video.play().catch(() => console.log("Autoplay ditunda"));
+            }
+        };
+    </script>
 </body>
 </html>
