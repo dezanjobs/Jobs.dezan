@@ -13,7 +13,7 @@ body { font-family: 'Inter', sans-serif; background: var(--bg-light); color: #33
 .mono { font-family: 'Roboto Mono', monospace; }
 
 /* HERO (STYLE V3 KEDUA) */
-.hero { position: relative; height: 100vh; color: white; display: flex; flex-direction: column; overflow: hidden;background: transparent; }
+.hero { position: relative; height: 100vh; color: white; display: flex; flex-direction: column; overflow: hidden;background: transparent !important; }
 .video-bg {
     position: absolute;
     top: 50%;
@@ -22,9 +22,10 @@ body { font-family: 'Inter', sans-serif; background: var(--bg-light); color: #33
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -2; /* Pastikan ini yang paling belakang */
+    z-index: 0 !important; /* Pastikan ini yang paling belakang */
     transform: translate(-50%, -50%);
     object-fit: cover;
+    display: block !important;
 }
 
 .overlay {
@@ -33,7 +34,7 @@ body { font-family: 'Inter', sans-serif; background: var(--bg-light); color: #33
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Transparan gelap */
+    background: rgba(0, 0, 0, 0.5) !important; /* Transparan gelap */
     z-index: -1; /* Berada di depan video, tapi di belakang teks */
 }
 
