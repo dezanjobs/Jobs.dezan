@@ -298,18 +298,22 @@ function changeLang(l) {
     localStorage.setItem('selectedLang', l);
 }
 
+// 1. Daftarkan fungsi ke window agar bisa dipanggil oleh onclick di HTML
 window.changeLang = changeLang;
 
-function initMenu() {
-    const m = document.getElementById('lang-menu');
-    if (m) {
-        m.innerHTML = languages.map(l => `
-            <a href="javascript:void(0)" onclick="changeLang('${l.id}')">${l.n}</a>
+// 2. Fungsi untuk mengisi daftar bahasa ke dalam dropdown
+function initLangMenu() {
+    const menu = document.getElementById('lang-menu');
+    if (menu) {
+        menu.innerHTML = languages.map(lang => `
+            <a href="javascript:void(0)" onclick="changeLang('${lang.id}')">${lang.n}</a>
         `).join('');
     }
 }
 
+// 3. Jalankan saat halaman selesai dimuat
 document.addEventListener('DOMContentLoaded', () => {
-    initMenu();
-    changeLang(localStorage.getItem('selectedLang') || 'ID');
+    initLangMenu(); // Isi menu dropdown dulu
+    const savedLang = localStorage.getItem('selectedLang') || 'ID';
+    changeLang(savedLang); // Panggil fungsi dengan huruf 'c' kecil
 });
