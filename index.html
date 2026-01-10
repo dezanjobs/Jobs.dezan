@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,36 +8,43 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* CSS Tambahan untuk mengamankan navigasi di atas video */
+        /* Perbaikan agar menu bahasa muncul di atas video */
         nav { z-index: 1000 !important; position: relative; }
+        .dropdown { position: relative; display: inline-block; }
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #1a1a1a;
+            right: 0;
+            background-color: #111;
             min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.5);
-            z-index: 10001 !important;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.8);
+            z-index: 9999 !important;
             border: 1px solid #333;
+            max-height: 400px;
+            overflow-y: auto;
         }
-        .dropdown:hover .dropdown-content { display: block; }
         .dropdown-content a {
             color: white;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
-            font-size: 14px;
+            font-size: 13px;
+            font-family: 'Roboto Mono', monospace;
         }
-        .dropdown-content a:hover { background-color: #333; }
-        .video-bg, .overlay { pointer-events: none; z-index: -1; }
+        .dropdown-content a:hover { background-color: #222; color: #00ff00; }
+        .dropdown:hover .dropdown-content { display: block; }
+        
+        /* Animasi loading saat translate */
+        .translating { opacity: 0.5; pointer-events: none; }
     </style>
 </head>
 <body>
 
     <header class="hero" id="home">
-        <video autoplay muted loop playsinline class="video-bg">
+        <video autoplay muted loop playsinline class="video-bg" style="z-index: -2;">
              <source src="assets/dc-background.mp4" type="video/mp4">
         </video>
-        <div class="overlay"></div>
+        <div class="overlay" style="z-index: -1;"></div>
 
         <nav class="container">
             <div class="logo">
@@ -48,7 +55,7 @@
                 <li><a href="#history">.history()</a></li>
                 <li><a href="#tools">.tools()</a></li>
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn"><i class="fas fa-globe"></i> <span id="current-lang">ID</span> ▾</a>
+                    <a href="javascript:void(0)" class="dropbtn"><i class="fas fa-globe"></i> <span id="current-lang">EN</span> ▾</a>
                     <div class="dropdown-content" id="lang-menu"></div>
                 </li>
             </ul>
@@ -58,13 +65,13 @@
             <div class="status-tag mono">
                 <span class="status-blink"></span> uptime: 12y_experience
             </div>
-            <p class="subtitle mono" data-key="hero_sub">Operasional Infrastruktur IT & Data Center</p>
+            <p class="subtitle mono" data-key="hero_sub">IT Infrastructure & Data Center Operations</p>
             <h1 class="hero-title" data-key="hero_title">Dezan Sanubari</h1>
-            <p class="tagline" data-key="hero_tagline">Keandalan | Konektivitas | Presisi <br> Selalu mencari peluang baru</p>
+            <p class="tagline" data-key="hero_tagline">Reliability | Connectivity | Precision <br> Always seeking new opportunities</p>
             
             <div class="hero-btns">
-                <a href="mailto:Jobs.Dezan@gmail.com" class="btn btn-main" data-key="btn_contact">Hubungi Saya</a>
-                <a href="assets/CV English 3.0 ATS-compressed_2.pdf" target="_blank" class="btn btn-outline" data-key="btn_cv">Unduh CV</a>
+                <a href="mailto:Jobs.Dezan@gmail.com" class="btn btn-main" data-key="btn_contact">Get In Touch</a>
+                <a href="assets/CV English 3.0 ATS-compressed_2.pdf" target="_blank" class="btn btn-outline" data-key="btn_cv">Download CV</a>
             </div>
         </div>
     </header>
@@ -77,7 +84,7 @@
             <div class="about-text">
                 <span class="section-label mono" data-key="label_about">// executive_summary</span>
                 <p data-key="about_desc">
-                    Spesialis Infrastruktur IT dengan pengalaman lebih dari 12 tahun dalam mengelola operasional Data Center kritis. Ahli dalam menjaga uptime sistem melalui manajemen kelistrikan (UPS/Genset), virtualisasi VMware, dan troubleshooting jaringan tingkat lanjut.
+                    IT Infrastructure Specialist with over 12 years of experience in managing critical Data Center operations. Expert in maintaining system uptime through power management (UPS/Genset), VMware virtualization, and advanced network troubleshooting.
                 </p>
             </div>
         </div>
@@ -121,127 +128,116 @@
     </footer>
 
     <script>
-        const translations = {
-            ID: {
-                hero_title: "Dezan Sanubari",
-                hero_sub: "Operasional Infrastruktur IT & Data Center",
-                hero_tagline: "Keandalan | Konektivitas | Presisi <br> Selalu mencari peluang baru — Pengalaman 12+ Tahun",
-                label_about: "// ringkasan_eksekutif",
-                about_desc: "Spesialis Infrastruktur IT dengan pengalaman lebih dari 12 tahun dalam mengelola operasional Data Center kritis. Ahli dalam menjaga uptime sistem melalui manajemen kelistrikan (UPS/Genset), virtualisasi VMware, dan troubleshooting jaringan tingkat lanjut.",
-                btn_contact: "Hubungi Saya", 
-                btn_cv: "Unduh CV",
-                label_history: "// riwayat_kerja", 
-                label_tools: "// keahlian_teknis",
-                jobs: [
-                    { year: "Feb 2020 - Feb 2025", title: "IT Operations Support", comp: "PT. ValueStream International", desc: "Operasional kritis L2: Pemeliharaan UPS/Genset, monitoring link, instalasi server VMware, dan analisis log transaksi." },
-                    { year: "Apr 2016 - Feb 2020", title: "Datacenter Operations Specialist", comp: "PT. ValueStream International", desc: "Monitoring 24/7 infrastruktur DC, manajemen pendinginan presisi, dan instalasi perangkat jaringan." },
-                    { year: "Jan 2015 - Mar 2016", title: "Wi-Fi Technical Support Engineer", comp: "Koperasi Pegawai Indosat", desc: "Instalasi sistem radio dan Access Point (Aruba/Ruckus) untuk proyek Indosat Super Wi-Fi." },
-                    { year: "Okt 2012 - Des 2014", title: "Technical Support Engineer", comp: "PT. Personel Alih Daya (Persada)", desc: "Implementasi jaringan wireless korporat dan troubleshooting mendalam untuk meminimalkan downtime." }
-                ],
-                skills: [
-                    { title: "Infrastructure", desc: "VMware, Linux, APC UPS, Genset, Precision Cooling." },
-                    { title: "Networking", desc: "Mikrotik, Cisco, Aruba, Ruckus, TCP/IP." },
-                    { title: "System", desc: "MySQL, ISO8583, JSON, Zabbix Monitoring." }
-                ]
-            },
-            EN: {
-                hero_title: "Dezan Sanubari",
-                hero_sub: "IT Infrastructure & Data Center Operations",
-                hero_tagline: "Reliability | Connectivity | Precision <br> Always seeking new opportunities - 12+ Years Experience",
-                label_about: "// executive_summary",
-                about_desc: "IT Infrastructure Specialist with over 12 years of experience managing critical Data Center operations. Expert in system uptime, UPS/Genset management, and VMware virtualization.",
-                btn_contact: "Get In Touch", 
-                btn_cv: "Download CV",
-                label_history: "// work_history", 
-                label_tools: "// technical_stack",
-                jobs: [
-                    { year: "Feb 2020 - Feb 2025", title: "IT Operations Support", comp: "PT. ValueStream International", desc: "L2 critical operations: UPS/Genset maintenance, server installation, and transaction log analysis." },
-                    { year: "Apr 2016 - Feb 2020", title: "Datacenter Operations Specialist", comp: "PT. ValueStream International", desc: "24/7 DC infrastructure monitoring, precision cooling management, and network device installation." },
-                    { year: "Jan 2015 - Mar 2016", title: "Wi-Fi Technical Support Engineer", comp: "Koperasi Pegawai Indosat", desc: "Radio system and Access Point installation (Aruba/Ruckus) for Indosat Super Wi-Fi project." },
-                    { year: "Oct 2012 - Dec 2014", title: "Technical Support Engineer", comp: "PT. Persada", desc: "Corporate wireless network implementation and deep-dive troubleshooting." }
-                ],
-                skills: [
-                    { title: "Infrastructure", desc: "VMware, Linux, APC UPS, Genset, Precision Cooling." },
-                    { title: "Networking", desc: "Mikrotik, Cisco, Aruba, Ruckus, TCP/IP." },
-                    { title: "System", desc: "MySQL, ISO8583, JSON, Zabbix Monitoring." }
-                ]
-            }
+        // Data Utama (Bahasa Inggris sebagai Source)
+        const sourceData = {
+            hero_title: "Dezan Sanubari",
+            hero_sub: "IT Infrastructure & Data Center Operations",
+            hero_tagline: "Reliability | Connectivity | Precision <br> Always seeking new opportunities - 12+ Years Experience",
+            label_about: "// executive_summary",
+            about_desc: "IT Infrastructure Specialist with over 12 years of experience in managing critical Data Center operations. Expert in maintaining system uptime through power management (UPS/Genset), VMware virtualization, and advanced network troubleshooting.",
+            btn_contact: "Get In Touch", 
+            btn_cv: "Download CV",
+            label_history: "// work_history", 
+            label_tools: "// technical_stack",
+            jobs: [
+                { year: "Feb 2020 - Feb 2025", title: "IT Operations Support", comp: "PT. ValueStream International", desc: "Leading L2 operations: DC power maintenance (UPS/Genset), internet/biller link monitoring, physical & VMware server deployment, and transaction log analysis." },
+                { year: "Apr 2016 - Feb 2020", title: "Datacenter Operations Specialist", comp: "PT. ValueStream International", desc: "24/7 monitoring of Data Center infrastructure, climate control (precision cooling), and network device installation (Switch/Router)." },
+                { year: "Jan 2015 - Mar 2016", title: "Wi-Fi Technical Support Engineer", comp: "Koperasi Pegawai Indosat", desc: "Installed radio systems and Access Points (Aruba, Ruckus) for the Indosat Super Wi-Fi project." },
+                { year: "Oct 2012 - Dec 2014", title: "Technical Support Engineer", comp: "PT. Personel Alih Daya (Persada)", desc: "Corporate wireless network implementation, deep-dive troubleshooting, and routine maintenance." }
+            ],
+            skills: [
+                { title: "Infrastructure", desc: "VMware, Linux, APC UPS, Genset Maintenance, Precision Cooling." },
+                { title: "Networking", desc: "Mikrotik, Cisco, Aruba, Ruckus, TCP/IP." },
+                { title: "System & Data", desc: "MySQL, ISO8583, JSON Analysis, Navicat, Zabbix Monitoring." }
+            ]
         };
 
         const languages = [
-            {code: 'ID', name: 'Indonesian'}, {code: 'EN', name: 'English'}, {code: 'CN', name: 'Chinese'},
-            {code: 'JP', name: 'Japanese'}, {code: 'KR', name: 'Korean'}, {code: 'DE', name: 'German'},
-            {code: 'FR', name: 'French'}, {code: 'ES', name: 'Spanish'}, {code: 'PT', name: 'Portuguese'},
-            {code: 'RU', name: 'Russian'}, {code: 'NL', name: 'Dutch'}, {code: 'AR', name: 'Arabic'}
+            {code: 'id', name: 'Indonesian'}, {code: 'en', name: 'English'}, {code: 'zh-CN', name: 'Chinese'},
+            {code: 'ja', name: 'Japanese'}, {code: 'ko', name: 'Korean'}, {code: 'de', name: 'German'},
+            {code: 'fr', name: 'French'}, {code: 'es', name: 'Spanish'}, {code: 'pt', name: 'Portuguese'},
+            {code: 'ru', name: 'Russian'}, {code: 'nl', name: 'Dutch'}, {code: 'ar', name: 'Arabic'}
         ];
+
+        // Engine Auto-Translate
+        async function translate(text, target) {
+            if (target === 'en') return text;
+            try {
+                const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=${target}&dt=t&q=${encodeURI(text)}`;
+                const response = await fetch(url);
+                const result = await response.json();
+                return result[0].map(x => x[0]).join('');
+            } catch (e) { return text; }
+        }
+
+        async function changeLang(langCode) {
+            const body = document.body;
+            const target = langCode.toLowerCase();
+            body.classList.add('translating');
+            document.getElementById('current-lang').innerText = "...";
+
+            // 1. Update Elemen Statis
+            for (let key in sourceData) {
+                if (typeof sourceData[key] === 'string') {
+                    const t = await translate(sourceData[key], target);
+                    const el = document.querySelector(`[data-key="${key}"]`);
+                    if (el) el.innerHTML = t;
+                }
+            }
+
+            // 2. Update Jobs (4 Posisi)
+            const workContent = document.getElementById('work-content');
+            if (workContent) {
+                let html = '';
+                for (let j of sourceData.jobs) {
+                    const tTitle = await translate(j.title, target);
+                    const tDesc = await translate(j.desc, target);
+                    html += `<div class="work-item">
+                        <div class="work-year mono">${j.year}</div>
+                        <div class="work-info">
+                            <h3>${tTitle}</h3>
+                            <span class="company">${j.comp}</span>
+                            <p>${tDesc}</p>
+                        </div>
+                    </div>`;
+                }
+                workContent.innerHTML = html;
+            }
+
+            // 3. Update Skills
+            const skillsContent = document.getElementById('skills-content');
+            if (skillsContent) {
+                let html = '';
+                for (let s of sourceData.skills) {
+                    const tTitle = await translate(s.title, target);
+                    const tDesc = await translate(s.desc, target);
+                    html += `<div class="skill-card"><h4 class="mono">${tTitle}</h4><p>${tDesc}</p></div>`;
+                }
+                skillsContent.innerHTML = html;
+            }
+
+            document.getElementById('current-lang').innerText = langCode.toUpperCase();
+            body.style.direction = (target === 'ar') ? 'rtl' : 'ltr';
+            body.classList.remove('translating');
+            localStorage.setItem('selectedLang', langCode);
+        }
 
         function initLangMenu() {
             const menu = document.getElementById('lang-menu');
-            if (!menu) return;
             menu.innerHTML = '';
             languages.forEach(l => {
                 const a = document.createElement('a');
                 a.href = "javascript:void(0)";
                 a.innerText = l.name;
-                a.onclick = (e) => {
-                    e.preventDefault();
-                    changeLang(l.code);
-                };
+                a.onclick = () => changeLang(l.code);
                 menu.appendChild(a);
             });
         }
 
-        function changeLang(langCode) {
-            // Gunakan EN jika data bahasa lain belum diisi lengkap di translations
-            const data = translations[langCode] || translations['EN'];
-            
-            // 1. Update Teks Statis
-            document.querySelectorAll('[data-key]').forEach(element => {
-                const key = element.getAttribute('data-key');
-                if (data[key]) element.innerHTML = data[key];
-            });
-
-            // 2. Update Riwayat Kerja (Render 4 Posisi)
-            const workContent = document.getElementById('work-content');
-            if (workContent) {
-                workContent.innerHTML = data.jobs.map(j => `
-                    <div class="work-item">
-                        <div class="work-year mono">${j.year}</div>
-                        <div class="work-info">
-                            <h3>${j.title}</h3>
-                            <span class="company">${j.comp}</span>
-                            <p>${j.desc}</p>
-                        </div>
-                    </div>`).join('');
-            }
-
-            // 3. Update Keahlian
-            const skillsContent = document.getElementById('skills-content');
-            if (skillsContent) {
-                skillsContent.innerHTML = data.skills.map(s => `
-                    <div class="skill-card">
-                        <h4 class="mono">${s.title}</h4>
-                        <p>${s.desc}</p>
-                    </div>`).join('');
-            }
-
-            // 4. Update UI Bahasa
-            const currentLangSpan = document.getElementById('current-lang');
-            if (currentLangSpan) currentLangSpan.innerText = langCode;
-            document.body.style.direction = (langCode === 'AR') ? 'rtl' : 'ltr';
-            localStorage.setItem('selectedLang', langCode);
-        }
-
-        window.onload = () => { 
+        window.onload = () => {
             initLangMenu();
-            const savedLang = localStorage.getItem('selectedLang') || 'ID';
-            changeLang(savedLang);
-
-            // Pemutar video
-            const video = document.querySelector('.video-bg');
-            if (video) {
-                video.play().catch(() => console.log("Autoplay ditunda browser"));
-            }
+            const saved = localStorage.getItem('selectedLang') || 'id';
+            changeLang(saved);
         };
     </script>
 </body>
