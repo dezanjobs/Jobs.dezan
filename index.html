@@ -37,7 +37,7 @@
             </div>
             <p class="subtitle mono" data-key="hero_sub">IT Infrastructure & Data Center Operations</p>
             <h1 class="hero-title">Dezan Sanubari</h1>
-            <p class="tagline" data-key="hero_tagline">Reliability | Connectivity | Precision<br/>Always seeking new opportunities</p>
+            <p class="tagline" data-key="hero_tagline">Reliability | Connectivity | Precision </br> Always seeking new opportunities</p>
             
             <div class="hero-btns">
                 <a href="mailto:Jobs.Dezan@gmail.com" class="btn btn-main" data-key="btn_contact">Get In Touch</a>
@@ -47,13 +47,15 @@
     </header>
 
     <main class="container content-section" id="history">
-        <span class="section-label mono" data-key="label_history">// work_history</span>
-        <div class="work-grid" id="work-content"></div>
+        <span class="section-label mono" data-key="label_history">// professional_experience</span>
+        <div class="work-grid" id="work-content">
+            </div>
     </main>
 
     <section id="tools" class="container content-section">
         <span class="section-label mono" data-key="label_tools">// technical_stack</span>
-        <div class="skills-container" id="skills-content"></div>
+        <div class="skills-container" id="skills-content">
+            </div>
     </section>
 
     <footer id="contact">
@@ -98,35 +100,76 @@
                 hero_sub: "Operasional Infrastruktur IT & Data Center",
                 hero_tagline: "Keandalan | Konektivitas | Presisi | Selalu mencari peluang baru — Pengalaman 12+ Tahun",
                 btn_contact: "Hubungi Saya", btn_cv: "Unduh CV",
-                label_history: "// riwayat_kerja_lengkap", label_tools: "// keahlian_&_pendidikan",
+                label_history: "// riwayat_kerja", label_tools: "// keahlian_teknis",
                 jobs: [
-                    { year: "2016 - 2025", title: "Data Center Operations Engineer", comp: "PT ValueStream International", desc: "Monitoring 24/7 infrastruktur kritis (Power, Cooling, Network). Instalasi VMware, manajemen storage Dell EMC, dan koordinasi vendor." },
-                    { year: "2015 - 2016", title: "Wifi Technical", comp: "Kopindosat", desc: "Instalasi radio wireless, provisioning access point, dan konfigurasi router." },
-                    { year: "2012 - 2014", title: "Senior Technical Support", comp: "PT Personal Alih Daya", desc: "Instalasi radio wireless, onsite support, dan pemeliharaan jaringan kantor." },
-                    { year: "2011", title: "Computer Technician (Intern)", comp: "CV. Media Utama / Secure Parking", desc: "Perbaikan hardware/software dan pemeliharaan jaringan lokal." }
+                    {
+                        year: "Feb 2020 - Feb 2025",
+                        title: "IT Operations Support",
+                        comp: "PT. ValueStream International",
+                        desc: "Bertanggung jawab atas operasional kritis L2: Pemeliharaan kelistrikan (UPS/Genset), monitoring link internet/biller, instalasi server fisik & VMware, analisis log transaksi (JSON/ISO8583), serta manajemen database produksi."
+                    },
+                    {
+                        year: "Apr 2016 - Feb 2020",
+                        title: "Datacenter Operations Specialist",
+                        comp: "PT. ValueStream International",
+                        desc: "Monitoring 24/7 infrastruktur Data Center: Server, Storage, dan Jaringan. Mengelola suhu ruang (cooling), instalasi perangkat network (Switch/Router), dan dokumentasi log harian gangguan."
+                    },
+                    {
+                        year: "Jan 2015 - Mar 2016",
+                        title: "Wi-Fi Technical Support Engineer",
+                        comp: "Koperasi Pegawai Indosat",
+                        desc: "Instalasi dan konfigurasi sistem radio, router, dan Access Point (Aruba, Ruckus) untuk proyek Indosat Super Wi-Fi guna meningkatkan cakupan jaringan di area publik dan BTS."
+                    },
+                    {
+                        year: "Okt 2012 - Des 2014",
+                        title: "Technical Support Engineer",
+                        comp: "PT. Personel Alih Daya (Persada)",
+                        desc: "Berperan dalam implementasi jaringan wireless untuk klien korporat, melakukan troubleshooting mendalam, dan pemeliharaan rutin untuk memastikan downtime minimal."
+                    }
                 ],
                 skills: [
-                    { title: "Keahlian Teknis", desc: "Networking (Cisco, Mikrotik), Virtualization (VMware), Monitoring (Zabbix, DCIM), Linux & Windows Server." },
-                    { title: "Pendidikan", desc: "S1 Teknik Informatika (STMIK Indonesia Mandiri), SMK TKJ (Angkasa 1 Margahayu)." }
+                    { title: "Infrastructure", desc: "VMware, Linux, APC UPS, Genset Maintenance, Precision Cooling." },
+                    { title: "Networking", desc: "Mikrotik, Cisco, Aruba, Ruckus, Radio Wireless, TCP/IP." },
+                    { title: "System & Data", desc: "MySQL, ISO8583, JSON Analysis, Navicat, Zabbix Monitoring." }
                 ]
             },
             EN: {
                 hero_sub: "IT Infrastructure & Data Center Operations",
-                hero_tagline: "Reliability | Connectivity | Precision | Always seeking new opportunities — 12+ Years Experience",
+                hero_tagline: "Reliability | Connectivity | Precision | Always seeking new opportunities - 12+ Years Experience",
                 btn_contact: "Get In Touch", btn_cv: "Download CV",
-                label_history: "// full_work_history", label_tools: "// skills_&_education",
+                label_history: "// work_history", label_tools: "// technical_stack",
                 jobs: [
-                    { year: "2016 - 2025", title: "Data Center Operations Engineer", comp: "PT ValueStream International", desc: "24/7 monitoring of critical infrastructure (Power, Cooling, Network). VMware installation and storage management." },
-                    { year: "2015 - 2016", title: "Wifi Technical", comp: "Kopindosat", desc: "Wireless radio installation, AP provisioning, and router configuration." },
-                    { year: "2012 - 2014", title: "Senior Technical Support", comp: "PT Personal Alih Daya", desc: "Radio installation, onsite support, and office network maintenance." },
-                    { year: "2011", title: "Computer Technician (Intern)", comp: "CV. Media Utama / Secure Parking", desc: "Hardware/software repairs and local network maintenance." }
+                    {
+                        year: "Feb 2020 - Feb 2025",
+                        title: "IT Operations Support",
+                        comp: "PT. ValueStream International",
+                        desc: "Leading L2 operations: DC power maintenance (UPS/Genset), internet/biller link monitoring, physical & VMware server deployment, transaction log analysis (JSON/ISO8583), and production database management."
+                    },
+                    {
+                        year: "Apr 2016 - Feb 2020",
+                        title: "Datacenter Operations Specialist",
+                        comp: "PT. ValueStream International",
+                        desc: "24/7 monitoring of Data Center infrastructure (Server, Storage, Network), climate control (precision cooling), network device installation (Switch/Router), and disturbance logging."
+                    },
+                    {
+                        year: "Jan 2015 - Mar 2016",
+                        title: "Wi-Fi Technical Support Engineer",
+                        comp: "Koperasi Pegawai Indosat",
+                        desc: "Installed and configured radio systems, routers, and Access Points (Aruba, Ruckus) for the Indosat Super Wi-Fi project to enhance coverage in public areas and BTS sites."
+                    },
+                    {
+                        year: "Oct 2012 - Dec 2014",
+                        title: "Technical Support Engineer",
+                        comp: "PT. Personel Alih Daya (Persada)",
+                        desc: "Key role in wireless network implementation for enterprise clients, performing deep-dive troubleshooting and routine maintenance to ensure minimal downtime."
+                    }
                 ],
                 skills: [
-                    { title: "Technical Skills", desc: "Networking (Cisco, Mikrotik), Virtualization (VMware), Monitoring (Zabbix, DCIM), Linux & Windows Server." },
-                    { title: "Education", desc: "Bachelor of Computer Science (STMIK Indonesia Mandiri), Vocational High School (Angkasa 1)." }
+                    { title: "Infrastructure", desc: "VMware, Linux, APC UPS, Genset Maintenance, Precision Cooling." },
+                    { title: "Networking", desc: "Mikrotik, Cisco, Aruba, Ruckus, Radio Wireless, TCP/IP." },
+                    { title: "System & Data", desc: "MySQL, ISO8583, JSON Analysis, Navicat, Zabbix Monitoring." }
                 ]
             }
-            // Bahasa lain (CN, JP, KR, DE, FR, ES, PT, RU, NL, AR) ditambahkan sesuai pola di atas.
         };
 
         const languages = [
@@ -135,7 +178,7 @@
             {code: 'FR', name: 'French'}, {code: 'ES', name: 'Spanish'}, {code: 'PT', name: 'Portuguese'},
             {code: 'RU', name: 'Russian'}, {code: 'NL', name: 'Dutch'}, {code: 'AR', name: 'Arabic'}
         ];
-        
+
         function initLangMenu() {
             const menu = document.getElementById('lang-menu');
             languages.forEach(l => {
@@ -157,7 +200,11 @@
             document.getElementById('work-content').innerHTML = data.jobs.map(j => `
                 <div class="work-item">
                     <div class="work-year mono">${j.year}</div>
-                    <div class="work-info"><h3>${j.title}</h3><span class="company">${j.comp}</span><p>${j.desc}</p></div>
+                    <div class="work-info">
+                        <h3>${j.title}</h3>
+                        <span class="company">${j.comp}</span>
+                        <p>${j.desc}</p>
+                    </div>
                 </div>`).join('');
             document.getElementById('skills-content').innerHTML = data.skills.map(s => `
                 <div class="skill-card"><h4 class="mono">${s.title}</h4><p>${s.desc}</p></div>`).join('');
