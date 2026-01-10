@@ -1,39 +1,247 @@
-html {
-  scroll-behavior: smooth;
+/* --- VARIABLES: SKEMA WARNA DATA CENTER --- */
+:root {
+    --bg-light: #f2f2f2;       /* Warna dasar (lantai/dinding) */
+    --rack-dark: #3f494d;      /* Warna utama (rak server/metal) */
+    --connector-gold: #c6a85c; /* Aksen 1 (konektor/pin) */
+    --led-amber: #fdb201;      /* Aksen 2 (lampu indikator/warning) */
+    --white: #ffffff;
 }
 
-/* Navbar */
-.nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid #eee;
-  z-index: 1000;
+/* --- RESET & BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.nav-inner {
-  max-width: 1000px;
-  margin: auto;
-  padding: 1rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+body {
+    font-family: 'Inter', sans-serif; /* Font utama yang bersih */
+    background-color: var(--bg-light);
+    color: var(--rack-dark);
+    line-height: 1.6;
 }
 
-.nav a {
-  margin-left: 1.2rem;
-  text-decoration: none;
-  color: var(--muted);
-  font-weight: 500;
+/* Menggunakan font Monospace untuk elemen yang berbau teknis */
+h1, h2, h3, .mono {
+    font-family: 'Roboto Mono', monospace;
 }
 
-.nav a:hover {
-  color: var(--accent);
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* --- NAVIGATION BAR --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background-color: var(--bg-light);
+    border-bottom: 3px solid var(--rack-dark);
+    position: sticky; /* Menu tetap di atas saat scroll */
+    top: 0;
+    z-index: 1000;
 }
 
-/* Offset scroll for fixed navbar */
-.section, .hero {
-  scroll-margin-top: 80px;
+.logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    border: 2px solid var(--rack-dark);
+    padding: 5px 10px;
+    background: #fff;
+}
+
+.logo span { color: var(--led-amber); }
+
+.nav-links a {
+    margin-left: 2rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--connector-gold);
+    text-decoration: underline;
+}
+
+/* --- HERO SECTION (BAGIAN ATAS) --- */
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10%;
+    /* Pola titik-titik (dot grid) meniru lantai Raised Floor */
+    background-image: radial-gradient(var(--rack-dark) 1px, transparent 1px);
+    background-size: 20px 20px; 
+}
+
+/* Animasi lampu berkedip */
+.status-light {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: var(--led-amber);
+    border-radius: 50%;
+    margin-right: 10px;
+    animation: blink 1.5s infinite;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin: 1rem 0;
+    color: var(--rack-dark);
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    color: var(--connector-gold);
+    margin-bottom: 2rem;
+}
+
+/* Tombol dengan gaya Industrial */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--rack-dark);
+    color: var(--white);
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    border-left: 5px solid var(--led-amber); /* Aksen garis di kiri tombol */
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--connector-gold);
+    border-left: 5px solid var(--rack-dark);
+    cursor: pointer;
+}
+
+/* --- GENERAL SECTION STYLES --- */
+section { padding: 4rem 10%; }
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    border-left: 10px solid var(--connector-gold);
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+}
+
+/* --- TIMELINE (HISTORY KERJA) --- */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Garis vertikal timeline (seperti jalur kabel) */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--rack-dark);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin-left: -2px;
+}
+
+.job-card {
+    position: relative;
+    background-color: var(--white);
+    border: 1px solid #ddd;
+    border-top: 4px solid var(--rack-dark); /* Top bar tebal */
+    padding: 20px 30px;
+    margin-bottom: 2rem;
+    margin-left: 30px;
+    /* Efek bayangan solid agar terlihat teknikal, bukan soft shadow */
+    box-shadow: 5px 5px 0px rgba(63, 73, 77, 0.1);
+}
+
+/* Titik timeline */
+.job-card::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: -40px;
+    background-color: var(--bg-light);
+    border: 4px solid var(--led-amber);
+    border-radius: 50%;
+    top: 20px;
+    z-index: 1;
+}
+
+.job-date {
+    font-family: 'Roboto Mono', monospace;
+    color: var(--connector-gold);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.job-role {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 5px 0;
+}
+
+.job-company {
+    font-style: italic;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* --- SKILLS GRID --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-item {
+    background: var(--white);
+    border: 2px solid var(--rack-dark);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--led-amber);
+}
+
+.skill-item i {
+    font-size: 2rem;
+    color: var(--connector-gold);
+    margin-bottom: 1rem;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--rack-dark);
+    color: var(--bg-light);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+footer p { font-family: 'Roboto Mono', monospace; font-size: 0.8rem; }
+
+/* --- KEYFRAMES ANIMATION --- */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+/* --- RESPONSIVE (MOBILE) --- */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    nav { flex-direction: column; gap: 1rem; }
+    .nav-links a { margin: 0 10px; }
+    .hero { padding: 0 5%; }
+    section { padding: 3rem 5%; }
+    .job-card { margin-left: 20px; } /* Sesuaikan margin timeline di HP */
 }
