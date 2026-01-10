@@ -228,15 +228,24 @@
             document.body.style.direction = (langCode === 'AR') ? 'rtl' : 'ltr';
         }
 
-        window.onload = () => { 
-    initLangMenu(); 
-    changeLang('ID'); 
+window.onload = () => { 
+    // Jalankan fungsi bahasa dulu
+    try {
+        if (typeof initLangMenu === 'function') {
+            initLangMenu(); 
+        }
+        if (typeof changeLang === 'function') {
+            changeLang('ID'); 
+        }
+    } catch (e) {
+        console.error("Gagal memuat sistem bahasa:", e);
+    }
 
-    // Tambahkan baris ini untuk memaksa video berputar
+    // Jalankan pemutar video secara terpisah
     const video = document.querySelector('.video-bg');
     if (video) {
         video.play().catch(error => {
-            console.log("Autoplay dicegah oleh browser, memerlukan interaksi pengguna.");
+            console.log("Autoplay dicegah oleh browser, tapi fitur lain tetap jalan.");
         });
     }
 };
