@@ -1,18 +1,18 @@
-/* --- VARIABLES (Ditimpah oleh ver2 jika sama) --- */
+/* --- GABUNGAN CSSVER1 & CSSVER2 --- */
 :root {
     --bg-light: #f2f2f2;
     --rack-dark: #3f494d;
     --connector-gold: #c6a85c;
     --led-amber: #fdb201;
     --white: #ffffff;
-    --text-muted: #666; /* Dari cssver1 */
+    --text-muted: #666;
 }
 
-/* --- RESET & BASE --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth; /* Membuat navigasi mulus saat diklik */
 }
 
 body {
@@ -20,13 +20,12 @@ body {
     background-color: var(--bg-light);
     color: var(--rack-dark);
     line-height: 1.7;
-    overflow-x: hidden;
 }
 
 .mono { font-family: 'Roboto Mono', monospace; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
-/* --- HERO & VIDEO BACKGROUND (ver2) --- */
+/* --- HERO & VIDEO BG --- */
 .hero {
     position: relative;
     height: 100vh;
@@ -43,8 +42,6 @@ body {
     left: 50%;
     min-width: 100%;
     min-height: 100%;
-    width: auto;
-    height: auto;
     z-index: -2;
     transform: translate(-50%, -50%);
     object-fit: cover;
@@ -56,11 +53,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.65);
     z-index: -1;
 }
 
-/* --- NAVIGATION (ver2) --- */
+/* --- NAV & DROPDOWN --- */
 nav {
     display: flex;
     justify-content: space-between;
@@ -68,27 +65,33 @@ nav {
     padding: 2rem 0;
 }
 
-.logo img { height: 40px; }
+.logo img { height: 45px; filter: brightness(0) invert(1); }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
+.nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--white); font-size: 0.9rem; transition: 0.3s; }
+.nav-links a:hover { color: var(--led-amber); }
+
+/* Language Dropdown Style */
+.dropdown { position: relative; display: inline-block; }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--rack-dark);
+    min-width: 120px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 100;
+    right: 0;
 }
-
-.nav-links a {
-    text-decoration: none;
+.dropdown-content a {
     color: var(--white);
-    font-size: 0.9rem;
-    transition: 0.3s;
+    padding: 10px 16px;
+    display: block;
+    border-bottom: 1px solid #555;
 }
+.dropdown-content a:hover { background-color: #555; }
+.dropdown:hover .dropdown-content { display: block; }
 
-.nav-links a.active, .nav-links a:hover {
-    color: var(--led-amber);
-    border-bottom: 2px solid var(--led-amber);
-}
-
-/* --- HERO CONTENT (ver2) --- */
+/* --- HERO CONTENT --- */
 .hero-content {
     flex: 1;
     display: flex;
@@ -98,19 +101,9 @@ nav {
     text-align: center;
 }
 
-.subtitle { color: var(--led-amber); margin-bottom: 1rem; letter-spacing: 2px; }
-
-.hero-content h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    max-width: 800px;
-}
-
-.tagline { font-size: 1.2rem; opacity: 0.8; margin-bottom: 3rem; }
-
-/* --- BUTTONS (ver2) --- */
-.hero-btns { display: flex; gap: 1.5rem; }
+.subtitle { color: var(--led-amber); margin-bottom: 1rem; letter-spacing: 3px; font-weight: bold; }
+.hero-content h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 1rem; }
+.tagline { font-size: 1.2rem; opacity: 0.9; margin-bottom: 3rem; font-weight: 300; }
 
 .btn {
     padding: 1rem 2rem;
@@ -118,66 +111,51 @@ nav {
     color: var(--white);
     border: 1px solid var(--white);
     transition: 0.3s;
+    font-weight: bold;
+    display: inline-block;
+    margin: 0 10px;
 }
-
-.btn:hover {
-    background: var(--white);
-    color: #000;
-}
-
+.btn:hover { background: var(--white); color: var(--rack-dark); }
 .btn-outline { border-color: var(--led-amber); color: var(--led-amber); }
 
-/* --- CONTENT SECTIONS (cssver1 + cssver2) --- */
-.content-section { padding: 6rem 0; }
-.section-label { color: var(--connector-gold); display: block; margin-bottom: 2rem; font-weight: bold; }
+/* --- SECTIONS --- */
+.content-section { padding: 8rem 2rem; }
+.section-label { color: var(--connector-gold); display: block; margin-bottom: 3rem; font-weight: bold; font-size: 1.1rem; }
 
 .work-item {
     display: grid;
     grid-template-columns: 200px 1fr;
-    padding: 2rem 0;
+    padding: 3rem 0;
     border-top: 1px solid #ddd;
     transition: 0.4s;
 }
-
-.work-item:hover {
-    padding-left: 1rem;
-    background-color: #ededed;
-}
-
+.work-item:hover { background: #ededed; padding-left: 1.5rem; }
+.work-year { color: var(--text-muted); font-weight: bold; }
 .company { color: var(--connector-gold); font-weight: 600; display: block; margin: 0.5rem 0; }
 
-/* --- SKILLS CARDS (cssver1) --- */
+/* --- SKILLS --- */
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
-
 .skill-card {
     background: var(--white);
-    padding: 2rem;
-    border: 1px solid #eee;
+    padding: 2.5rem;
+    border-bottom: 4px solid var(--rack-dark);
+    transition: 0.3s;
 }
+.skill-card:hover { transform: translateY(-10px); border-color: var(--led-amber); }
+.skill-card h4 { margin-bottom: 1.5rem; color: var(--connector-gold); }
 
-.skill-card h4 {
-    margin-bottom: 1rem;
-    color: var(--rack-dark);
-    border-bottom: 2px solid var(--led-amber);
-    display: inline-block;
-}
+/* --- FOOTER --- */
+footer { padding: 4rem 0; background: #1a1a1a; color: var(--white); border-top: 5px solid var(--led-amber); }
+.footer-flex { display: flex; justify-content: space-between; align-items: center; }
+.social-links a { color: var(--white); text-decoration: none; margin-left: 2rem; font-size: 0.9rem; }
+.social-links a:hover { color: var(--led-amber); }
 
-/* --- FOOTER (cssver2) --- */
-footer { padding: 4rem 0; background: #1a1a1a; color: var(--white); text-align: center; }
-
-.footer-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-    .hero-content h1 { font-size: 2.5rem; }
-    .work-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    .work-item { grid-template-columns: 1fr; gap: 1rem; }
     .nav-links { display: none; }
+    .hero-content h1 { font-size: 2.5rem; }
 }
