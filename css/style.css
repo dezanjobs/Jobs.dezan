@@ -1,12 +1,13 @@
+/* VARIABLES */
 :root {
     --bg-light: #f2f2f2;
     --rack-dark: #3f494d;
     --connector-gold: #c6a85c;
     --led-amber: #fdb201;
     --white: #ffffff;
-    --text-muted: #666;
 }
 
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -17,188 +18,130 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-light);
     color: var(--rack-dark);
-    line-height: 1.7;
-    overflow-x: hidden;
 }
 
-h1, h2, h3, .mono {
-    font-family: 'Roboto Mono', monospace;
-    text-transform: lowercase; /* Nuansa terminal/coding */
+.mono { font-family: 'Roboto Mono', monospace; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+/* HERO & VIDEO BG */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: var(--white);
 }
 
-/* --- LAYOUT CONTAINER --- */
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 2rem;
+.video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -2;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
 }
 
-/* --- NAV (MODERN MINIMALIST) --- */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Gelap transparan */
+    z-index: -1;
+}
+
+/* NAVIGATION */
 nav {
-    padding: 2rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 2rem 0;
+}
+
+.logo img { height: 40px; }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
 }
 
 .nav-links a {
-    margin-left: 1.5rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--text-muted);
-    transition: 0.3s;
     text-decoration: none;
+    color: var(--white);
+    font-size: 0.9rem;
+    transition: 0.3s;
 }
 
-.nav-links a:hover {
-    color: var(--rack-dark);
+.nav-links a.active, .nav-links a:hover {
+    color: var(--led-amber);
+    border-bottom: 2px solid var(--led-amber);
 }
 
-/* --- HERO SECTION --- */
-.hero {
-    padding: 8rem 0;
-    border-bottom: 1px solid #ddd;
-}
-
-.hero .status {
-    font-size: 0.8rem;
-    color: var(--connector-gold);
-    letter-spacing: 2px;
+/* HERO CONTENT */
+.hero-content {
+    flex: 1;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 1rem;
+    text-align: center;
 }
 
-.status-blink {
-    width: 8px;
-    height: 8px;
-    background: var(--led-amber);
-    border-radius: 50%;
-    margin-right: 10px;
-    box-shadow: 0 0 8px var(--led-amber);
-    animation: blink 1.5s infinite;
-}
+.subtitle { color: var(--led-amber); margin-bottom: 1rem; letter-spacing: 2px; }
 
-.hero h1 {
+.hero-content h1 {
     font-size: 3.5rem;
-    line-height: 1.1;
-    margin-bottom: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    max-width: 800px;
 }
 
-.hero p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    color: var(--text-muted);
+.tagline { font-size: 1.2rem; opacity: 0.8; margin-bottom: 3rem; }
+
+/* BUTTONS */
+.hero-btns { display: flex; gap: 1.5rem; }
+
+.btn {
+    padding: 1rem 2rem;
+    text-decoration: none;
+    color: var(--white);
+    border: 1px solid var(--white);
+    transition: 0.3s;
 }
 
-/* --- WORK/HISTORY SECTION (GRID STYLE) --- */
-.section-padding { padding: 6rem 0; }
-
-.section-label {
-    font-size: 0.8rem;
-    color: var(--connector-gold);
-    margin-bottom: 2rem;
-    display: block;
+.btn:hover {
+    background: var(--white);
+    color: #000;
 }
 
-.work-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-}
+.btn-outline { border-color: var(--led-amber); color: var(--led-amber); }
+
+/* CONTENT SECTION */
+.content-section { padding: 5rem 2rem; }
+.section-label { color: var(--connector-gold); display: block; margin-bottom: 2rem; font-weight: bold; }
 
 .work-item {
     display: grid;
     grid-template-columns: 200px 1fr;
     padding: 2rem 0;
     border-top: 1px solid #ddd;
-    transition: 0.4s;
 }
 
-.work-item:hover {
-    padding-left: 1rem;
-    background-color: #ededed;
-}
+.company { color: var(--connector-gold); font-weight: 600; display: block; margin: 0.5rem 0; }
 
-.work-year {
-    font-family: 'Roboto Mono', monospace;
-    font-size: 0.9rem;
-    color: var(--text-muted);
-}
-
-.work-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.work-info .company {
-    color: var(--connector-gold);
-    font-weight: 600;
-    margin-bottom: 1rem;
-    display: block;
-}
-
-/* --- SKILLS CARD (Bento Box Style) --- */
-.skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-}
-
-.skill-card {
-    background: var(--white);
-    padding: 2rem;
-    border: 1px solid #eee;
-}
-
-.skill-card h4 {
-    margin-bottom: 1rem;
-    color: var(--rack-dark);
-    border-bottom: 2px solid var(--led-amber);
-    display: inline-block;
-}
-
-/* --- FOOTER --- */
-footer {
-    padding: 4rem 0;
-    background: var(--rack-dark);
-    color: var(--white);
-}
-
-.footer-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-@keyframes blink { 50% { opacity: 0; } }
+footer { padding: 2rem 0; background: #1a1a1a; color: #666; text-align: center; }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
-    .work-item { grid-template-columns: 1fr; gap: 0.5rem; }
-    .footer-flex { flex-direction: column; gap: 2rem; text-align: center; }
-}
-/* Tambahkan di bagian atas atau bawah file style.css */
-
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.site-logo {
-    height: 40px; /* Sesuaikan ukuran logo */
-    width: auto;
-    filter: grayscale(1) contrast(1.2); /* Membuat logo nuansa industrial */
-    transition: 0.3s;
-}
-
-.logo-container:hover .site-logo {
-    filter: grayscale(0); /* Logo berwarna saat di-hover */
-}
-
-.cv-link {
-    color: var(--led-amber) !important;
-    font-weight: bold;
+    .hero-content h1 { font-size: 2rem; }
+    .work-item { grid-template-columns: 1fr; gap: 1rem; }
+    .nav-links { display: none; } /* Sembunyikan nav di mobile untuk kesederhanaan */
 }
