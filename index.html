@@ -12,12 +12,14 @@
 
     <header class="hero" id="home">
         <video autoplay muted loop playsinline class="video-bg">
-            <source src="assets/video_bg.mp4" type="video/mp4">
+            <source src="assets/Always seeking new opportuniti..." type="video/mp4">
         </video>
         <div class="overlay"></div>
 
         <nav class="container">
-            <div class="logo"><img src="assets/erasebg-transformed.png" alt="Logo"></div>
+            <div class="logo">
+                <img src="assets/erasebg-transformed (1).png" alt="Logo">
+            </div>
             <ul class="nav-links mono">
                 <li><a href="#home">.home()</a></li>
                 <li><a href="#history">.history()</a></li>
@@ -30,14 +32,19 @@
         </nav>
 
         <div class="hero-content container">
+            <div class="status-tag mono">
+                <span class="status-blink"></span> uptime: 12y_experience
+            </div>
             <p class="subtitle mono" data-key="hero_sub">IT Infrastructure & Data Center Operations</p>
-            <h1>Dezan Sanubari</h1>
+            <h1 class="hero-title">Dezan Sanubari</h1>
             <p class="tagline" data-key="hero_tagline">Reliability | Connectivity | Precision — 12+ Years Experience</p>
+            
             <div class="hero-btns">
-                <a href="mailto:Jobs.Dezan@gmail.com" class="btn" data-key="btn_contact">Get In Touch</a>
+                <a href="mailto:Jobs.Dezan@gmail.com" class="btn btn-main" data-key="btn_contact">Get In Touch</a>
                 <a href="assets/CV English 3.0 ATS-compressed_2.pdf" target="_blank" class="btn btn-outline" data-key="btn_cv">Download CV</a>
             </div>
         </div>
+        <div class="hero-bottom-line"></div>
     </header>
 
     <main class="container content-section" id="history">
@@ -46,7 +53,7 @@
     </main>
 
     <section id="tools" class="container content-section">
-        <span class="section-label mono" data-key="label_tools">// technical_stack</span>
+        <span class="section-label mono" data-key="label_tools">// technical_stack_&_edu</span>
         <div class="skills-container" id="skills-content"></div>
     </section>
 
@@ -58,7 +65,7 @@
                         <i class="fab fa-linkedin-in"></i>
                         <div class="text-group">
                             <h4 class="mono">LinkedIn</h4>
-                            <p>dezansanubari</p>
+                            <p>linkedin.com/in/dezansanubari</p>
                         </div>
                     </div>
                 </a>
@@ -102,34 +109,38 @@
     <script>
         const translations = {
             ID: {
-                hero_sub: "Infrastruktur IT & Operasional Data Center",
-                hero_tagline: "Keandalan | Konektivitas | Presisi — 12+ Tahun Pengalaman",
+                hero_sub: "Operasional Infrastruktur IT & Data Center",
+                hero_tagline: "Keandalan | Konektivitas | Presisi — Pengalaman 12+ Tahun",
                 btn_contact: "Hubungi Saya", btn_cv: "Unduh CV",
-                label_history: "// riwayat_kerja", label_tools: "// keahlian_teknis",
+                label_history: "// riwayat_kerja_lengkap", label_tools: "// keahlian_&_pendidikan",
                 jobs: [
-                    { year: "2016 - 2025", title: "Data Center Operations Engineer", comp: "PT ValueStream International", desc: "Monitoring 24/7 infrastruktur kritis, instalasi VMware, dan koordinasi ISP." },
-                    { year: "2012 - 2014", title: "Senior Technical Support", comp: "PT Personal Alih Daya", desc: "Instalasi radio wireless dan support teknis onsite." }
+                    { year: "2016 - 2025", title: "Data Center Operations Engineer", comp: "PT ValueStream International", desc: "Monitoring 24/7 infrastruktur kritis (Power, Cooling, Network). Instalasi VMware, manajemen storage Dell EMC, dan koordinasi vendor." },
+                    { year: "2015 - 2016", title: "Wifi Technical", comp: "Kopindosat", desc: "Instalasi radio wireless, provisioning access point, dan konfigurasi router." },
+                    { year: "2012 - 2014", title: "Senior Technical Support", comp: "PT Personal Alih Daya", desc: "Instalasi radio wireless, onsite support, dan pemeliharaan jaringan kantor." },
+                    { year: "2011", title: "Computer Technician (Intern)", comp: "CV. Media Utama / Secure Parking", desc: "Perbaikan hardware/software dan pemeliharaan jaringan lokal." }
                 ],
                 skills: [
-                    { title: "Networking", desc: "LAN/WAN, Fiber Optic, Cisco, Mikrotik." },
-                    { title: "Virtualization", desc: "VMware, Linux, Windows Server, Zabbix." }
+                    { title: "Keahlian Teknis", desc: "Networking (Cisco, Mikrotik), Virtualization (VMware), Monitoring (Zabbix, DCIM), Linux & Windows Server." },
+                    { title: "Pendidikan", desc: "S1 Teknik Informatika (STMIK Indonesia Mandiri), SMK TKJ (Angkasa 1 Margahayu)." }
                 ]
             },
             EN: {
                 hero_sub: "IT Infrastructure & Data Center Operations",
                 hero_tagline: "Reliability | Connectivity | Precision — 12+ Years Experience",
                 btn_contact: "Get In Touch", btn_cv: "Download CV",
-                label_history: "// work_history", label_tools: "// technical_stack",
+                label_history: "// full_work_history", label_tools: "// skills_&_education",
                 jobs: [
-                    { year: "2016 - 2025", title: "Data Center Operations Engineer", comp: "PT ValueStream International", desc: "24/7 monitoring of critical infra, VMware installation, and ISP coordination." },
-                    { year: "2012 - 2014", title: "Senior Technical Support", comp: "PT Personal Alih Daya", desc: "Radio wireless installation and onsite technical support." }
+                    { year: "2016 - 2025", title: "Data Center Operations Engineer", comp: "PT ValueStream International", desc: "24/7 monitoring of critical infrastructure (Power, Cooling, Network). VMware installation and storage management." },
+                    { year: "2015 - 2016", title: "Wifi Technical", comp: "Kopindosat", desc: "Wireless radio installation, AP provisioning, and router configuration." },
+                    { year: "2012 - 2014", title: "Senior Technical Support", comp: "PT Personal Alih Daya", desc: "Radio installation, onsite support, and office network maintenance." },
+                    { year: "2011", title: "Computer Technician (Intern)", comp: "CV. Media Utama / Secure Parking", desc: "Hardware/software repairs and local network maintenance." }
                 ],
                 skills: [
-                    { title: "Networking", desc: "LAN/WAN, Fiber Optic, Cisco, Mikrotik." },
-                    { title: "Virtualization", desc: "VMware, Linux, Windows Server, Zabbix." }
+                    { title: "Technical Skills", desc: "Networking (Cisco, Mikrotik), Virtualization (VMware), Monitoring (Zabbix, DCIM), Linux & Windows Server." },
+                    { title: "Education", desc: "Bachelor of Computer Science (STMIK Indonesia Mandiri), Vocational High School (Angkasa 1)." }
                 ]
             }
-            // Bahasa lain ditambahkan dengan pola yang sama di sini...
+            // Bahasa lain (CN, JP, KR, DE, FR, ES, PT, RU, NL, AR) ditambahkan sesuai pola di atas.
         };
 
         const languages = [
