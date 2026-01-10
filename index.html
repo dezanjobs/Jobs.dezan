@@ -1,62 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Dezan Sanubari</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Center Engineer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- VARIABLES --- */
+        :root {
+            --bg-light: #f2f2f2;
+            --rack-dark: #3f494d;
+            --connector-gold: #c6a85c;
+            --led-amber: #fdb201;
+            --white: #ffffff;
+        }
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
+        /* --- RESET & BASE --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--rack-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .mono {
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background-color: var(--bg-light);
+            border-bottom: 3px solid var(--rack-dark);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            border: 2px solid var(--rack-dark);
+            padding: 5px 10px;
+        }
+
+        .logo span { color: var(--led-amber); }
+
+        .nav-links a {
+            margin-left: 2rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--connector-gold);
+            text-decoration: underline;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10%;
+            background-image: radial-gradient(var(--rack-dark) 1px, transparent 1px);
+            background-size: 20px 20px; /* Dot grid pattern like raised floor */
+        }
+
+        .status-light {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-color: var(--led-amber);
+            border-radius: 50%;
+            margin-right: 10px;
+            animation: blink 1.5s infinite;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin: 1rem 0;
+            color: var(--rack-dark);
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            color: var(--connector-gold);
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--rack-dark);
+            color: var(--white);
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 700;
+            border-left: 5px solid var(--led-amber);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--connector-gold);
+            border-left: 5px solid var(--rack-dark);
+        }
+
+        /* --- HISTORY / EXPERIENCE (TIMELINE) --- */
+        section { padding: 4rem 10%; }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            border-left: 10px solid var(--connector-gold);
+            padding-left: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* The vertical line representing cable management */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--rack-dark);
+            top: 0;
+            bottom: 0;
+            left: 0;
+            margin-left: -2px;
+        }
+
+        .job-card {
+            position: relative;
+            background-color: var(--white);
+            border: 1px solid #ddd;
+            border-top: 4px solid var(--rack-dark);
+            padding: 20px 30px;
+            margin-bottom: 2rem;
+            margin-left: 30px;
+            box-shadow: 5px 5px 0px rgba(63, 73, 77, 0.1);
+        }
+
+        .job-card::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            left: -40px;
+            background-color: var(--bg-light);
+            border: 4px solid var(--led-amber);
+            border-radius: 50%;
+            top: 20px;
+            z-index: 1;
+        }
+
+        .job-date {
+            font-family: 'Roboto Mono', monospace;
+            color: var(--connector-gold);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .job-role {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 5px 0;
+        }
+
+        .job-company {
+            font-style: italic;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* --- SKILLS GRID --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-item {
+            background: var(--white);
+            border: 2px solid var(--rack-dark);
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--led-amber);
+        }
+
+        .skill-item i {
+            font-size: 2rem;
+            color: var(--connector-gold);
+            margin-bottom: 1rem;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--rack-dark);
+            color: var(--bg-light);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p { font-family: 'Roboto Mono', monospace; font-size: 0.8rem; }
+        
+        /* --- ANIMATIONS --- */
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { flex-direction: column; gap: 1rem; }
+            .nav-links a { margin: 0 10px; }
+            .hero { padding: 0 5%; }
+            section { padding: 3rem 5%; }
+        }
+    </style>
 </head>
 <body>
 
-<header class="nav">
-  <div class="nav-inner">
-    <span class="brand">Dezan</span>
     <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+        <div class="logo mono">
+            root@user:<span>~</span>$
+        </div>
+        <div class="nav-links mono">
+            <a href="#about">About</a>
+            <a href="#experience">History</a>
+            <a href="#skills">Skills</a>
+            <a href="mailto:your.email@example.com">Contact</a>
+        </div>
     </nav>
-  </div>
-</header>
 
-<main>
+    <section id="about" class="hero">
+        <div>
+            <span class="mono" style="color: var(--rack-dark);"><span class="status-light"></span>System Online</span>
+            <h1>John Doe</h1>
+            <h2 class="mono">Data Center Operations Engineer</h2>
+            <p style="max-width: 600px; margin-bottom: 2rem;">
+                Menjaga infrastruktur digital tetap dingin, aman, dan terhubung. Spesialis dalam manajemen server fisik, *structured cabling*, dan mitigasi *downtime* di lingkungan *mission-critical*.
+            </p>
+            <a href="#experience" class="btn">LIHAT RIWAYAT KERJA</a>
+        </div>
+    </section>
+    
+    
 
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <div class="hero-inner">
-      <h1 class="hero-title">Dezan Sanubari</h1>
-      <p class="hero-sub">Network & Data Center Specialist</p>
-      <p class="hero-tag">Reliability · Connectivity · Precision</p>
-    </div>
-  </section>
+    <section id="experience">
+        <h2 class="section-title">/var/log/career_history</h2>
+        
+        <div class="timeline">
+            <div class="job-card">
+                <span class="job-date">2021 - SEKARANG</span>
+                <h3 class="job-role">Senior DC Engineer</h3>
+                <span class="job-company">Tech Giant Corp, Jakarta</span>
+                <ul>
+                    <li>• Mengelola kapasitas daya dan pendinginan untuk 500+ rak server.</li>
+                    <li>• Melakukan *troubleshooting* hardware layer 1 (Server, Switch, Storage).</li>
+                    <li>• Memimpin proyek migrasi kabel fiber optik dengan *zero downtime*.</li>
+                </ul>
+            </div>
 
-  <!-- About -->
-  <section class="section" id="about">
-    <h2>About</h2>
-    <p>Experienced IT Onsite Engineer specializing in data center operations and network infrastructure.</p>
-  </section>
+            <div class="job-card">
+                <span class="job-date">2018 - 2021</span>
+                <h3 class="job-role">NOC Technician</h3>
+                <span class="job-company">Regional ISP Provider</span>
+                <ul>
+                    <li>• Monitoring sistem 24/7 menggunakan Zabbix dan Grafana.</li>
+                    <li>• Eskalasi insiden dan manajemen tiket gangguan.</li>
+                    <li>• *Rack and Stack* perangkat jaringan baru sesuai standar EIA.</li>
+                </ul>
+            </div>
 
-  <!-- Skills -->
-  <section class="section" id="skills">
-    <h2>Skills</h2>
-    <div class="tags">
-      <span>VMware</span>
-      <span>EMC</span>
-      <span>Cisco</span>
-      <span>Mikrotik</span>
-      <span>Linux</span>
-    </div>
-  </section>
+            <div class="job-card">
+                <span class="job-date">2016 - 2018</span>
+                <h3 class="job-role">IT Support Specialist</h3>
+                <span class="job-company">StartUp Unicorn</span>
+                <ul>
+                    <li>• Instalasi OS Linux/Windows Server dan manajemen patch.</li>
+                    <li>• Dokumentasi aset fisik dan manajemen inventaris.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-  <!-- Contact -->
-  <section class="section" id="contact">
-    <h2>Contact</h2>
-    <p><a href="mailto:dezan.sanubari.official@gmail.com">dezan.sanubari.official@gmail.com</a></p>
-  </section>
+    <section id="skills" style="background-color: #e8e8e8;">
+        <h2 class="section-title">/usr/bin/skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <i class="fas fa-server"></i>
+                <h3 class="mono">Hardware</h3>
+                <p>Dell PowerEdge, HP ProLiant, Cisco UCS, Storage Arrays.</p>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-network-wired"></i>
+                <h3 class="mono">Cabling</h3>
+                <p>Fiber Splicing, Cat6 Termination, Cable Management, Fluke Testing.</p>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-terminal"></i>
+                <h3 class="mono">Systems</h3>
+                <p>Linux (RHEL/Ubuntu), VMware vSphere, Windows Server.</p>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-bolt"></i>
+                <h3 class="mono">Power & Cooling</h3>
+                <p>UPS Systems, PDU Management, HVAC Basics, Hot/Cold Aisle.</p>
+            </div>
+        </div>
+    </section>
 
-</main>
+    <footer>
+        <div class="mono">
+            <p>127.0.0.1 - LOCALHOST</p>
+            <p>&copy; 2026 John Doe. All systems operational.</p>
+            <div style="margin-top: 10px;">
+                <a href="#" style="color: var(--led-amber); margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
+                <a href="#" style="color: var(--led-amber); margin: 0 10px;"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
