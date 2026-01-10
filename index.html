@@ -273,26 +273,19 @@ function changeLang(langCode) {
         }
 
 window.onload = () => { 
-    // Jalankan fungsi bahasa dulu
     try {
-        if (typeof initLangMenu === 'function') {
-            initLangMenu(); 
-        }
-        if (typeof changeLang === 'function') {
-            changeLang('ID'); 
-        }
+        if (typeof initLangMenu === 'function') initLangMenu(); 
+        if (typeof changeLang === 'function') changeLang('ID'); 
     } catch (e) {
         console.error("Gagal memuat sistem bahasa:", e);
     }
-
-    // Jalankan pemutar video secara terpisah
+    
+    // Pemutar video
     const video = document.querySelector('.video-bg');
     if (video) {
-        video.play().catch(error => {
-            console.log("Autoplay dicegah oleh browser, tapi fitur lain tetap jalan.");
-        });
+        video.play().catch(error => console.log("Autoplay ditunda"));
     }
 };
-    </script>
+</script>
 </body>
 </html>
