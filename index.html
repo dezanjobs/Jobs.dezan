@@ -35,9 +35,9 @@
             <div class="status-tag mono">
                 <span class="status-blink"></span> uptime: 12y_experience
             </div>
-            <p class="subtitle mono" data-key="hero_sub">IT Infrastructure & Data Center Operations</p>
+            <p class="subtitle mono" data-key="hero_sub">IT Infrastructure, Network & Data Center Operations</p>
             <h1 class="hero-title">Dezan Sanubari</h1>
-            <p class="tagline" data-key="hero_tagline">Reliability | Connectivity | Precision — 12+ Years Experience</p>
+            <p class="tagline" data-key="hero_tagline">Reliability | Connectivity | Precision — 12+ Years Experience<br/>Always seeking new opportunities</p>
             
             <div class="hero-btns">
                 <a href="mailto:Jobs.Dezan@gmail.com" class="btn btn-main" data-key="btn_contact">Get In Touch</a>
@@ -53,60 +53,50 @@
     </main>
 
     <section id="tools" class="container content-section">
-        <span class="section-label mono" data-key="label_tools">// technical_stack_&_edu</span>
+        <span class="section-label mono" data-key="label_tools">// technical_stack</span>
         <div class="skills-container" id="skills-content"></div>
     </section>
 
     <footer id="contact">
-        <div class="footer-wrapper">
-            <div class="footer-grid">
-                <a href="https://www.linkedin.com/in/dezansanubari/" target="_blank" class="footer-card">
-                    <div class="card-inner">
-                        <i class="fab fa-linkedin-in"></i>
-                        <div class="text-group">
-                            <h4 class="mono">LinkedIn</h4>
-                            <p>linkedin.com/in/dezansanubari</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="mailto:Jobs.Dezan@gmail.com" class="footer-card">
-                    <div class="card-inner">
-                        <i class="fas fa-envelope"></i>
-                        <div class="text-group">
-                            <h4 class="mono">Email</h4>
-                            <p>Jobs.Dezan@gmail.com</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="https://wa.me/6285156739343" target="_blank" class="footer-card">
-                    <div class="card-inner">
-                        <i class="fab fa-whatsapp"></i>
-                        <div class="text-group">
-                            <h4 class="mono">WhatsApp</h4>
-                            <p>+62 851-5673-9343</p>
-                        </div>
-                    </div>
-                </a>
-                <div class="footer-card">
-                    <div class="card-inner">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div class="text-group">
-                            <h4 class="mono">Location</h4>
-                            <p>Bandung, West Java, ID</p>
-                        </div>
+        <div class="footer-grid">
+            <a href="https://www.linkedin.com/in/dezansanubari/" target="_blank" class="footer-card">
+                <div class="card-inner">
+                    <i class="fab fa-linkedin-in"></i>
+                    <div class="text-group">
+                        <h4 class="mono">LinkedIn</h4>
+                        <p>dezansanubari</p>
                     </div>
                 </div>
-            </div>
-            <div class="footer-bottom-bar container mono">
-                <span>© 2026 DEZAN SANUBARI</span>
-                <div class="status-group">
-                    <span>STATUS: <span class="blink-green">OPERATIONAL</span></span>
+            </a>
+            <a href="mailto:Jobs.Dezan@gmail.com" class="footer-card">
+                <div class="card-inner">
+                    <i class="fas fa-envelope"></i>
+                    <div class="text-group">
+                        <h4 class="mono">Email</h4>
+                        <p>Jobs.Dezan@gmail.com</p>
+                    </div>
                 </div>
+            </a>
+            <a href="https://wa.me/6285156739343" target="_blank" class="footer-card">
+                <div class="card-inner">
+                    <i class="fab fa-whatsapp"></i>
+                    <div class="text-group">
+                        <h4 class="mono">WhatsApp</h4>
+                        <p>+62 851-5673-9343</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="footer-bottom-bar container mono">
+            <span>© 2026 DEZAN SANUBARI</span>
+            <div class="status-group">
+                <span>STATUS: <span class="blink-green">OPERATIONAL</span></span>
             </div>
         </div>
     </footer>
 
     <script>
+            <script>
         const translations = {
             ID: {
                 hero_sub: "Operasional Infrastruktur IT & Data Center",
@@ -168,14 +158,12 @@
                 const key = el.getAttribute('data-key');
                 if (data[key]) el.innerText = data[key];
             });
-            const workGrid = document.getElementById('work-content');
-            workGrid.innerHTML = (data.jobs || translations['EN'].jobs).map(j => `
+            document.getElementById('work-content').innerHTML = data.jobs.map(j => `
                 <div class="work-item">
                     <div class="work-year mono">${j.year}</div>
                     <div class="work-info"><h3>${j.title}</h3><span class="company">${j.comp}</span><p>${j.desc}</p></div>
                 </div>`).join('');
-            const skillsGrid = document.getElementById('skills-content');
-            skillsGrid.innerHTML = (data.skills || translations['EN'].skills).map(s => `
+            document.getElementById('skills-content').innerHTML = data.skills.map(s => `
                 <div class="skill-card"><h4 class="mono">${s.title}</h4><p>${s.desc}</p></div>`).join('');
             document.body.style.direction = (langCode === 'AR') ? 'rtl' : 'ltr';
         }
