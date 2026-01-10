@@ -13,7 +13,7 @@ body { font-family: 'Inter', sans-serif; background: var(--bg-light); color: #33
 .mono { font-family: 'Roboto Mono', monospace; }
 
 /* HERO (STYLE V3 KEDUA) */
-.hero { position: relative; height: 100vh; color: white; display: flex; flex-direction: column; overflow: hidden;background: transparent !important; }
+.hero { position: relative; height: 100vh; color: white; display: flex; flex-direction: column; overflow: hidden;background: transparent !important; align-items: center;}
 .video-bg {
     position: absolute;
     top: 50%;
@@ -22,7 +22,7 @@ body { font-family: 'Inter', sans-serif; background: var(--bg-light); color: #33
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: 0 !important; /* Pastikan ini yang paling belakang */
+    z-index: 1 !important; /* Pastikan ini yang paling belakang */
     transform: translate(-50%, -50%);
     object-fit: cover;
     display: block !important;
@@ -35,7 +35,7 @@ body { font-family: 'Inter', sans-serif; background: var(--bg-light); color: #33
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5) !important; /* Transparan gelap */
-    z-index: -1; /* Berada di depan video, tapi di belakang teks */
+    z-index: 2; /* Berada di depan video, tapi di belakang teks */
 }
 
 nav { display: flex; justify-content: space-between; align-items: center; padding: 2rem 0; z-index: 10; }
@@ -44,7 +44,7 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 .nav-links a { text-decoration: none; color: white; font-size: 0.9rem; opacity: 0.8; transition: 0.3s; }
 .nav-links a:hover { color: var(--amber); opacity: 1; }
 
-.hero-content { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.hero-content { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; z-index: 10; color: #fff; }
 .status-tag { background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 20px; font-size: 0.7rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.2); }
 .status-blink { width: 8px; height: 8px; background: #00ff00; border-radius: 50%; animation: blink 1.5s infinite; box-shadow: 0 0 8px #00ff00; }
 .hero-title { font-size: clamp(2.5rem, 6vw, 4.5rem); margin: 10px 0; font-weight: 700; }
