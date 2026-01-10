@@ -1,113 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Center Engineer Portfolio</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+    <title>Personal Portfolio | Data Center Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
-        <div class="logo mono">
-            root@user:<span>~</span>$
-        </div>
-        <div class="nav-links mono">
-            <a href="#about">About</a>
-            <a href="#experience">History</a>
-            <a href="#skills">Skills</a>
-            <a href="mailto:your.email@example.com">Contact</a>
-        </div>
-    </nav>
+    <div class="container">
+        <nav>
+            <div class="logo mono"><strong>engineer</strong>@work:~$</div>
+            <div class="nav-links mono">
+                <a href="#work">.history()</a>
+                <a href="#skills">.tools()</a>
+                <a href="mailto:email@kamu.com">.contact()</a>
+            </div>
+        </nav>
 
-    <section id="about" class="hero">
-        <div>
-            <span class="mono" style="color: var(--rack-dark);"><span class="status-light"></span>System Online</span>
-            <h1>John Doe</h1>
-            <h2 class="mono">Data Center Operations Engineer</h2>
-            <p style="max-width: 600px; margin-bottom: 2rem;">
-                Menjaga infrastruktur digital tetap dingin, aman, dan terhubung. Spesialis dalam manajemen server fisik, *structured cabling*, dan mitigasi *downtime* di lingkungan *mission-critical*.
-            </p>
-            <a href="#experience" class="btn">LIHAT RIWAYAT KERJA</a>
-        </div>
-    </section>
+        <header class="hero">
+            <div class="status mono"><span class="status-blink"></span> uptime: 99.9%</div>
+            <h1>Halo, saya [Nama Kamu].<br>Saya membangun & mengelola infrastruktur data center.</h1>
+            <p>Berfokus pada efisiensi termal, manajemen rak, dan ketersediaan sistem tinggi untuk mendukung operasi skala besar.</p>
+        </header>
 
-    <section id="experience">
-        <h2 class="section-title">/var/log/career_history</h2>
-        
-        <div class="timeline">
-            <div class="job-card">
-                <span class="job-date">2021 - SEKARANG</span>
-                <h3 class="job-role">Senior DC Engineer</h3>
-                <span class="job-company">Tech Giant Corp, Jakarta</span>
-                <ul>
-                    <li>• Mengelola kapasitas daya dan pendinginan untuk 500+ rak server.</li>
-                    <li>• Melakukan *troubleshooting* hardware layer 1 (Server, Switch, Storage).</li>
-                    <li>• Memimpin proyek migrasi kabel fiber optik dengan *zero downtime*.</li>
-                </ul>
-            </div>
+        <section id="work" class="section-padding">
+            <span class="section-label mono">// work_history</span>
+            <div class="work-grid">
+                
+                <div class="work-item">
+                    <div class="work-year">2021 — Sekarang</div>
+                    <div class="work-info">
+                        <h3>Senior Data Center Engineer</h3>
+                        <span class="company">PT. Teknologi Awan Indonesia</span>
+                        <p>Bertanggung jawab atas operasional 24/7, optimasi PUE (Power Usage Effectiveness), dan manajemen vendor pihak ketiga.</p>
+                    </div>
+                </div>
 
-            <div class="job-card">
-                <span class="job-date">2018 - 2021</span>
-                <h3 class="job-role">NOC Technician</h3>
-                <span class="job-company">Regional ISP Provider</span>
-                <ul>
-                    <li>• Monitoring sistem 24/7 menggunakan Zabbix dan Grafana.</li>
-                    <li>• Eskalasi insiden dan manajemen tiket gangguan.</li>
-                    <li>• *Rack and Stack* perangkat jaringan baru sesuai standar EIA.</li>
-                </ul>
-            </div>
+                <div class="work-item">
+                    <div class="work-year">2018 — 2021</div>
+                    <div class="work-info">
+                        <h3>DC Facilities Technician</h3>
+                        <span class="company">Global Connect Data</span>
+                        <p>Fokus pada instalasi rak, cable management (fiber & copper), serta monitoring sistem UPS dan Cooling.</p>
+                    </div>
+                </div>
 
-            <div class="job-card">
-                <span class="job-date">2016 - 2018</span>
-                <h3 class="job-role">IT Support Specialist</h3>
-                <span class="job-company">StartUp Unicorn</span>
-                <ul>
-                    <li>• Instalasi OS Linux/Windows Server dan manajemen patch.</li>
-                    <li>• Dokumentasi aset fisik dan manajemen inventaris.</li>
-                </ul>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="skills" style="background-color: #e8e8e8;">
-        <h2 class="section-title">/usr/bin/skills</h2>
-        <div class="skills-grid">
-            <div class="skill-item">
-                <i class="fas fa-server"></i>
-                <h3 class="mono">Hardware</h3>
-                <p>Dell PowerEdge, HP ProLiant, Cisco UCS, Storage Arrays.</p>
+        <section id="skills" class="section-padding">
+            <span class="section-label mono">// technical_stack</span>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <h4 class="mono">Infrastruktur</h4>
+                    <p>Rack & Stack, Structured Cabling, Thermal Management, Power Distribution.</p>
+                </div>
+                <div class="skill-card">
+                    <h4 class="mono">Monitoring</h4>
+                    <p>DCIM Tools, Zabbix, SNMP, Environmental Monitoring Systems.</p>
+                </div>
+                <div class="skill-card">
+                    <h4 class="mono">Hardware</h4>
+                    <p>Cisco, Dell EMC, HP ProLiant, APC UPS Systems.</p>
+                </div>
             </div>
-            <div class="skill-item">
-                <i class="fas fa-network-wired"></i>
-                <h3 class="mono">Cabling</h3>
-                <p>Fiber Splicing, Cat6 Termination, Cable Management, Fluke Testing.</p>
-            </div>
-            <div class="skill-item">
-                <i class="fas fa-terminal"></i>
-                <h3 class="mono">Systems</h3>
-                <p>Linux (RHEL/Ubuntu), VMware vSphere, Windows Server.</p>
-            </div>
-            <div class="skill-item">
-                <i class="fas fa-bolt"></i>
-                <h3 class="mono">Power & Cooling</h3>
-                <p>UPS Systems, PDU Management, HVAC Basics, Hot/Cold Aisle.</p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <footer>
-        <div class="mono">
-            <p>127.0.0.1 - LOCALHOST</p>
-            <p>&copy; 2026 John Doe. All systems operational.</p>
-            <div style="margin-top: 10px;">
-                <a href="#" style="color: var(--led-amber); margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
-                <a href="#" style="color: var(--led-amber); margin: 0 10px;"><i class="fab fa-github"></i></a>
+        <div class="container footer-flex">
+            <div class="mono">built_by: yourname.sys</div>
+            <div class="nav-links mono">
+                <a href="#" style="color: var(--led-amber)">LinkedIn</a>
+                <a href="#" style="color: var(--led-amber)">GitHub</a>
+                <a href="#" style="color: var(--led-amber)">CV.pdf</a>
             </div>
         </div>
     </footer>
