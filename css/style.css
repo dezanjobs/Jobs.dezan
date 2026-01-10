@@ -13,7 +13,7 @@ body { font-family: 'Inter', sans-serif; background: var(--bg-light); color: #33
 .mono { font-family: 'Roboto Mono', monospace; }
 
 /* HERO (STYLE V3 KEDUA) */
-.hero { position: relative; height: 100vh; color: white; display: flex; flex-direction: column; overflow: hidden; }
+.hero { position: relative; height: 100vh; color: white; display: flex; flex-direction: column; overflow: hidden;background: transparent; }
 .video-bg {
     position: absolute;
     top: 50%;
