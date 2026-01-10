@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,248 +8,133 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* CSS FIX: Memastikan menu bahasa di atas video dan bisa di-klik */
         nav { z-index: 1000 !important; position: relative; }
-        .dropdown { position: relative; display: inline-block; }
         .dropdown-content {
-            display: none;
-            position: absolute;
-            right: 0;
-            background-color: #0f0f0f;
-            min-width: 180px;
-            box-shadow: 0px 10px 25px rgba(0,0,0,0.9);
-            z-index: 9999 !important;
-            border: 1px solid #333;
-            max-height: 450px;
-            overflow-y: auto;
-            border-radius: 4px;
+            display: none; position: absolute; right: 0; background-color: #111;
+            min-width: 160px; box-shadow: 0px 8px 16px rgba(0,0,0,0.5); z-index: 9999;
         }
-        .dropdown-content a {
-            color: #ccc;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            font-size: 13px;
-            font-family: 'Roboto Mono', monospace;
-            transition: 0.2s;
-        }
-        .dropdown-content a:hover { background-color: #1a1a1a; color: #00ff00; }
         .dropdown:hover .dropdown-content { display: block; }
-        
-        /* Animasi Transisi saat Loading Translate */
-        .translating { opacity: 0.6; pointer-events: none; transition: 0.3s; }
-        .video-bg { z-index: -2 !important; }
-        .overlay { z-index: -1 !important; }
+        .dropdown-content a { color: white; padding: 12px 16px; text-decoration: none; display: block; }
+        .dropdown-content a:hover { background-color: #333; }
     </style>
 </head>
 <body>
 
     <header class="hero" id="home">
-        <video autoplay muted loop playsinline class="video-bg">
+        <video autoplay muted loop playsinline class="video-bg" style="z-index:-1">
              <source src="assets/dc-background.mp4" type="video/mp4">
         </video>
         <div class="overlay"></div>
-
         <nav class="container">
-            <div class="logo">
-                <img src="assets/erasebg-transformed (1).png" alt="Logo">
-            </div>
+            <div class="logo"><img src="assets/erasebg-transformed (1).png" alt="Logo"></div>
             <ul class="nav-links mono">
                 <li><a href="#home">.home()</a></li>
                 <li><a href="#history">.history()</a></li>
                 <li><a href="#tools">.tools()</a></li>
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">
-                        <i class="fas fa-globe"></i> <span id="current-lang">ID</span> ▾
-                    </a>
-                    <div class="dropdown-content" id="lang-menu"></div>
+                    <a href="javascript:void(0)" class="dropbtn"><i class="fas fa-globe"></i> <span id="current-lang">ID</span> ▾</a>
+                    <div class="dropdown-content" id="lang-menu">
+                        <a href="javascript:void(0)" onclick="changeLang('ID')">Indonesian</a>
+                        <a href="javascript:void(0)" onclick="changeLang('EN')">English</a>
+                        <a href="javascript:void(0)" onclick="changeLang('JP')">Japanese</a>
+                        <a href="javascript:void(0)" onclick="changeLang('CN')">Chinese</a>
+                        <a href="javascript:void(0)" onclick="changeLang('AR')">Arabic</a>
+                    </div>
                 </li>
             </ul>
         </nav>
-
         <div class="hero-content container">
-            <div class="status-tag mono">
-                <span class="status-blink"></span> uptime: 12y_experience
-            </div>
-            <p class="subtitle mono" data-key="hero_sub">IT Infrastructure & Data Center Operations</p>
             <h1 class="hero-title" data-key="hero_title">Dezan Sanubari</h1>
-            <p class="tagline" data-key="hero_tagline">Reliability | Connectivity | Precision <br> Always seeking new opportunities</p>
-            
+            <p class="subtitle mono" data-key="hero_sub">Operasional Infrastruktur IT & Data Center</p>
+            <p class="tagline" data-key="hero_tagline">Keandalan | Konektivitas | Presisi</p>
             <div class="hero-btns">
-                <a href="mailto:Jobs.Dezan@gmail.com" class="btn btn-main" data-key="btn_contact">Get In Touch</a>
-                <a href="assets/CV English 3.0 ATS-compressed_2.pdf" target="_blank" class="btn btn-outline" data-key="btn_cv">Download CV</a>
+                <a href="mailto:Jobs.Dezan@gmail.com" class="btn btn-main" data-key="btn_contact">Hubungi Saya</a>
+                <a href="assets/CV English 3.0 ATS-compressed_2.pdf" class="btn btn-outline" data-key="btn_cv">Unduh CV</a>
             </div>
         </div>
     </header>
-
-    <section class="container about-section">
-        <div class="about-grid">
-            <div class="about-photo">
-                <img src="assets/DSC04474-removebg-preview.png" alt="Dezan Sanubari">
-            </div>
-            <div class="about-text">
-                <span class="section-label mono" data-key="label_about">// executive_summary</span>
-                <p data-key="about_desc">
-                    IT Infrastructure Specialist with over 12 years of experience in managing critical Data Center operations. Expert in maintaining system uptime through power management (UPS/Genset), VMware virtualization, and advanced network troubleshooting.
-                </p>
-            </div>
-        </div>
-    </section>
 
     <main class="container content-section" id="history">
         <span class="section-label mono" data-key="label_history">// professional_experience</span>
         <div class="work-grid" id="work-content"></div>
     </main>
 
-    <section id="tools" class="container content-section">
-        <span class="section-label mono" data-key="label_tools">// technical_stack</span>
-        <div class="skills-container" id="skills-content"></div>
-    </section>
-
-    <footer id="contact">
-        <div class="footer-grid">
-            <a href="https://www.linkedin.com/in/dezansanubari/" target="_blank" class="footer-card">
-                <div class="card-inner">
-                    <i class="fab fa-linkedin-in"></i>
-                    <div class="text-group">
-                        <h4 class="mono">LinkedIn</h4>
-                        <p>dezansanubari</p>
-                    </div>
-                </div>
-            </a>
-            <a href="mailto:Jobs.Dezan@gmail.com" class="footer-card">
-                <div class="card-inner">
-                    <i class="fas fa-envelope"></i>
-                    <div class="text-group">
-                        <h4 class="mono">Email</h4>
-                        <p>Jobs.Dezan@gmail.com</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="footer-bottom-bar container mono">
-            <span>© 2026 DEZAN SANUBARI</span>
-            <span class="blink-green">● SYSTEM_OPERATIONAL</span>
-        </div>
-    </footer>
-
     <script>
-        // SOURCE DATA (Satu-satunya tempat untuk edit teks)
-        const sourceData = {
-            hero_title: "Dezan Sanubari",
-            hero_sub: "IT Infrastructure & Data Center Operations",
-            hero_tagline: "Reliability | Connectivity | Precision <br> Always seeking new opportunities - 12+ Years Experience",
-            label_about: "// executive_summary",
-            about_desc: "IT Infrastructure Specialist with over 12 years of experience in managing critical Data Center operations. Expert in maintaining system uptime through power management (UPS/Genset), VMware virtualization, and advanced network troubleshooting. Experienced in bridging technical needs with business stability through transaction log analysis.",
-            btn_contact: "Get In Touch", 
-            btn_cv: "Download CV",
-            label_history: "// professional_experience", 
-            label_tools: "// technical_stack",
-            jobs: [
-                { year: "Feb 2020 - Feb 2025", title: "IT Operations Support", comp: "PT. ValueStream International", desc: "Leading L2 operations: DC power maintenance (UPS/Genset), internet/biller link monitoring, physical & VMware server deployment, and transaction log analysis (JSON/ISO8583)." },
-                { year: "Apr 2016 - Feb 2020", title: "Datacenter Operations Specialist", comp: "PT. ValueStream International", desc: "24/7 monitoring of Data Center infrastructure, climate control (precision cooling), network device installation (Switch/Router), and disturbance logging." },
-                { year: "Jan 2015 - Mar 2016", title: "Wi-Fi Technical Support Engineer", comp: "Koperasi Pegawai Indosat", desc: "Installed radio systems and Access Points (Aruba, Ruckus) for the Indosat Super Wi-Fi project to enhance coverage in public areas." },
-                { year: "Oct 2012 - Dec 2014", title: "Technical Support Engineer", comp: "PT. Personel Alih Daya (Persada)", desc: "Corporate wireless network implementation, deep-dive troubleshooting, and routine maintenance to ensure minimal downtime." }
-            ],
-            skills: [
-                { title: "Infrastructure", desc: "VMware, Linux, APC UPS, Genset Maintenance, Precision Cooling." },
-                { title: "Networking", desc: "Mikrotik, Cisco, Aruba, Ruckus, TCP/IP, Radio Wireless." },
-                { title: "System & Data", desc: "MySQL, ISO8583, JSON Analysis, Navicat, Zabbix Monitoring." }
-            ]
+        const translations = {
+            ID: {
+                hero_title: "Dezan Sanubari",
+                hero_sub: "Operasional Infrastruktur IT & Data Center",
+                hero_tagline: "Keandalan | Konektivitas | Presisi — 12+ Tahun Pengalaman",
+                btn_contact: "Hubungi Saya", btn_cv: "Unduh CV", label_history: "// riwayat_kerja",
+                jobs: [
+                    { year: "2020 - 2025", title: "IT Operations Support", comp: "PT. ValueStream International", desc: "Pemeliharaan UPS/Genset, monitoring link, instalasi server VMware." },
+                    { year: "2016 - 2020", title: "Datacenter Specialist", comp: "PT. ValueStream International", desc: "Monitoring infrastruktur DC 24/7 dan pendinginan presisi." },
+                    { year: "2015 - 2016", title: "Wi-Fi Support Engineer", comp: "Koperasi Indosat", desc: "Instalasi Access Point Aruba/Ruckus untuk Indosat Super Wi-Fi." },
+                    { year: "2012 - 2014", title: "Technical Support", comp: "PT. Persada", desc: "Implementasi jaringan wireless korporat dan troubleshooting." }
+                ]
+            },
+            EN: {
+                hero_title: "Dezan Sanubari",
+                hero_sub: "IT Infrastructure & Data Center Operations",
+                hero_tagline: "Reliability | Connectivity | Precision — 12+ Years Experience",
+                btn_contact: "Contact Me", btn_cv: "Download CV", label_history: "// work_history",
+                jobs: [
+                    { year: "2020 - 2025", title: "IT Operations Support", comp: "PT. ValueStream International", desc: "UPS/Genset maintenance, link monitoring, VMware server installation." },
+                    { year: "2016 - 2020", title: "Datacenter Specialist", comp: "PT. ValueStream International", desc: "24/7 DC infrastructure monitoring and precision cooling." },
+                    { year: "2015 - 2016", title: "Wi-Fi Support Engineer", comp: "Indosat Cooperative", desc: "Aruba/Ruckus Access Point installation for Indosat Super Wi-Fi." },
+                    { year: "2012 - 2014", title: "Technical Support", comp: "PT. Persada", desc: "Corporate wireless network implementation and troubleshooting." }
+                ]
+            },
+            JP: {
+                hero_title: "デザン・サヌバリ",
+                hero_sub: "ITインフラ・データセンター運用",
+                hero_tagline: "信頼性 | 接続性 | 精度 — 12年以上の経験",
+                btn_contact: "お問い合わせ", btn_cv: "履歴書をダウンロード", label_history: "// 職歴",
+                jobs: [
+                    { year: "2020 - 2025", title: "IT運用サポート", comp: "PT. ValueStream International", desc: "UPS/発電機メンテナンス、サーバー設置、VMware運用。" },
+                    { year: "2016 - 2020", title: "データセンター専門家", comp: "PT. ValueStream International", desc: "24時間365日のDC監視と精密冷却管理。" },
+                    { year: "2015 - 2016", title: "Wi-Fiサポートエンジニア", comp: "Indosat 協同組合", desc: "Indosat Super Wi-Fi用のAruba/Ruckusアクセスポイント設置。" },
+                    { year: "2012 - 2014", title: "テクニカルサポート", comp: "PT. Persada", desc: "企業のワイヤレスネットワーク構築とトラブルシューティング。" }
+                ]
+            },
+            CN: {
+                hero_title: "Dezan Sanubari",
+                hero_sub: "IT 基础设施与数据中心运营",
+                hero_tagline: "可靠性 | 连接性 | 精准 — 12年以上经验",
+                btn_contact: "联系我", btn_cv: "下载简历", label_history: "// 工作经历",
+                jobs: [
+                    { year: "2020 - 2025", title: "IT运营支持", comp: "PT. ValueStream International", desc: "UPS/发电机维护、链路监控、VMware服务器安装。" },
+                    { year: "2016 - 2020", title: "数据中心专员", comp: "PT. ValueStream International", desc: "24/7 数据中心基础设施监控和精密冷却。" },
+                    { year: "2015 - 2016", title: "Wi-Fi技术支持", comp: "Indosat 合作社", desc: "为 Indosat Super Wi-Fi 安装 Aruba/Ruckus 接入点。" },
+                    { year: "2012 - 2014", title: "技术支持工程师", comp: "PT. Persada", desc: "企业无线网络实施和故障排除。" }
+                ]
+            }
         };
 
-        const languages = [
-            {code: 'id', name: 'Indonesian'}, {code: 'en', name: 'English'}, {code: 'zh-CN', name: 'Chinese'},
-            {code: 'ja', name: 'Japanese'}, {code: 'ko', name: 'Korean'}, {code: 'de', name: 'German'},
-            {code: 'fr', name: 'French'}, {code: 'es', name: 'Spanish'}, {code: 'pt', name: 'Portuguese'},
-            {code: 'ru', name: 'Russian'}, {code: 'nl', name: 'Dutch'}, {code: 'ar', name: 'Arabic'}
-        ];
-
-        // AUTO-TRANSLATE ENGINE
-        async function translate(text, target) {
-            if (!text || target === 'en') return text;
-            try {
-                // Lindungi tag <br>
-                const safeText = text.replace(/<br>/g, ' [br] ');
-                const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=${target}&dt=t&q=${encodeURIComponent(safeText)}`;
-                const response = await fetch(url);
-                const result = await response.json();
-                let output = result[0].map(x => x[0]).join('');
-                return output.replace(/ \[br\] /g, '<br>').replace(/\[br\]/g, '<br>');
-            } catch (e) {
-                console.error("Translate Error:", e);
-                return text;
-            }
-        }
-
-        async function changeLang(langCode) {
-            const target = langCode.toLowerCase();
-            document.body.classList.add('translating');
-            const statusLabel = document.getElementById('current-lang');
-            statusLabel.innerText = "...";
-
-            // 1. Update Static Text
-            const keys = ['hero_title', 'hero_sub', 'hero_tagline', 'label_about', 'about_desc', 'btn_contact', 'btn_cv', 'label_history', 'label_tools'];
-            for (let key of keys) {
-                const t = await translate(sourceData[key], target);
-                const el = document.querySelector(`[data-key="${key}"]`);
-                if (el) el.innerHTML = t;
-            }
-
-            // 2. Update Jobs (4 Items)
-            const workContent = document.getElementById('work-content');
-            if (workContent) {
-                let html = '';
-                for (let j of sourceData.jobs) {
-                    const tTitle = await translate(j.title, target);
-                    const tDesc = await translate(j.desc, target);
-                    html += `
-                        <div class="work-item">
-                            <div class="work-year mono">${j.year}</div>
-                            <div class="work-info">
-                                <h3>${tTitle}</h3>
-                                <span class="company">${j.comp}</span>
-                                <p>${tDesc}</p>
-                            </div>
-                        </div>`;
-                }
-                workContent.innerHTML = html;
-            }
-
-            // 3. Update Skills
-            const skillsContent = document.getElementById('skills-content');
-            if (skillsContent) {
-                let html = '';
-                for (let s of sourceData.skills) {
-                    const tTitle = await translate(s.title, target);
-                    const tDesc = await translate(s.desc, target);
-                    html += `<div class="skill-card"><h4 class="mono">${tTitle}</h4><p>${tDesc}</p></div>`;
-                }
-                skillsContent.innerHTML = html;
-            }
-
-            statusLabel.innerText = langCode.toUpperCase();
-            document.body.style.direction = (target === 'ar') ? 'rtl' : 'ltr';
-            document.body.classList.remove('translating');
-            localStorage.setItem('selectedLang', langCode);
-        }
-
-        function initLangMenu() {
-            const menu = document.getElementById('lang-menu');
-            if (!menu) return;
-            menu.innerHTML = '';
-            languages.forEach(l => {
-                const a = document.createElement('a');
-                a.href = "javascript:void(0)";
-                a.innerText = l.name;
-                a.onclick = () => changeLang(l.code);
-                menu.appendChild(a);
+        function changeLang(lang) {
+            const data = translations[lang] || translations['ID'];
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if(data[key]) el.innerHTML = data[key];
             });
+
+            const workContent = document.getElementById('work-content');
+            workContent.innerHTML = data.jobs.map(j => `
+                <div class="work-item">
+                    <div class="work-year mono">${j.year}</div>
+                    <div class="work-info">
+                        <h3>${j.title}</h3>
+                        <span class="company">${j.comp}</span>
+                        <p>${j.desc}</p>
+                    </div>
+                </div>`).join('');
+
+            document.getElementById('current-lang').innerText = lang;
+            localStorage.setItem('selectedLang', lang);
         }
 
         window.onload = () => {
-            initLangMenu();
-            const saved = localStorage.getItem('selectedLang') || 'id';
+            const saved = localStorage.getItem('selectedLang') || 'ID';
             changeLang(saved);
         };
     </script>
