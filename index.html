@@ -7,6 +7,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* CSS Tambahan untuk mengamankan navigasi di atas video */
+        nav { z-index: 1000 !important; position: relative; }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a1a1a;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.5);
+            z-index: 10001 !important;
+            border: 1px solid #333;
+        }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+        }
+        .dropdown-content a:hover { background-color: #333; }
+        .video-bg, .overlay { pointer-events: none; z-index: -1; }
+    </style>
 </head>
 <body>
 
@@ -52,9 +75,9 @@
                 <img src="assets/DSC04474-removebg-preview.png" alt="Dezan Sanubari">
             </div>
             <div class="about-text">
-                <span class="section-label mono">// executive_summary</span>
+                <span class="section-label mono" data-key="label_about">// executive_summary</span>
                 <p data-key="about_desc">
-                    Spesialis Infrastruktur IT dengan pengalaman lebih dari 12 tahun...
+                    Spesialis Infrastruktur IT dengan pengalaman lebih dari 12 tahun dalam mengelola operasional Data Center kritis. Ahli dalam menjaga uptime sistem melalui manajemen kelistrikan (UPS/Genset), virtualisasi VMware, dan troubleshooting jaringan tingkat lanjut.
                 </p>
             </div>
         </div>
@@ -62,14 +85,12 @@
 
     <main class="container content-section" id="history">
         <span class="section-label mono" data-key="label_history">// professional_experience</span>
-        <div class="work-grid" id="work-content">
-            </div>
+        <div class="work-grid" id="work-content"></div>
     </main>
 
     <section id="tools" class="container content-section">
         <span class="section-label mono" data-key="label_tools">// technical_stack</span>
-        <div class="skills-container" id="skills-content">
-            </div>
+        <div class="skills-container" id="skills-content"></div>
     </section>
 
     <footer id="contact">
@@ -105,65 +126,53 @@
                 hero_title: "Dezan Sanubari",
                 hero_sub: "Operasional Infrastruktur IT & Data Center",
                 hero_tagline: "Keandalan | Konektivitas | Presisi <br> Selalu mencari peluang baru — Pengalaman 12+ Tahun",
+                label_about: "// ringkasan_eksekutif",
                 about_desc: "Spesialis Infrastruktur IT dengan pengalaman lebih dari 12 tahun dalam mengelola operasional Data Center kritis. Ahli dalam menjaga uptime sistem melalui manajemen kelistrikan (UPS/Genset), virtualisasi VMware, dan troubleshooting jaringan tingkat lanjut.",
                 btn_contact: "Hubungi Saya", 
                 btn_cv: "Unduh CV",
                 label_history: "// riwayat_kerja", 
                 label_tools: "// keahlian_teknis",
                 jobs: [
-                    {
-                        year: "Feb 2020 - Feb 2025",
-                        title: "IT Operations Support",
-                        comp: "PT. ValueStream International",
-                        desc: "Bertanggung jawab atas operasional kritis L2: Pemeliharaan kelistrikan (UPS/Genset), monitoring link internet/biller, instalasi server fisik & VMware."
-                    },
-                    {
-                        year: "Apr 2016 - Feb 2020",
-                        title: "Datacenter Operations Specialist",
-                        comp: "PT. ValueStream International",
-                        desc: "Monitoring 24/7 infrastruktur Data Center: Server, Storage, dan Jaringan."
-                    }
+                    { year: "Feb 2020 - Feb 2025", title: "IT Operations Support", comp: "PT. ValueStream International", desc: "Operasional kritis L2: Pemeliharaan UPS/Genset, monitoring link, instalasi server VMware, dan analisis log transaksi." },
+                    { year: "Apr 2016 - Feb 2020", title: "Datacenter Operations Specialist", comp: "PT. ValueStream International", desc: "Monitoring 24/7 infrastruktur DC, manajemen pendinginan presisi, dan instalasi perangkat jaringan." },
+                    { year: "Jan 2015 - Mar 2016", title: "Wi-Fi Technical Support Engineer", comp: "Koperasi Pegawai Indosat", desc: "Instalasi sistem radio dan Access Point (Aruba/Ruckus) untuk proyek Indosat Super Wi-Fi." },
+                    { year: "Okt 2012 - Des 2014", title: "Technical Support Engineer", comp: "PT. Personel Alih Daya (Persada)", desc: "Implementasi jaringan wireless korporat dan troubleshooting mendalam untuk meminimalkan downtime." }
                 ],
                 skills: [
-                    { title: "Infrastructure", desc: "VMware, Linux, APC UPS, Genset Maintenance, Precision Cooling." },
-                    { title: "Networking", desc: "Mikrotik, Cisco, Aruba, Ruckus, Radio Wireless, TCP/IP." },
-                    { title: "System & Data", desc: "MySQL, ISO8583, JSON Analysis, Navicat, Zabbix Monitoring." }
+                    { title: "Infrastructure", desc: "VMware, Linux, APC UPS, Genset, Precision Cooling." },
+                    { title: "Networking", desc: "Mikrotik, Cisco, Aruba, Ruckus, TCP/IP." },
+                    { title: "System", desc: "MySQL, ISO8583, JSON, Zabbix Monitoring." }
                 ]
             },
             EN: {
                 hero_title: "Dezan Sanubari",
                 hero_sub: "IT Infrastructure & Data Center Operations",
                 hero_tagline: "Reliability | Connectivity | Precision <br> Always seeking new opportunities - 12+ Years Experience",
-                about_desc: "IT Infrastructure Specialist with over 12 years of experience in managing critical Data Center operations. Expert in maintaining system uptime through power management (UPS/Genset), VMware virtualization, and advanced network troubleshooting.",
+                label_about: "// executive_summary",
+                about_desc: "IT Infrastructure Specialist with over 12 years of experience managing critical Data Center operations. Expert in system uptime, UPS/Genset management, and VMware virtualization.",
                 btn_contact: "Get In Touch", 
                 btn_cv: "Download CV",
                 label_history: "// work_history", 
                 label_tools: "// technical_stack",
                 jobs: [
-                    {
-                        year: "Feb 2020 - Feb 2025",
-                        title: "IT Operations Support",
-                        comp: "PT. ValueStream International",
-                        desc: "Leading L2 operations: DC power maintenance (UPS/Genset), internet/biller link monitoring, physical & VMware server deployment."
-                    },
-                    {
-                        year: "Apr 2016 - Feb 2020",
-                        title: "Datacenter Operations Specialist",
-                        comp: "PT. ValueStream International",
-                        desc: "24/7 monitoring of Data Center infrastructure (Server, Storage, Network)."
-                    }
+                    { year: "Feb 2020 - Feb 2025", title: "IT Operations Support", comp: "PT. ValueStream International", desc: "L2 critical operations: UPS/Genset maintenance, server installation, and transaction log analysis." },
+                    { year: "Apr 2016 - Feb 2020", title: "Datacenter Operations Specialist", comp: "PT. ValueStream International", desc: "24/7 DC infrastructure monitoring, precision cooling management, and network device installation." },
+                    { year: "Jan 2015 - Mar 2016", title: "Wi-Fi Technical Support Engineer", comp: "Koperasi Pegawai Indosat", desc: "Radio system and Access Point installation (Aruba/Ruckus) for Indosat Super Wi-Fi project." },
+                    { year: "Oct 2012 - Dec 2014", title: "Technical Support Engineer", comp: "PT. Persada", desc: "Corporate wireless network implementation and deep-dive troubleshooting." }
                 ],
                 skills: [
-                    { title: "Infrastructure", desc: "VMware, Linux, APC UPS, Genset Maintenance, Precision Cooling." },
-                    { title: "Networking", desc: "Mikrotik, Cisco, Aruba, Ruckus, Radio Wireless, TCP/IP." },
-                    { title: "System & Data", desc: "MySQL, ISO8583, JSON Analysis, Navicat, Zabbix Monitoring." }
+                    { title: "Infrastructure", desc: "VMware, Linux, APC UPS, Genset, Precision Cooling." },
+                    { title: "Networking", desc: "Mikrotik, Cisco, Aruba, Ruckus, TCP/IP." },
+                    { title: "System", desc: "MySQL, ISO8583, JSON, Zabbix Monitoring." }
                 ]
             }
         };
 
         const languages = [
-            {code: 'ID', name: 'Indonesian'}, 
-            {code: 'EN', name: 'English'}
+            {code: 'ID', name: 'Indonesian'}, {code: 'EN', name: 'English'}, {code: 'CN', name: 'Chinese'},
+            {code: 'JP', name: 'Japanese'}, {code: 'KR', name: 'Korean'}, {code: 'DE', name: 'German'},
+            {code: 'FR', name: 'French'}, {code: 'ES', name: 'Spanish'}, {code: 'PT', name: 'Portuguese'},
+            {code: 'RU', name: 'Russian'}, {code: 'NL', name: 'Dutch'}, {code: 'AR', name: 'Arabic'}
         ];
 
         function initLangMenu() {
@@ -183,18 +192,16 @@
         }
 
         function changeLang(langCode) {
-            const data = translations[langCode];
-            if (!data) return;
-
+            // Gunakan EN jika data bahasa lain belum diisi lengkap di translations
+            const data = translations[langCode] || translations['EN'];
+            
             // 1. Update Teks Statis
             document.querySelectorAll('[data-key]').forEach(element => {
                 const key = element.getAttribute('data-key');
-                if (data[key]) {
-                    element.innerHTML = data[key];
-                }
+                if (data[key]) element.innerHTML = data[key];
             });
 
-            // 2. Update Riwayat Kerja
+            // 2. Update Riwayat Kerja (Render 4 Posisi)
             const workContent = document.getElementById('work-content');
             if (workContent) {
                 workContent.innerHTML = data.jobs.map(j => `
@@ -218,8 +225,10 @@
                     </div>`).join('');
             }
 
-            // 4. Update UI
-            document.getElementById('current-lang').innerText = langCode;
+            // 4. Update UI Bahasa
+            const currentLangSpan = document.getElementById('current-lang');
+            if (currentLangSpan) currentLangSpan.innerText = langCode;
+            document.body.style.direction = (langCode === 'AR') ? 'rtl' : 'ltr';
             localStorage.setItem('selectedLang', langCode);
         }
 
@@ -228,6 +237,7 @@
             const savedLang = localStorage.getItem('selectedLang') || 'ID';
             changeLang(savedLang);
 
+            // Pemutar video
             const video = document.querySelector('.video-bg');
             if (video) {
                 video.play().catch(() => console.log("Autoplay ditunda browser"));
