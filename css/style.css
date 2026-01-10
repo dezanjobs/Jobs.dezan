@@ -22,7 +22,7 @@ body { font-family: 'Inter', sans-serif; background: var(--bg-light); color: #33
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: 1 !important; /* Pastikan ini yang paling belakang */
+    z-index: 2 !important; /* Pastikan ini yang paling belakang */
     transform: translate(-50%, -50%);
     object-fit: cover;
     display: block !important;
@@ -35,14 +35,19 @@ body { font-family: 'Inter', sans-serif; background: var(--bg-light); color: #33
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5) !important; /* Transparan gelap */
-    z-index: 2; /* Berada di depan video, tapi di belakang teks */
+    z-index: -1; /* Berada di depan video, tapi di belakang teks */
 }
 
-nav { display: flex; justify-content: space-between; align-items: center; padding: 2rem 0; z-index: 100 !important; }
+nav { display: flex; justify-content: space-between; align-items: center; padding: 2rem 0; z-index: 9999 !important; }
 .logo img { height: 45px; filter: brightness(0) invert(1); }
 .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
 .nav-links a { text-decoration: none; color: white; font-size: 0.9rem; opacity: 0.8; transition: 0.3s; }
 .nav-links a:hover { color: var(--amber); opacity: 1; }
+
+.lang-menu, .lang-current, .lang-dropdown {
+    z-index: 10000 !important;
+    cursor: pointer;
+}
 
 .hero-content { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; z-index: 10; color: #fff; }
 .status-tag { background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 20px; font-size: 0.7rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.2); }
