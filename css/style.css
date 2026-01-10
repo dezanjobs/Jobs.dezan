@@ -1,94 +1,229 @@
-console.log("Retro minimal site loaded 🚀");
+:root {
+    --bg-light: #f4f4f4;
+    --dark: #0a0a0a;
+    --card-bg: #0d0d0d;
+    --border: #1a1a1a;
+    --amber: #fdb201;
+    --gold: #c6a85c;
+}
 
-const translations = {
-    ID: {
-        hero_sub: "Operasional Infrastruktur IT & Data Center",
-        hero_title: "Dezan Sanubari",
-        hero_tagline: "Keandalan | Konektivitas | Presisi <br> Selalu mencari peluang baru",
-        btn_contact: "Hubungi Saya", btn_cv: "Unduh CV", label_history: "// riwayat_kerja",
-        jobs: [
-            { year: "2020 - 2025", title: "IT Operations Support", comp: "PT. ValueStream International", desc: "Pemeliharaan UPS/Genset, monitoring link, VMware, analisis log transaksi." },
-            { year: "2016 - 2020", title: "Datacenter Specialist", comp: "PT. ValueStream International", desc: "Monitoring DC 24/7 dan pendinginan presisi." },
-            { year: "2015 - 2016", title: "Wi-Fi Support Engineer", comp: "Koperasi Indosat", desc: "Instalasi Aruba/Ruckus proyek Indosat Super Wi-Fi." },
-            { year: "2012 - 2014", title: "Technical Support", comp: "PT. Persada", desc: "Implementasi jaringan wireless korporat dan troubleshooting." }
-        ]
-    },
-    EN: {
-        hero_sub: "IT Infrastructure & Data Center Operations",
-        hero_title: "Dezan Sanubari",
-        hero_tagline: "Reliability | Connectivity | Precision <br> Always seeking new opportunities",
-        btn_contact: "Contact Me", btn_cv: "Download CV", label_history: "// work_history",
-        jobs: [
-            { year: "2020 - 2025", title: "IT Operations Support", comp: "PT. ValueStream International", desc: "UPS/Genset maintenance, link monitoring, VMware, log analysis." },
-            { year: "2016 - 2020", title: "Datacenter Specialist", comp: "PT. ValueStream International", desc: "24/7 DC monitoring and precision cooling." },
-            { year: "2015 - 2016", title: "Wi-Fi Support Engineer", comp: "Indosat Coop", desc: "Aruba/Ruckus installation for Indosat Super Wi-Fi." },
-            { year: "2012 - 2014", title: "Technical Support", comp: "PT. Persada", desc: "Corporate wireless network and troubleshooting." }
-        ]
-    },
-    ZH: { hero_sub: "IT 基础设施与数据中心运营", hero_title: "Dezan Sanubari", hero_tagline: "可靠性 | 连接性 | 精准 <br> 始终寻求新机会", btn_contact: "联系我", btn_cv: "下载简历", label_history: "// 工作经历", jobs: [{ year: "2020 - 2025", title: "IT运营支持", comp: "PT. ValueStream", desc: "UPS/发电机维护、链路监控、VMware、日志分析。" }, { year: "2016 - 2020", title: "数据中心专员", comp: "PT. ValueStream", desc: "24/7 数据中心基础设施监控和精密冷却。" }, { year: "2015 - 2016", title: "Wi-Fi技术支持", comp: "Indosat", desc: "安装 Aruba/Ruckus 接入点。" }, { year: "2012 - 2014", title: "技术支持", comp: "PT. Persada", desc: "企业无线网络实施和故障排除。" }] },
-    JP: { hero_sub: "ITインフラ・データセンター運用", hero_title: "デザン・サヌバリ", hero_tagline: "信頼性 | 接続性 | 精度 <br> 常に新しい機会を求めて", btn_contact: "お問い合わせ", btn_cv: "履歴書", label_history: "// 職歴", jobs: [{ year: "2020 - 2025", title: "IT運用サポート", comp: "PT. ValueStream", desc: "UPS/発電機メンテナンス、VMware、ログ分析。" }, { year: "2016 - 2020", title: "DCスペシャリスト", comp: "PT. ValueStream", desc: "24時間365日のDC監視と精密冷却。" }, { year: "2015 - 2016", title: "Wi-Fiエンジニア", comp: "Indosat", desc: "Indosat Super Wi-Fi用AP設置。" }, { year: "2012 - 2014", title: "技術サポート", comp: "PT. Persada", desc: "企業のワイヤレスネットワーク構築。" }] },
-    KO: { hero_sub: "IT 인프라 및 데이터 센터 운영", hero_title: "Dezan Sanubari", hero_tagline: "신뢰성 | 연결성 | 정밀도 <br> 항상 새로운 기회를 찾고 있습니다", btn_contact: "문의하기", btn_cv: "이력서 다운로드", label_history: "// 경력 사항", jobs: [{ year: "2020 - 2025", title: "IT 운영 지원", comp: "PT. ValueStream", desc: "UPS/발전기 유지보수, VMware, 로그 분석." }, { year: "2016 - 2020", title: "데이터 센터 전문가", comp: "PT. ValueStream", desc: "24/7 DC 인프라 모니터링." }, { year: "2015 - 2016", title: "Wi-Fi 지원", comp: "Indosat", desc: "Aruba/Ruckus AP 설치." }, { year: "2012 - 2014", title: "기술 지원", comp: "PT. Persada", desc: "기업 무선 네트워크 구축." }] },
-    DE: { hero_sub: "IT-Infrastruktur & RZ-Betrieb", hero_title: "Dezan Sanubari", hero_tagline: "Zuverlässigkeit | Konnektivität | Präzision <br> Immer auf der Suche nach neuen Möglichkeiten", btn_contact: "Kontakt", btn_cv: "Lebenslauf", label_history: "// Erfahrung", jobs: [{ year: "2020 - 2025", title: "IT-Operations", comp: "PT. ValueStream", desc: "Wartung USV/Genset, VMware, Analyse." }, { year: "2016 - 2020", title: "RZ-Spezialist", comp: "PT. ValueStream", desc: "24/7 RZ-Monitoring und Kühlung." }, { year: "2015 - 2016", title: "Wi-Fi-Ingenieur", comp: "Indosat", desc: "Aruba/Ruckus AP Installation." }, { year: "2012 - 2014", title: "Tech-Support", comp: "PT. Persada", desc: "WLAN-Implementierung." }] },
-    FR: { hero_sub: "Infrastructure IT & Data Center", hero_title: "Dezan Sanubari", hero_tagline: "Fiabilité | Connectivité | Précision <br> Toujours à la recherche d'opportunités", btn_contact: "Contact", btn_cv: "Télécharger CV", label_history: "// Expérience", jobs: [{ year: "2020 - 2025", title: "Support IT", comp: "PT. ValueStream", desc: "Maintenance UPS, VMware, analyse logs." }, { year: "2016 - 2020", title: "Spécialiste DC", comp: "PT. ValueStream", desc: "Monitoring 24/7 et refroidissement." }, { year: "2015 - 2016", title: "Ingénieur Wi-Fi", comp: "Indosat", desc: "Installation AP Aruba/Ruckus." }, { year: "2012 - 2014", title: "Support Technique", comp: "PT. Persada", desc: "Réseau sans fil entreprise." }] },
-    ES: { hero_sub: "Infraestructura IT & Data Center", hero_title: "Dezan Sanubari", hero_tagline: "Fiabilidad | Conectividad | Precisión <br> Siempre buscando oportunidades", btn_contact: "Contacto", btn_cv: "Descargar CV", label_history: "// Experiencia", jobs: [{ year: "2020 - 2025", title: "Soporte TI", comp: "PT. ValueStream", desc: "Mantenimiento UPS, VMware, análisis." }, { year: "2016 - 2020", title: "Especialista DC", comp: "PT. ValueStream", desc: "Monitoreo 24/7 y enfriamiento." }, { year: "2015 - 2016", title: "Soporte Wi-Fi", comp: "Indosat", desc: "Instalación AP Aruba/Ruckus." }, { year: "2012 - 2014", title: "Soporte Técnico", comp: "PT. Persada", desc: "Redes inalámbricas." }] },
-    PT: { hero_sub: "Infraestrutura de TI & Data Center", hero_title: "Dezan Sanubari", hero_tagline: "Confiabilidade | Precisão <br> Sempre buscando oportunidades", btn_contact: "Contato", btn_cv: "Baixar CV", label_history: "// Experiência", jobs: [{ year: "2020 - 2025", title: "Suporte TI", comp: "PT. ValueStream", desc: "Manutenção UPS, VMware, logs." }, { year: "2016 - 2020", title: "Especialista DC", comp: "PT. ValueStream", desc: "Monitoramento 24/7." }, { year: "2015 - 2016", title: "Engenheiro Wi-Fi", comp: "Indosat", desc: "Instalação AP Aruba/Ruckus." }, { year: "2012 - 2014", title: "Suporte Técnico", comp: "PT. Persada", desc: "Redes sem fio." }] },
-    RU: { hero_sub: "IT-инфраструктура и ЦОД", hero_title: "Дезан Санубари", hero_tagline: "Надежность | Точность <br> Всегда в поиске новых возможностей", btn_contact: "Контакт", btn_cv: "Скачать CV", label_history: "// Опыт", jobs: [{ year: "2020 - 2025", title: "IT-поддержка", comp: "PT. ValueStream", desc: "Обслуживание ИБП, VMware." }, { year: "2016 - 2020", title: "Специалист ЦОД", comp: "PT. ValueStream", desc: "Мониторинг 24/7." }, { year: "2015 - 2016", title: "Wi-Fi инженер", comp: "Indosat", desc: "Установка точек доступа." }, { year: "2012 - 2014", title: "Техподдержка", comp: "PT. Persada", desc: "Беспроводные сети." }] },
-    NL: { hero_sub: "IT Infrastructuur & Datacenter", hero_title: "Dezan Sanubari", hero_tagline: "Betrouwbaarheid | Precisie <br> Altijd op zoek naar kansen", btn_contact: "Contact", btn_cv: "Download CV", label_history: "// Ervaring", jobs: [{ year: "2020 - 2025", title: "IT Support", comp: "PT. ValueStream", desc: "UPS onderhoud, VMware." }, { year: "2016 - 2020", title: "DC Specialist", comp: "PT. ValueStream", desc: "24/7 monitoring." }, { year: "2015 - 2016", title: "Wi-Fi Engineer", comp: "Indosat", desc: "Aruba/Ruckus installatie." }, { year: "2012 - 2014", title: "Technical Support", comp: "PT. Persada", desc: "Bedrijfsnetwerken." }] },
-    IT: { hero_sub: "Infrastruttura IT & Data Center", hero_title: "Dezan Sanubari", hero_tagline: "Affidabilità | Precisione <br> Sempre alla ricerca di opportunità", btn_contact: "Contatto", btn_cv: "Scarica CV", label_history: "// Esperienza", jobs: [{ year: "2020 - 2025", title: "Supporto IT", comp: "PT. ValueStream", desc: "Manutenzione UPS, VMware." }, { year: "2016 - 2020", title: "Specialista DC", comp: "PT. ValueStream", desc: "Monitoraggio 24/7." }, { year: "2015 - 2016", title: "Ingegnere Wi-Fi", comp: "Indosat", desc: "Installazione AP." }, { year: "2012 - 2014", title: "Supporto Técnico", comp: "PT. Persada", desc: "Reti wireless." }] },
-    AR: { hero_sub: "بنية تكنولوجيا المعلومات والبيانات", hero_title: "ديزان سنوباري", hero_tagline: "الموثوقية | الدقة <br> البحث دائما عن فرص جديدة", btn_contact: "اتصل بي", btn_cv: "السيرة الذاتية", label_history: "// الخبرة", jobs: [{ year: "2020 - 2025", title: "دعم العمليات", comp: "PT. ValueStream", desc: "صيانة المولدات و VMware." }, { year: "2016 - 2020", title: "أخصائي مركز البيانات", comp: "PT. ValueStream", desc: "مراقبة على مدار الساعة." }, { year: "2015 - 2016", title: "مهندس Wi-Fi", comp: "Indosat", desc: "تركيب نقاط وصول." }, { year: "2012 - 2014", title: "الدعم الفني", comp: "PT. Persada", desc: "شبكات لاسلكية." }] }
-};
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--bg-light); color: #333; line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.mono { font-family: 'Roboto Mono', monospace; }
 
-const languages = [
-    {id:'ID', n:'Indonesian'}, {id:'EN', n:'English'}, {id:'ZH', n:'Chinese'},
-    {id:'JP', n:'Japanese'}, {id:'KO', n:'Korean'}, {id:'DE', n:'German'},
-    {id:'FR', n:'French'}, {id:'ES', n:'Spanish'}, {id:'PT', n:'Portuguese'},
-    {id:'RU', n:'Russian'}, {id:'NL', n:'Dutch'}, {id:'IT', n:'Italian'}, {id:'AR', n:'Arabic'}
-];
+/* HERO (STYLE V3 KEDUA) */
+.hero { position: relative; height: 100vh; color: white; display: flex; flex-direction: column; overflow: hidden;background: transparent !important; align-items: center; z-index: 10 !important;}
+.video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 2 !important; /* Pastikan ini yang paling belakang */
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    display: block !important;
+}
 
-function changeLang(l) {
-    const d = translations[l] || translations.ID;
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5) !important; /* Transparan gelap */
+    z-index: -1; /* Berada di depan video, tapi di belakang teks */
+}
+
+nav { display: flex; justify-content: space-between; align-items: center; padding: 2rem 0; z-index: 9999 !important; }
+.logo img { height: 45px; filter: brightness(0) invert(1); }
+.nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
+.nav-links a { text-decoration: none; color: white; font-size: 0.9rem; opacity: 0.8; transition: 0.3s; }
+.nav-links a:hover { color: var(--amber); opacity: 1; }
+
+.lang-menu, .lang-current, .lang-dropdown {
+    z-index: 10000 !important;
+    cursor: pointer;
+}
+
+.hero-content { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; z-index: 10; color: #fff; }
+.status-tag { background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 20px; font-size: 0.7rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.2); }
+.status-blink { width: 8px; height: 8px; background: #00ff00; border-radius: 50%; animation: blink 1.5s infinite; box-shadow: 0 0 8px #00ff00; }
+.hero-title { font-size: clamp(2.5rem, 6vw, 4.5rem); margin: 10px 0; font-weight: 700; }
+.subtitle { color: var(--amber); letter-spacing: 3px; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; }
+.tagline { opacity: 0.7; margin-bottom: 3rem; font-size: 1.1rem; }
+
+.btn { padding: 1rem 2rem; text-decoration: none; font-weight: bold; transition: 0.3s; border: 1px solid white; display: inline-block; font-size: 0.85rem; }
+.btn-main { background: white; color: black; }
+.btn-outline { color: var(--amber); border-color: var(--amber); margin-left: 1rem; }
+
+/* DROPDOWN */
+.dropdown { position: relative; }
+.dropdown-content { display: none; position: absolute; background: #111; right: 0; min-width: 160px; max-height: 300px; overflow-y: auto; z-index: 1000; border: 1px solid var(--gold); }
+.dropdown-content a { color: white; padding: 12px; display: block; font-size: 0.8rem; text-decoration: none; border-bottom: 1px solid #222; }
+.dropdown:hover .dropdown-content { display: block; }
+
+/* SECTIONS */
+.content-section { padding: 6rem 0; }
+.section-label { color: var(--gold); display: block; margin-bottom: 2rem; font-weight: bold; font-size: 0.9rem; }
+.work-item { display: grid; grid-template-columns: 220px 1fr; padding: 2.5rem 0; border-top: 1px solid #ddd; }
+.work-year { color: #888; font-weight: bold; font-size: 0.9rem; }
+.company { color: var(--gold); font-weight: bold; display: block; margin: 5px 0; font-size: 1rem; }
+.work-info h3 { font-size: 1.3rem; }
+.work-info p { font-size: 0.95rem; color: #555; max-width: 800px; }
+
+.skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+.skill-card { background: white; padding: 2.5rem; border-bottom: 3px solid var(--dark); transition: 0.3s; }
+.skill-card:hover { transform: translateY(-5px); }
+
+/* FOOTER (3 KOLOM GRID) */
+footer { background: #050505; color: white; }
+.footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--border); gap: 1px; }
+.footer-card { background: var(--card-bg); padding: 3rem 1.5rem; text-decoration: none; color: white; display: flex; align-items: center; transition: 0.3s; }
+.footer-card:hover { background: #111; }
+.card-inner { display: flex; align-items: center; gap: 1.2rem; }
+.footer-card i { font-size: 1.6rem; color: var(--amber); }
+.footer-card h4 { font-size: 0.85rem; letter-spacing: 1px; }
+.footer-card p { font-size: 0.75rem; color: #666; }
+.footer-bottom-bar { display: flex; justify-content: space-between; padding: 2rem 0; font-size: 0.7rem; color: #444; letter-spacing: 1px; }
+.blink-green { color: #00ff00; }
+
+@keyframes blink { 50% { opacity: 0.3; } }
+@media (max-width: 1024px) { 
+    .footer-grid { grid-template-columns: 1fr; } 
+    .work-item { grid-template-columns: 1fr; gap: 10px; } 
+    .btn-outline { margin-left: 0; margin-top: 10px; } 
+    .hero-btns { display: flex; flex-direction: column; } 
+}
+.about-section {
+    padding: 8rem 0 4rem 0; /* Memberi ruang setelah hero video */
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr; /* Kolom kiri untuk foto, kanan untuk teks */
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-photo img {
+    width: 100%;
+    height: auto;
+    filter: grayscale(1); /* Efek hitam putih profesional */
+    border: 1px solid var(--gold); /* Bingkai warna emas */
+    padding: 10px;
+    background: white;
+    transition: 0.5s ease;
+    box-shadow: 10px 10px 0px var(--dark); /* Efek bayangan tegas modern */
+}
+
+.about-photo img:hover {
+    filter: grayscale(0); /* Berwarna kembali saat disentuh mouse */
+    transform: translateY(-5px);
+    box-shadow: 15px 15px 0px var(--amber);
+}
+
+.about-text p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #444;
+    font-weight: 300;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr; /* Foto dan teks menumpuk vertikal */
+        text-align: center;
+        gap: 2rem;
+    }
     
-    // Update Teks
-    document.querySelectorAll('[data-key]').forEach(el => {
-        const k = el.getAttribute('data-key');
-        if(d[k]) el.innerHTML = d[k];
-    });
-
-    // Update Riwayat Kerja
-    const workBox = document.getElementById('work-content');
-    if (workBox) {
-        workBox.innerHTML = d.jobs.map(j => `
-            <div class="work-item">
-                <div class="work-year mono">${j.year}</div>
-                <div class="work-info">
-                    <h3>${j.title}</h3>
-                    <span class="company">${j.comp}</span>
-                    <p>${j.desc}</p>
-                </div>
-            </div>`).join('');
+    .about-photo {
+        max-width: 250px;
+        margin: 0 auto;
     }
-
-    // Update UI
-    document.getElementById('current-lang').innerText = l;
-    document.body.style.direction = (l === 'AR') ? 'rtl' : 'ltr';
-    localStorage.setItem('selectedLang', l);
-}
-
-// Ekspos ke window agar bisa dipanggil onclick dari HTML
-window.changeLang = changeLang;
-
-function initMenu() {
-    const m = document.getElementById('lang-menu');
-    if (m) {
-        m.innerHTML = languages.map(l => `
-            <a href="javascript:void(0)" onclick="changeLang('${l.id}')">${l.n}</a>
-        `).join('');
+    
+    .about-text p {
+        font-size: 1.1rem;
     }
 }
+/* --- PERBAIKAN & FITUR BARU --- */
 
-document.addEventListener('DOMContentLoaded', () => {
-    initMenu();
-    const s = localStorage.getItem('selectedLang') || 'ID';
-    changeLang(s);
-    console.log("Dezan Portfolio Loaded with 13 Languages 🚀");
-});
+/* 1. Warna Subtitle (Oranye & Tebal) */
+.subtitle.mono { 
+    color: #ffa500 !important; 
+    font-weight: bold; 
+    margin-bottom: 10px; 
+    display: block; 
+}
+
+/* 2. Indikator Uptime Berkedip (Green Dot) */
+.status-blink { 
+    height: 10px; 
+    width: 10px; 
+    background-color: #00ff00; 
+    border-radius: 50%; 
+    display: inline-block; 
+    margin-right: 8px; 
+    animation: blink 1.2s infinite; 
+}
+
+@keyframes blink { 
+    0% { opacity: 1; transform: scale(1); } 
+    50% { opacity: 0.4; transform: scale(0.9); } 
+    100% { opacity: 1; transform: scale(1); } 
+}
+
+/* 3. Dropdown Menu untuk 13 Bahasa */
+/* Supaya daftar bahasa tidak kepanjangan ke bawah layar */
+.dropdown-content {
+    display: none; 
+    position: absolute; 
+    right: 0; 
+    background-color: #0f0f0f;
+    min-width: 160px; 
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.9); 
+    z-index: 9999;
+    border: 1px solid #333; 
+    max-height: 350px; /* Batasi tinggi menu */
+    overflow-y: auto;  /* Tambahkan scrollbar internal */
+    border-radius: 4px;
+}
+
+.dropdown-content a { 
+    color: #ccc; 
+    padding: 12px 16px; 
+    text-decoration: none; 
+    display: block; 
+    font-size: 13px; 
+    font-family: 'Roboto Mono', monospace;
+    border-bottom: 1px solid #222;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover { 
+    background-color: #1a1a1a; 
+    color: #00ff00; 
+}
+
+/* Menampilkan dropdown saat hover */
+.dropdown:hover .dropdown-content { 
+    display: block; 
+}
+
+/* 4. Perbaikan Responsif untuk Tagline */
+.tagline {
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+.about-photo img {
+    width: 100%;
+    filter: grayscale(1) contrast(1.1); /* Menambah sedikit kontras */
+    mix-blend-mode: luminosity; /* Membuat foto menyatu dengan background gelap web */
