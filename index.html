@@ -8,43 +8,47 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Perbaikan agar menu bahasa muncul di atas video */
+        /* CSS FIX: Memastikan menu bahasa di atas video dan bisa di-klik */
         nav { z-index: 1000 !important; position: relative; }
         .dropdown { position: relative; display: inline-block; }
         .dropdown-content {
             display: none;
             position: absolute;
             right: 0;
-            background-color: #111;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.8);
+            background-color: #0f0f0f;
+            min-width: 180px;
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.9);
             z-index: 9999 !important;
             border: 1px solid #333;
-            max-height: 400px;
+            max-height: 450px;
             overflow-y: auto;
+            border-radius: 4px;
         }
         .dropdown-content a {
-            color: white;
+            color: #ccc;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
             font-size: 13px;
             font-family: 'Roboto Mono', monospace;
+            transition: 0.2s;
         }
-        .dropdown-content a:hover { background-color: #222; color: #00ff00; }
+        .dropdown-content a:hover { background-color: #1a1a1a; color: #00ff00; }
         .dropdown:hover .dropdown-content { display: block; }
         
-        /* Animasi loading saat translate */
-        .translating { opacity: 0.5; pointer-events: none; }
+        /* Animasi Transisi saat Loading Translate */
+        .translating { opacity: 0.6; pointer-events: none; transition: 0.3s; }
+        .video-bg { z-index: -2 !important; }
+        .overlay { z-index: -1 !important; }
     </style>
 </head>
 <body>
 
     <header class="hero" id="home">
-        <video autoplay muted loop playsinline class="video-bg" style="z-index: -2;">
+        <video autoplay muted loop playsinline class="video-bg">
              <source src="assets/dc-background.mp4" type="video/mp4">
         </video>
-        <div class="overlay" style="z-index: -1;"></div>
+        <div class="overlay"></div>
 
         <nav class="container">
             <div class="logo">
@@ -55,7 +59,9 @@
                 <li><a href="#history">.history()</a></li>
                 <li><a href="#tools">.tools()</a></li>
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn"><i class="fas fa-globe"></i> <span id="current-lang">EN</span> ▾</a>
+                    <a href="javascript:void(0)" class="dropbtn">
+                        <i class="fas fa-globe"></i> <span id="current-lang">ID</span> ▾
+                    </a>
                     <div class="dropdown-content" id="lang-menu"></div>
                 </li>
             </ul>
@@ -128,26 +134,26 @@
     </footer>
 
     <script>
-        // Data Utama (Bahasa Inggris sebagai Source)
+        // SOURCE DATA (Satu-satunya tempat untuk edit teks)
         const sourceData = {
             hero_title: "Dezan Sanubari",
             hero_sub: "IT Infrastructure & Data Center Operations",
             hero_tagline: "Reliability | Connectivity | Precision <br> Always seeking new opportunities - 12+ Years Experience",
             label_about: "// executive_summary",
-            about_desc: "IT Infrastructure Specialist with over 12 years of experience in managing critical Data Center operations. Expert in maintaining system uptime through power management (UPS/Genset), VMware virtualization, and advanced network troubleshooting.",
+            about_desc: "IT Infrastructure Specialist with over 12 years of experience in managing critical Data Center operations. Expert in maintaining system uptime through power management (UPS/Genset), VMware virtualization, and advanced network troubleshooting. Experienced in bridging technical needs with business stability through transaction log analysis.",
             btn_contact: "Get In Touch", 
             btn_cv: "Download CV",
-            label_history: "// work_history", 
+            label_history: "// professional_experience", 
             label_tools: "// technical_stack",
             jobs: [
-                { year: "Feb 2020 - Feb 2025", title: "IT Operations Support", comp: "PT. ValueStream International", desc: "Leading L2 operations: DC power maintenance (UPS/Genset), internet/biller link monitoring, physical & VMware server deployment, and transaction log analysis." },
-                { year: "Apr 2016 - Feb 2020", title: "Datacenter Operations Specialist", comp: "PT. ValueStream International", desc: "24/7 monitoring of Data Center infrastructure, climate control (precision cooling), and network device installation (Switch/Router)." },
-                { year: "Jan 2015 - Mar 2016", title: "Wi-Fi Technical Support Engineer", comp: "Koperasi Pegawai Indosat", desc: "Installed radio systems and Access Points (Aruba, Ruckus) for the Indosat Super Wi-Fi project." },
-                { year: "Oct 2012 - Dec 2014", title: "Technical Support Engineer", comp: "PT. Personel Alih Daya (Persada)", desc: "Corporate wireless network implementation, deep-dive troubleshooting, and routine maintenance." }
+                { year: "Feb 2020 - Feb 2025", title: "IT Operations Support", comp: "PT. ValueStream International", desc: "Leading L2 operations: DC power maintenance (UPS/Genset), internet/biller link monitoring, physical & VMware server deployment, and transaction log analysis (JSON/ISO8583)." },
+                { year: "Apr 2016 - Feb 2020", title: "Datacenter Operations Specialist", comp: "PT. ValueStream International", desc: "24/7 monitoring of Data Center infrastructure, climate control (precision cooling), network device installation (Switch/Router), and disturbance logging." },
+                { year: "Jan 2015 - Mar 2016", title: "Wi-Fi Technical Support Engineer", comp: "Koperasi Pegawai Indosat", desc: "Installed radio systems and Access Points (Aruba, Ruckus) for the Indosat Super Wi-Fi project to enhance coverage in public areas." },
+                { year: "Oct 2012 - Dec 2014", title: "Technical Support Engineer", comp: "PT. Personel Alih Daya (Persada)", desc: "Corporate wireless network implementation, deep-dive troubleshooting, and routine maintenance to ensure minimal downtime." }
             ],
             skills: [
                 { title: "Infrastructure", desc: "VMware, Linux, APC UPS, Genset Maintenance, Precision Cooling." },
-                { title: "Networking", desc: "Mikrotik, Cisco, Aruba, Ruckus, TCP/IP." },
+                { title: "Networking", desc: "Mikrotik, Cisco, Aruba, Ruckus, TCP/IP, Radio Wireless." },
                 { title: "System & Data", desc: "MySQL, ISO8583, JSON Analysis, Navicat, Zabbix Monitoring." }
             ]
         };
@@ -159,47 +165,53 @@
             {code: 'ru', name: 'Russian'}, {code: 'nl', name: 'Dutch'}, {code: 'ar', name: 'Arabic'}
         ];
 
-        // Engine Auto-Translate
+        // AUTO-TRANSLATE ENGINE
         async function translate(text, target) {
-            if (target === 'en') return text;
+            if (!text || target === 'en') return text;
             try {
-                const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=${target}&dt=t&q=${encodeURI(text)}`;
+                // Lindungi tag <br>
+                const safeText = text.replace(/<br>/g, ' [br] ');
+                const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=${target}&dt=t&q=${encodeURIComponent(safeText)}`;
                 const response = await fetch(url);
                 const result = await response.json();
-                return result[0].map(x => x[0]).join('');
-            } catch (e) { return text; }
+                let output = result[0].map(x => x[0]).join('');
+                return output.replace(/ \[br\] /g, '<br>').replace(/\[br\]/g, '<br>');
+            } catch (e) {
+                console.error("Translate Error:", e);
+                return text;
+            }
         }
 
         async function changeLang(langCode) {
-            const body = document.body;
             const target = langCode.toLowerCase();
-            body.classList.add('translating');
-            document.getElementById('current-lang').innerText = "...";
+            document.body.classList.add('translating');
+            const statusLabel = document.getElementById('current-lang');
+            statusLabel.innerText = "...";
 
-            // 1. Update Elemen Statis
-            for (let key in sourceData) {
-                if (typeof sourceData[key] === 'string') {
-                    const t = await translate(sourceData[key], target);
-                    const el = document.querySelector(`[data-key="${key}"]`);
-                    if (el) el.innerHTML = t;
-                }
+            // 1. Update Static Text
+            const keys = ['hero_title', 'hero_sub', 'hero_tagline', 'label_about', 'about_desc', 'btn_contact', 'btn_cv', 'label_history', 'label_tools'];
+            for (let key of keys) {
+                const t = await translate(sourceData[key], target);
+                const el = document.querySelector(`[data-key="${key}"]`);
+                if (el) el.innerHTML = t;
             }
 
-            // 2. Update Jobs (4 Posisi)
+            // 2. Update Jobs (4 Items)
             const workContent = document.getElementById('work-content');
             if (workContent) {
                 let html = '';
                 for (let j of sourceData.jobs) {
                     const tTitle = await translate(j.title, target);
                     const tDesc = await translate(j.desc, target);
-                    html += `<div class="work-item">
-                        <div class="work-year mono">${j.year}</div>
-                        <div class="work-info">
-                            <h3>${tTitle}</h3>
-                            <span class="company">${j.comp}</span>
-                            <p>${tDesc}</p>
-                        </div>
-                    </div>`;
+                    html += `
+                        <div class="work-item">
+                            <div class="work-year mono">${j.year}</div>
+                            <div class="work-info">
+                                <h3>${tTitle}</h3>
+                                <span class="company">${j.comp}</span>
+                                <p>${tDesc}</p>
+                            </div>
+                        </div>`;
                 }
                 workContent.innerHTML = html;
             }
@@ -216,14 +228,15 @@
                 skillsContent.innerHTML = html;
             }
 
-            document.getElementById('current-lang').innerText = langCode.toUpperCase();
-            body.style.direction = (target === 'ar') ? 'rtl' : 'ltr';
-            body.classList.remove('translating');
+            statusLabel.innerText = langCode.toUpperCase();
+            document.body.style.direction = (target === 'ar') ? 'rtl' : 'ltr';
+            document.body.classList.remove('translating');
             localStorage.setItem('selectedLang', langCode);
         }
 
         function initLangMenu() {
             const menu = document.getElementById('lang-menu');
+            if (!menu) return;
             menu.innerHTML = '';
             languages.forEach(l => {
                 const a = document.createElement('a');
