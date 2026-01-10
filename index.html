@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dezan Sanubari | Portfolio</title>
+    <title>Dezan Sanubari | Portfolio IT Infrastructure</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <link rel="stylesheet" href="css/style.css">
@@ -27,8 +27,8 @@
                 <li><a href="#about">.about()</a></li>
                 <li><a href="#history">.history()</a></li>
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">
-                        <i class="fas fa-globe"></i> <span id="current-lang">ID</span> ▾
+                    <a href="javascript:void(0)" class="lang-current">
+                        <i class="fas fa-globe"></i> <span id="current-lang">ID</span> <i class="fas fa-chevron-down" style="font-size: 0.6rem; margin-left: 5px;"></i>
                     </a>
                     <div class="dropdown-content" id="lang-menu">
                         </div>
@@ -57,27 +57,28 @@
         </div>
     </header>
 
-    <section id="about" class="container content-section">
+    <section id="about" class="about-section container">
         <span class="section-label mono" data-key="label_about">// about_me</span>
         <div class="about-grid">
             <div class="about-photo">
                 <img src="assets/profile.jpg" alt="Dezan Sanubari">
             </div>
             <div class="about-text">
-                <p data-key="hero_about"></p>
+                <p data-key="hero_about">
+                    </p>
             </div>
         </div>
     </section>
 
     <section class="container content-section">
         <span class="section-label mono" data-key="label_skills">// technical_skills</span>
-        <div id="skill-content" class="skills-container">
+        <div id="skill-content">
             </div>
     </section>
 
     <main class="container content-section" id="history">
         <span class="section-label mono" data-key="label_history">// professional_experience</span>
-        <div class="work-grid" id="work-content">
+        <div id="work-content">
             </div>
     </main>
 
@@ -87,8 +88,43 @@
             </div>
     </section>
 
-    <footer class="container mono" style="text-align: center; padding: 60px 0; color: #666; font-size: 12px;">
-        <p>&copy; 2026 DEZAN SANUBARI. ALL SYSTEMS OPERATIONAL <span style="color: #00ff00;">●</span></p>
+    <footer>
+        <div class="footer-grid">
+            <a href="mailto:Jobs.Dezan@gmail.com" class="footer-card">
+                <div class="card-inner">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4 data-key="footer_contact">Email</h4>
+                        <p>Jobs.Dezan@gmail.com</p>
+                    </div>
+                </div>
+            </a>
+            <a href="https://linkedin.com/in/dezansanubari" target="_blank" class="footer-card">
+                <div class="card-inner">
+                    <i class="fab fa-linkedin-in"></i>
+                    <div>
+                        <h4>LinkedIn</h4>
+                        <p>Dezan Sanubari</p>
+                    </div>
+                </div>
+            </a>
+            <div class="footer-card">
+                <div class="card-inner">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Bandung, Indonesia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="footer-bottom-bar mono">
+                <p>&copy; 2026 DEZAN SANUBARI</p>
+                <p>ALL SYSTEMS OPERATIONAL <span class="status-blink" style="width:6px; height:6px; margin-left:5px;"></span></p>
+            </div>
+        </div>
     </footer>
 
     <script src="js/main.js"></script>
