@@ -179,3 +179,26 @@ footer {
     .work-item { grid-template-columns: 1fr; gap: 0.5rem; }
     .footer-flex { flex-direction: column; gap: 2rem; text-align: center; }
 }
+/* Tambahkan di bagian atas atau bawah file style.css */
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.site-logo {
+    height: 40px; /* Sesuaikan ukuran logo */
+    width: auto;
+    filter: grayscale(1) contrast(1.2); /* Membuat logo nuansa industrial */
+    transition: 0.3s;
+}
+
+.logo-container:hover .site-logo {
+    filter: grayscale(0); /* Logo berwarna saat di-hover */
+}
+
+.cv-link {
+    color: var(--led-amber) !important;
+    font-weight: bold;
+}
