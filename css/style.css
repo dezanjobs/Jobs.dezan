@@ -38,7 +38,7 @@ body { font-family: 'Inter', sans-serif; background: var(--bg-light); color: #33
     z-index: 2; /* Berada di depan video, tapi di belakang teks */
 }
 
-nav { display: flex; justify-content: space-between; align-items: center; padding: 2rem 0; z-index: 100; }
+nav { display: flex; justify-content: space-between; align-items: center; padding: 2rem 0; z-index: 100 !important; }
 .logo img { height: 45px; filter: brightness(0) invert(1); }
 .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
 .nav-links a { text-decoration: none; color: white; font-size: 0.9rem; opacity: 0.8; transition: 0.3s; }
