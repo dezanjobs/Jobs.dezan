@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Network & Data Center Specialist | Portfolio</title>
+    <title>Dezan Sanubari | IT Infrastructure & Data Center Engineer</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <header class="hero">
+    <header class="hero" id="home">
         <video autoplay muted loop playsinline class="video-bg">
             <source src="assets/Always seeking new opportuniti..." type="video/mp4">
         </video>
@@ -17,77 +18,102 @@
 
         <nav class="container">
             <div class="logo">
-                <img src="assets/erasebg-transformed (1).png" alt="Logo">
+                <img src="assets/erasebg-transformed (1).png" alt="Dezan Sanubari Logo">
             </div>
             <ul class="nav-links mono">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#work">History</a></li>
-                <li><a href="#skills">Tools</a></li>
-                <li class="lang-selector">EN ▾</li>
+                <li><a href="#home">.home()</a></li>
+                <li><a href="#history">.history()</a></li>
+                <li><a href="#tools">.tools()</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">.lang(<span id="current-lang">ID</span>) ▾</a>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="changeLang('ID')">Indonesia</a>
+                        <a href="#" onclick="changeLang('EN')">English</a>
+                        <a href="#" onclick="changeLang('CN')">Chinese (中文)</a>
+                    </div>
+                </li>
             </ul>
         </nav>
 
         <div class="hero-content container">
-            <p class="subtitle mono">Always seeking new opportunities</p>
-            <h1>Network and DataCenter Specialist</h1>
-            <p class="tagline">Reliability | Connectivity | Precision</p>
+            <p class="subtitle mono">IT Infrastructure & Data Center Operations</p>
+            <h1>Dezan Sanubari</h1>
+            <p class="tagline">Reliability | Connectivity | Precision — 12+ Years Experience</p>
             
             <div class="hero-btns">
-                <a href="mailto:emailanda@example.com" class="btn">Get In Touch</a>
-                <a href="assets/CV English 3.0 ATS-compressed..." target="_blank" class="btn btn-outline">Download CV</a>
+                <a href="mailto:Jobs.Dezan@gmail.com" class="btn">Get In Touch</a>
+                <a href="assets/CV English 3.0 ATS-compressed_2.pdf" target="_blank" class="btn btn-outline">Download CV</a>
             </div>
         </div>
     </header>
 
-    <main class="container content-section" id="work">
-        <span class="section-label mono">// work_history</span>
+    <main class="container content-section" id="history">
+        <span class="section-label mono">// work_history_12_years</span>
+        
         <div class="work-grid">
             <div class="work-item">
-                <div class="work-year mono">2021 — Sekarang</div>
+                <div class="work-year mono">2016 — 2025</div>
                 <div class="work-info">
-                    <h3>Senior Data Center Engineer</h3>
-                    <span class="company">PT. Teknologi Awan Indonesia</span>
-                    <p>Bertanggung jawab atas operasional 24/7, optimasi PUE (Power Usage Effectiveness), dan manajemen vendor pihak ketiga.</p>
+                    <h3>Data Center Operations Engineer</h3>
+                    <span class="company">PT ValueStream International</span>
+                    <p>Mengelola operasional harian data center & infrastruktur IT (Server, Storage, Network, Power, Cooling). Instalasi & konfigurasi fisik/virtual (VMware), troubleshooting incident, dan koordinasi vendor ISP/DC.</p>
                 </div>
             </div>
+
             <div class="work-item">
-                <div class="work-year mono">2018 — 2021</div>
+                <div class="work-year mono">2015 — 2016</div>
                 <div class="work-info">
-                    <h3>DC Facilities Technician</h3>
-                    <span class="company">Global Connect Data</span>
-                    <p>Fokus pada instalasi rak, cable management (fiber & copper), serta monitoring sistem UPS dan Cooling.</p>
+                    <h3>Wifi Technical</h3>
+                    <span class="company">Kopindosat (Koperasi Indosat)</span>
+                    <p>Instalasi radio wireless, provisioning access point, serta konfigurasi router untuk solusi jaringan pelanggan.</p>
+                </div>
+            </div>
+
+            <div class="work-item">
+                <div class="work-year mono">2012 — 2014</div>
+                <div class="work-info">
+                    <h3>Technical Support / Senior Technical</h3>
+                    <span class="company">PT Personal Alih Daya</span>
+                    <p>Support teknis onsite/remote, instalasi radio wireless dan infrastruktur jaringan kantor di berbagai lokasi.</p>
                 </div>
             </div>
         </div>
     </main>
 
-    <section id="skills" class="container content-section">
-        <span class="section-label mono">// technical_stack</span>
+    <section id="tools" class="container content-section">
+        <span class="section-label mono">// technical_stack_&_education</span>
         <div class="skills-container">
             <div class="skill-card">
-                <h4 class="mono">Infrastruktur</h4>
-                <p>Rack & Stack, Structured Cabling, Thermal Management, Power Distribution.</p>
+                <h4 class="mono">Network & Infrastructure</h4>
+                <p>LAN/WAN, TCP/IP, DNS, Fiber Optic, Wireless Radio, VMware Virtualization, Cisco & Mikrotik.</p>
             </div>
             <div class="skill-card">
-                <h4 class="mono">Monitoring</h4>
-                <p>DCIM Tools, Zabbix, SNMP, Environmental Monitoring Systems.</p>
+                <h4 class="mono">Operations & Systems</h4>
+                <p>Linux (CentOS, Ubuntu), Windows Server, Monitoring (Zabbix), DCIM, Power & Cooling Management.</p>
             </div>
             <div class="skill-card">
-                <h4 class="mono">Hardware</h4>
-                <p>Cisco, Dell EMC, HP ProLiant, APC UPS Systems.</p>
+                <h4 class="mono">Education</h4>
+                <p><strong>S1 Teknik Informatika</strong><br>STMIK Indonesia Mandiri Bandung</p>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container footer-flex">
-            <div class="mono">uptime: 99.9% | built_by: yourname.sys</div>
-            <div class="nav-links mono">
-                <a href="#" style="color: var(--led-amber)">LinkedIn</a>
-                <a href="#" style="color: var(--led-amber)">GitHub</a>
+            <div class="mono">uptime: 12y_experience | dezan.sys</div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/dezansanubari/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="mailto:Jobs.Dezan@gmail.com"><i class="fas fa-envelope"></i> Email</a>
             </div>
         </div>
     </footer>
 
+    <script>
+        function changeLang(lang) {
+            document.getElementById('current-lang').innerText = lang;
+            // Di sini Anda bisa menambahkan logika penggantian teks jika sudah ada kamus bahasanya
+            console.log("Language changed to: " + lang);
+        }
+    </script>
 </body>
 </html>
