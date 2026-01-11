@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio Dezan Sanubari - Insinyur IT Infrastruktur & Data Center dengan pengalaman 12 tahun. Spesialis VMware, Cisco, dan operasional data center.">
+    <meta name="keywords" content="Dezan Sanubari, IT Infrastructure, Data Center, VMware, Cisco, Portfolio">
+    <meta name="author" content="Dezan Sanubari">
+    <!-- Open Graph untuk sharing -->
+    <meta property="og:title" content="Dezan Sanubari | Portfolio IT Infrastructure">
+    <meta property="og:description" content="Portfolio profesional untuk operasional IT dan data center.">
+    <meta property="og:image" content="assets/profile.jpg"> <!-- Ganti dengan URL lengkap jika di-host -->
+    <meta property="og:url" content="https://yourdomain.com"> <!-- Ganti dengan URL situsmu -->
+    <meta property="og:type" content="website">
     <title>Dezan Sanubari | Portfolio IT Infrastructure</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -13,32 +22,35 @@
 <body>
 
     <header class="hero" id="home">
-        <video autoplay muted loop playsinline class="video-bg">
+        <video autoplay muted loop playsinline preload="metadata" class="video-bg">
              <source src="assets/dc-background.mp4" type="video/mp4">
+             <!-- Fallback image jika video gagal load -->
+             <img src="assets/fallback-image.jpg" alt="Background fallback" loading="lazy">
         </video>
         <div class="overlay"></div>
 
         <nav class="container">
             <div class="logo">
-                <img src="assets/erasebg-transformed (1).png" alt="Logo">
+                <img src="assets/erasebg-transformed (1).png" alt="Logo Dezan Sanubari" loading="lazy">
             </div>
             <ul class="nav-links mono">
                 <li><a href="#home">.home()</a></li>
                 <li><a href="#about">.about()</a></li>
                 <li><a href="#history">.history()</a></li>
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="lang-current">
-                        <i class="fas fa-globe"></i> <span id="current-lang">ID</span> <i class="fas fa-chevron-down" style="font-size: 0.6rem; margin-left: 5px;"></i>
+                    <a href="javascript:void(0)" class="lang-current" aria-expanded="false" aria-haspopup="true" id="lang-toggle">
+                        <i class="fas fa-globe" aria-hidden="true"></i> <span id="current-lang">ID</span> <i class="fas fa-chevron-down" aria-hidden="true" style="font-size: 0.6rem; margin-left: 5px;"></i>
                     </a>
-                    <div class="dropdown-content" id="lang-menu">
-                        </div>
+                    <div class="dropdown-content" id="lang-menu" role="menu" aria-labelledby="lang-toggle">
+                        <!-- Konten dropdown diisi oleh JS -->
+                    </div>
                 </li>
             </ul>
         </nav>
 
         <div class="hero-content container">
             <div class="status-tag mono">
-                <span class="status-blink"></span> uptime: 12y_experience
+                <span class="status-blink" aria-hidden="true"></span> uptime: 12y_experience
             </div>
             
             <p class="subtitle mono" data-key="hero_sub">Operasional Infrastruktur IT & Data Center</p>
@@ -52,7 +64,7 @@
 
             <div class="hero-btns">
                 <a href="mailto:Jobs.Dezan@gmail.com" class="btn btn-main" data-key="btn_contact">Hubungi Saya</a>
-                <a href="assets/CV English 3.0 ATS-compressed_2.pdf" target="_blank" class="btn btn-outline" data-key="btn_cv">Unduh CV</a>
+                <a href="assets/CV English 3.0 ATS-compressed_2.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline" data-key="btn_cv">Unduh CV</a>
             </div>
         </div>
     </header>
@@ -61,38 +73,42 @@
         <span class="section-label mono" data-key="label_about">// about_me</span>
         <div class="about-grid">
             <div class="about-photo">
-                <img src="assets/profile.jpg" alt="Dezan Sanubari">
+                <img src="assets/profile.jpg" alt="Foto Profil Dezan Sanubari" loading="lazy">
             </div>
             <div class="about-text">
                 <p data-key="hero_about">
-                    </p>
+                    <!-- Konten diisi oleh JS -->
+                </p>
             </div>
         </div>
     </section>
 
-    <section class="container content-section">
+    <main class="container content-section">
         <span class="section-label mono" data-key="label_skills">// technical_skills</span>
         <div id="skill-content" class="skills-container">
-            </div>
-    </section>
+            <!-- Konten skills diisi oleh JS -->
+        </div>
+    </main>
 
-    <main class="container content-section" id="history">
+    <section class="container content-section" id="history">
         <span class="section-label mono" data-key="label_history">// professional_experience</span>
         <div id="work-content">
-            </div>
-    </main>
+            <!-- Konten work history diisi oleh JS -->
+        </div>
+    </section>
 
     <section class="container content-section">
         <span class="section-label mono" data-key="label_school">// education</span>
         <div id="school-content">
-            </div>
+            <!-- Konten education diisi oleh JS -->
+        </div>
     </section>
 
     <footer>
         <div class="footer-grid">
             <a href="mailto:Jobs.Dezan@gmail.com" class="footer-card">
                 <div class="card-inner">
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
                     <div>
                         <h4 data-key="footer_contact">Email</h4>
                         <p>Jobs.Dezan@gmail.com</p>
@@ -100,9 +116,9 @@
                 </div>
             </a>
 
-            <a href="https://wa.me/6281223456789" target="_blank" class="footer-card">
+            <a href="https://bit.ly/WADezan" target="_blank" rel="noopener noreferrer" class="footer-card">
                 <div class="card-inner">
-                    <i class="fab fa-whatsapp" style="color: #25D366;"></i>
+                    <i class="fab fa-whatsapp" aria-hidden="true" style="color: #25D366;"></i>
                     <div>
                         <h4>WhatsApp</h4>
                         <p>Chat Sekarang</p>
@@ -110,9 +126,9 @@
                 </div>
             </a>
 
-            <a href="https://linkedin.com/in/dezansanubari" target="_blank" class="footer-card">
+            <a href="https://linkedin.com/in/dezansanubari" target="_blank" rel="noopener noreferrer" class="footer-card">
                 <div class="card-inner">
-                    <i class="fab fa-linkedin-in"></i>
+                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                     <div>
                         <h4>LinkedIn</h4>
                         <p>Dezan Sanubari</p>
@@ -124,10 +140,14 @@
         <div class="container">
             <div class="footer-bottom-bar mono">
                 <p>&copy; 2026 DEZAN SANUBARI</p>
-                <p>ALL SYSTEMS OPERATIONAL <span class="status-blink" style="width:6px; height:6px; margin-left:5px;"></span></p>
+                <p>ALL SYSTEMS OPERATIONAL <span class="status-blink" aria-hidden="true" style="width:6px; height:6px; margin-left:5px;"></span></p>
             </div>
         </div>
     </footer>
+
+    <noscript>
+        <p style="text-align: center; padding: 20px; background: #f0f0f0; color: #333;">Website ini memerlukan JavaScript untuk pengalaman penuh, termasuk penggantian bahasa dan konten dinamis. Silakan aktifkan JavaScript di browser Anda.</p>
+    </noscript>
 
     <script src="js/main.js"></script>
 </body>
