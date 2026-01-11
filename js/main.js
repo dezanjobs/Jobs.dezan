@@ -239,6 +239,8 @@ const translations = {
             { year: "2009 - 2012", name: "مدرسة أنجكاسا 1 المهنية", major: "هندسة الحاسوب والشبكات" }
         ]
     }
+};
+
 const languages = [
     {id:'ID', n:'Indonesian'}, {id:'EN', n:'English'}, {id:'ZH', n:'Chinese'},
     {id:'JP', n:'Japanese'}, {id:'KO', n:'Korean'}, {id:'DE', n:'German'},
@@ -298,22 +300,30 @@ function changeLang(l) {
     localStorage.setItem('selectedLang', l);
 }
 
-// 1. Daftarkan fungsi ke window agar bisa dipanggil oleh onclick di HTML
+// Daftarkan fungsi ke window agar bisa dipanggil oleh onclick di HTML (jika masih digunakan)
 window.changeLang = changeLang;
 
-// 2. Fungsi untuk mengisi daftar bahasa ke dalam dropdown
+// Fungsi untuk mengisi daftar bahasa ke dalam dropdown dengan event listener modern
 function initLangMenu() {
     const menu = document.getElementById('lang-menu');
     if (menu) {
-        menu.innerHTML = languages.map(lang => `
-            <a href="javascript:void(0)" onclick="changeLang('${lang.id}')">${lang.n}</a>
-        `).join('');
+        menu.innerHTML = languages.map(lang => `<a href="#" data-lang="${lang.id}">${lang.n}</a>`).join('');
+        menu.addEventListener('click', (e) => {
+            e.preventDefault();
+            const lang = e.target.getAttribute('data-lang');
+            if (lang) {
+                changeLang(lang);
+                // Update aria-expanded untuk aksesibilitas
+                const toggle = document.getElementById('lang-toggle');
+                if (toggle) toggle.setAttribute('aria-expanded', 'false'); // Tutup dropdown setelah klik
+            }
+        });
     }
 }
 
-// 3. Jalankan saat halaman selesai dimuat
+// Jalankan saat halaman selesai dimuat
 document.addEventListener('DOMContentLoaded', () => {
     initLangMenu(); // Isi menu dropdown dulu
     const savedLang = localStorage.getItem('selectedLang') || 'ID';
-    changeLang(savedLang); // Panggil fungsi dengan huruf 'c' kecil
+    changeLang(savedLang); // Panggil fungsi dengan bahasa tersimpan
 });
