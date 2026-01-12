@@ -4,7 +4,7 @@ const translations = {
         hero_sub: "Operasional Infrastruktur IT & Data Center",
         hero_title: "Dezan Sanubari",
         hero_tagline: "Keandalan | Konektivitas | Presisi <br> Selalu mencari peluang baru",
-        hero_about: "Insinyur jaringan berusia 31 tahun di Bandung dengan 12 tahun pengalaman. Spesialisasi dalam Data Center, virtualisasi VMware, dan jaringan Cisco/Mikrotik. Penggemar fotografi dan pendukung setia Real Madrid & Persib Bandung.",
+        hero_about: "Teknisi Data Center berpengalaman dengan 12 tahun keahlian dalam pemasangan kabel terstruktur, diagnostik perangkat keras, dan operasi kritis. Terbukti mampu menjaga uptime 99,9%, mengurangi waktu troubleshooting hingga 30%, dan mengoptimalkan skalabilitas infrastruktur. Mahir dalam platform VMware dan solusi penyimpanan EMC, memberikan dukungan teknis berbasis hasil di lingkungan 24x7. Berkomitmen untuk memanfaatkan teknologi guna meningkatkan efisiensi operasional dan siap memperluas keahlian dalam perbaikan sistem tingkat papan sirkuit. Sedang meningkatkan keterampilan komunikasi bahasa Inggris untuk keperluan profesional dan teknis.",
         btn_contact: "Hubungi Saya", btn_cv: "Unduh CV", 
         label_about: "// tentang_saya", label_history: "// riwayat_kerja", label_skills: "// keahlian_teknis", label_school: "// pendidikan",
         footer_contact: "Kontak", footer_reach: "Hubungi kapan saja untuk kolaborasi atau pertanyaan.",
@@ -24,12 +24,12 @@ const translations = {
         hero_sub: "IT Infrastructure & Data Center Operations",
         hero_title: "Dezan Sanubari",
         hero_tagline: "Reliability | Connectivity | Precision <br> Always seeking new opportunities",
-        hero_about: "31-year-old network engineer in Bandung with 12 years of experience. Specialist in Data Centers, VMware, and Cisco/Mikrotik networks.",
+        hero_about: "Experienced Data Center Technician with 13 years of expertise in structured cabling, hardware diagnostics, and mission-critical operations. Proven ability to maintain 99.9% uptime, reduce troubleshooting times by 30%, and optimize infrastructure scalability. Skilled in VMware platforms and EMC storage solutions, delivering results-driven technical support in 24x7 environments. Passionate about leveraging technology to enhance operational efficiency and eager to expand expertise in system board-level repair. Actively improving spoken English to enhance professional and technical communication.",
         btn_contact: "Contact Me", btn_cv: "Download CV", 
         label_about: "// about_me", label_history: "// work_history", label_skills: "// technical_skills", label_school: "// education",
         footer_contact: "Contact", footer_reach: "Reach out anytime for collaborations.",
         jobs: [
-            { year: "2020 - 2025", title: "IT Operations Support", comp: "PT. ValueStream International", desc: "UPS/Genset maintenance, link monitoring, VMware, ISO8583/JSON log analysis." },
+            { year: "2020 - 2025", title: "IT Operations Support", comp: "PT. ValueStream International", desc: "- Maintained Data Center electricity systems, UPS, and generators, achieving 99.9% uptime and ensuring uninterrupted operations.<br/>- Reduced incident resolution time by 30% through proactive troubleshooting workflows and effective prioritization of tasks.<br/>- Managed the maintenance and operation of 10 server racks, including the installation of 3 new racks, which enhanced server deployment speed and infrastructure growth and maintenance of 2 network racks, ensuring reliable network performance.<br/>- Configured physical and virtual servers to enhance service reliability and minimize downtime.<br/>- Acted as 2nd level support for complex system and database troubleshooting, contributing to a 20% increase in SLA compliance.<br/>- Collaborated with cross-functional teams, including networking and compliance, to address escalated issues, fostering seamless communication.<br/>- Operated and maintained databases for critical updates, backups, and transaction log analysis (JSON & ISO)." },
             { year: "2016 - 2020", title: "Datacenter Specialist", comp: "PT. ValueStream International", desc: "24/7 DC monitoring and precision cooling (CRAC)." },
             { year: "2015 - 2016", title: "Wi-Fi Support Engineer", comp: "Indosat Coop", desc: "Aruba/Ruckus installation for Indosat Super Wi-Fi project." },
             { year: "2012 - 2014", title: "Technical Support", comp: "PT. Persada", desc: "Corporate wireless network implementation and troubleshooting." }
@@ -44,7 +44,7 @@ const translations = {
     ZH: {
         hero_sub: "IT 基础设施与数据中心运营", hero_title: "Dezan Sanubari",
         hero_tagline: "可靠性 | 连接性 | 精密性 <br> 始终寻求新机会",
-        hero_about: "31 岁的网络工程师，驻扎在万隆，拥有 12 年经验。精通数据中心、VMware 虚拟化以及 Cisco/Mikrotik 网络。",
+        hero_about: "資深數據中心技術員，具備13年結構化佈線、硬體診斷及關鍵任務運維經驗。經實證能維持99.9%系統可用性，將故障排除時間縮短30%，並優化基礎架構擴展性。精通VMware平台與EMC儲存解決方案，於全天候運作環境中提供成果導向的技術支援。熱衷運用科技提升營運效率，並積極拓展主機板級維修專業技能。持續精進英語口說能力，以強化專業技術溝通效能.",
         btn_contact: "联系我", btn_cv: "下载简历",
         label_about: "// 关于我", label_history: "// 工作经历", label_skills: "// 技术技能", label_school: "// 教育经历",
         footer_contact: "联系方式", footer_reach: "欢迎随时联系进行合作或咨询。",
@@ -62,7 +62,7 @@ const translations = {
     JP: {
         hero_sub: "ITインフラ・データセンター運用", hero_title: "デザン・サヌバリ",
         hero_tagline: "信頼性 | 接続性 | 精密性 <br> 常に新しい機会を求めています",
-        hero_about: "バンドンを拠点とする31歳のネットワークエンジニア。12年の経験を持ち、データセンター、VMware仮想化、Cisco/Mikrotikネットワークのスペシャリストです。",
+        hero_about: "構造化配線、ハードウェア診断、ミッションクリティカルな運用において13年の専門知識を有する経験豊富なデータセンター技術者。99.9%の稼働率維持、トラブルシューティング時間の30%削減、インフラストラクチャのスケーラビリティ最適化の実績あり。VMwareプラットフォームおよびEMCストレージソリューションに精通し、24時間365日の環境で結果重視の技術サポートを提供。技術を活用して業務効率を向上させることに情熱を持ち、システム基板レベルの修理に関する専門知識の拡大に意欲的。専門的・技術的なコミュニケーション能力向上のため、英語会話力の向上に積極的に取り組んでいる.",
         btn_contact: "お問い合わせ", btn_cv: "CVをダウンロード",
         label_about: "// 私について", label_history: "// 職歴", label_skills: "// 技術スキル", label_school: "// 学歴",
         footer_contact: "連絡先", footer_reach: "コラボレーションやご質問については、いつでもご連絡ください。",
@@ -80,7 +80,7 @@ const translations = {
     KO: {
         hero_sub: "IT 인프라 및 데이터 센터 운영", hero_title: "Dezan Sanubari",
         hero_tagline: "신뢰성 | 연결성 | 정밀성 <br> 항상 새로운 기회를 찾고 있습니다",
-        hero_about: "반둥에서 활동하는 31세 네트워크 엔지니어. 12년 경력의 데이터 센터, VMware 가상화 및 Cisco/Mikrotik 네트워크 전문가.",
+        hero_about: "구조화 케이블링, 하드웨어 진단 및 미션 크리티컬 운영 분야에서 13년의 전문성을 보유한 데이터 센터 기술자입니다. 99.9% 가동률 유지, 문제 해결 시간 30% 단축, 인프라 확장성 최적화 능력을 입증했습니다. VMware 플랫폼 및 EMC 스토리지 솔루션에 능숙하며, 24x7 환경에서 결과 중심의 기술 지원을 제공합니다. 기술을 활용해 운영 효율성을 높이는 데 열정적이며, 시스템 보드 레벨 수리 분야의 전문성 확장에 적극적입니다. 전문적·기술적 의사소통 능력 향상을 위해 영어 회화 실력을 꾸준히 향상 중입니다.",
         btn_contact: "문의하기", btn_cv: "이력서 다운로드",
         label_about: "// 자기소개", label_history: "// 경력 사항", label_skills: "// 기술 스택", label_school: "// 학력",
         footer_contact: "연락처", footer_reach: "협업이나 질문이 있으시면 언제든지 연락주세요.",
@@ -98,7 +98,7 @@ const translations = {
     DE: {
         hero_sub: "IT-Infrastruktur & RZ-Betrieb", hero_title: "Dezan Sanubari",
         hero_tagline: "Zuverlässigkeit | Konnektivität | Präzision <br> Immer auf der Suche nach neuen Möglichkeiten",
-        hero_about: "31-jähriger Netzwerkingenieur in Bandung mit 12 Jahren Erfahrung. Spezialist für Rechenzentren, VMware-Virtualisierung und Cisco/Mikrotik-Netzwerke.",
+        hero_about: "Erfahrener Rechenzentrumstechniker mit 13 Jahren Fachwissen in den Bereichen strukturierte Verkabelung, Hardware-Diagnose und unternehmenskritische Abläufe. Nachgewiesene Fähigkeit, eine Verfügbarkeit von 99,9 % aufrechtzuerhalten, die Fehlerbehebungszeiten um 30 % zu reduzieren und die Skalierbarkeit der Infrastruktur zu optimieren. Kompetent im Umgang mit VMware-Plattformen und EMC-Speicherlösungen, liefert ergebnisorientierten technischen Support in 24x7-Umgebungen. Begeistert davon, Technologien zur Steigerung der betrieblichen Effizienz einzusetzen, und bestrebt, Fachwissen im Bereich der Reparatur von Systemplatinen zu erweitern. Aktive Verbesserung der englischen Sprachkenntnisse zur Verbesserung der beruflichen und technischen Kommunikation.",
         btn_contact: "Kontakt", btn_cv: "CV herunterladen",
         label_about: "// Über mich", label_history: "// Werdegang", label_skills: "// Fähigkeiten", label_school: "// Ausbildung",
         footer_contact: "Kontakt", footer_reach: "Kontaktieren Sie mich jederzeit für Kooperationen oder Fragen.",
@@ -116,7 +116,7 @@ const translations = {
     FR: {
         hero_sub: "Infrastructures IT & Opérations Data Center", hero_title: "Dezan Sanubari",
         hero_tagline: "Fiabilité | Connectivité | Précision <br> Toujours à la recherche de nouvelles opportunités",
-        hero_about: "Ingénieur réseau de 31 ans à Bandung avec 12 ans d'expérience. Expert en Data Center, virtualisation VMware et réseaux Cisco/Mikrotik.",
+        hero_about: "Technicien expérimenté dans les centres de données, avec 13 ans d'expertise dans le câblage structuré, le diagnostic matériel et les opérations critiques. Capacité avérée à maintenir un temps de disponibilité de 99,9 %, à réduire les temps de dépannage de 30 % et à optimiser l'évolutivité de l'infrastructure. Compétent dans les plateformes VMware et les solutions de stockage EMC, fournissant un support technique axé sur les résultats dans des environnements 24h/24 et 7j/7. Passionné par l'utilisation de la technologie pour améliorer l'efficacité opérationnelle et désireux d'élargir son expertise dans la réparation des cartes mères. Améliore activement son anglais parlé afin d'améliorer sa communication professionnelle et technique.",
         btn_contact: "Contactez-moi", btn_cv: "Télécharger le CV",
         label_about: "// À propos", label_history: "// Expérience", label_skills: "// Compétences", label_school: "// Éducation",
         footer_contact: "Contact", footer_reach: "Contactez-nous à tout moment pour des collaborations ou des questions.",
@@ -134,7 +134,7 @@ const translations = {
     ES: {
         hero_sub: "Infraestructura IT y Operaciones de Data Center", hero_title: "Dezan Sanubari",
         hero_tagline: "Fiabilidad | Conectividad | Precisión <br> Siempre buscando nuevas oportunidades",
-        hero_about: "Ingeniero de redes de 31 años con 12 años de experiencia. Especialista en Centros de Datos, virtualización VMware y redes Cisco/Mikrotik.",
+        hero_about: "Técnico de centros de datos con 13 años de experiencia en cableado estructurado, diagnóstico de hardware y operaciones de misión crítica. Capacidad demostrada para mantener un tiempo de actividad del 99,9 %, reducir los tiempos de resolución de problemas en un 30 % y optimizar la escalabilidad de la infraestructura. Experto en plataformas VMware y soluciones de almacenamiento EMC, proporcionando soporte técnico orientado a resultados en entornos 24x7. Apasionado por aprovechar la tecnología para mejorar la eficiencia operativa y deseoso de ampliar sus conocimientos en la reparación de placas base. Mejora activamente su inglés hablado para mejorar la comunicación profesional y técnica.",
         btn_contact: "Contacto", btn_cv: "Descargar CV",
         label_about: "// Sobre mí", label_history: "// Experiencia", label_skills: "// Habilidades", label_school: "// Educación",
         footer_contact: "Contacto", footer_reach: "Comuníquese en cualquier momento para colaboraciones o preguntas.",
@@ -152,7 +152,7 @@ const translations = {
     PT: {
         hero_sub: "Infraestrutura de TI e Operações de Data Center", hero_title: "Dezan Sanubari",
         hero_tagline: "Confiabilidade | Conectividade | Precisão <br> Sempre buscando novas oportunidades",
-        hero_about: "Engenheiro de redes de 31 anos com 12 anos de experiência. Especialista em Data Centers, virtualização VMware e redes Cisco/Mikrotik.",
+        hero_about: "Técnico experiente em centros de dados com 13 anos de experiência em cabeamento estruturado, diagnóstico de hardware e operações de missão crítica. Capacidade comprovada de manter 99,9% de tempo de atividade, reduzir o tempo de resolução de problemas em 30% e otimizar a escalabilidade da infraestrutura. Habilitado em plataformas VMware e soluções de armazenamento EMC, fornecendo suporte técnico orientado para resultados em ambientes 24x7. Apaixonado por aproveitar a tecnologia para aumentar a eficiência operacional e ansioso por expandir a experiência em reparos em placas de sistema. Melhorando ativamente o inglês falado para aprimorar a comunicação profissional e técnica.",
         btn_contact: "Contato", btn_cv: "Baixar CV",
         label_about: "// Sobre mim", label_history: "// Experiência", label_skills: "// Competências", label_school: "// Educação",
         footer_contact: "Contato", footer_reach: "Entre em contato a qualquer momento para colaborações ou perguntas.",
@@ -170,7 +170,7 @@ const translations = {
     RU: {
         hero_sub: "IT-инфраструктура и ЦОД", hero_title: "Дезан Санубари",
         hero_tagline: "Надежность | Связность | Точность <br> Всегда в поиске новых возможностей",
-        hero_about: "31-летний сетевой инженер в Бандунге с 12-летним опытом. Специалист по ЦОД, виртуализации VMware и сетям Cisco/Mikrotik.",
+        hero_about: "Опытный техник по обслуживанию центров обработки данных с 13-летним стажем работы в области структурированных кабельных сетей, диагностики оборудования и критически важных операций. Подтвержденная способность поддерживать 99,9% времени безотказной работы, сокращать время устранения неисправностей на 30% и оптимизировать масштабируемость инфраструктуры. Имеет навыки работы с платформами VMware и решениями для хранения данных EMC, предоставляя ориентированную на результат техническую поддержку в круглосуточном режиме. Увлечен использованием технологий для повышения операционной эффективности и стремится расширить свои знания в области ремонта системных плат. Активно совершенствует устный английский язык для улучшения профессиональной и технической коммуникации.",
         btn_contact: "Связаться", btn_cv: "Скачать резюме",
         label_about: "// Обо мне", label_history: "// Опыт работы", label_skills: "// Навыки", label_school: "// Образование",
         footer_contact: "Контакт", footer_reach: "Пишите в любое время для сотрудничества или вопросов.",
@@ -188,7 +188,7 @@ const translations = {
     NL: {
         hero_sub: "IT Infrastructuur & Datacenter Operaties", hero_title: "Dezan Sanubari",
         hero_tagline: "Betrouwbaarheid | Connectiviteit | Precisie <br> Altijd op zoek naar nieuwe kansen",
-        hero_about: "31-jarige netwerkingenieur in Bandung met 12 jaar ervaring. Specialist in datacenters, VMware-virtualisatie en Cisco/Mikrotik-netwerken.",
+        hero_about: "Ervaren datacentertechnicus met 13 jaar expertise in gestructureerde bekabeling, hardwarediagnostiek en bedrijfskritische activiteiten. Bewezen vermogen om 99,9% uptime te handhaven, de tijd voor probleemoplossing met 30% te verminderen en de schaalbaarheid van de infrastructuur te optimaliseren. Bekwaam in VMware-platforms en EMC-opslagoplossingen, levert resultaatgerichte technische ondersteuning in 24x7-omgevingen. Gepassioneerd over het gebruik van technologie om de operationele efficiëntie te verbeteren en enthousiast om expertise op het gebied van reparaties op systeembordniveau uit te breiden. Actief bezig met het verbeteren van gesproken Engels om professionele en technische communicatie te verbeteren.",
         btn_contact: "Contact", btn_cv: "Download CV",
         label_about: "// Over mij", label_history: "// Werkervaring", label_skills: "// Vaardigheden", label_school: "// Opleiding",
         footer_contact: "Contact", footer_reach: "Neem op elk gewenst moment contact op voor samenwerkingen.",
@@ -206,12 +206,12 @@ const translations = {
     IT: {
         hero_sub: "Infrastruttura IT e Operazioni Data Center", hero_title: "Dezan Sanubari",
         hero_tagline: "Affidabilità | Connettività | Precisione <br> Alla ricerca di nuove opportunità",
-        hero_about: "Ingegnere di rete di 31 anni a Bandung con 12 anni di esperienza. Esperto di Data Center, virtualizzazione VMware e reti Cisco/Mikrotik.",
+        hero_about: "Tecnico esperto di data center con 13 anni di esperienza nel cablaggio strutturato, nella diagnostica hardware e nelle operazioni mission-critical. Comprovata capacità di mantenere un tempo di attività del 99,9%, ridurre i tempi di risoluzione dei problemi del 30% e ottimizzare la scalabilità dell'infrastruttura. Esperto nelle piattaforme VMware e nelle soluzioni di archiviazione EMC, fornisce un supporto tecnico orientato ai risultati in ambienti 24x7. Appassionato di tecnologia per migliorare l'efficienza operativa e desideroso di ampliare le proprie competenze nella riparazione a livello di scheda madre. Migliora attivamente il proprio inglese parlato per migliorare la comunicazione professionale e tecnica.",
         btn_contact: "Contattami", btn_cv: "Scarica CV",
         label_about: "// Su di me", label_history: "// Esperienza", label_skills: "// Competenze", label_school: "// Istruzione",
         footer_contact: "Contatto", footer_reach: "Contattaci in qualsiasi momento per collaborazioni o domande.",
         jobs: [
-            { year: "2020 - 2025", title: "Supporto Operativo IT", comp: "PT. ValueStream International", desc: "Manutenzione UPS/Genset, VMware, analisi log ISO8583/JSON." },
+            { year: "2020 - 2025", title: "Supporto Operativo IT", comp: "PT. ValueStream International", desc: "- Manutenzione dei sistemi elettrici, degli UPS e dei generatori del data center, raggiungendo un tempo di attività del 99,9% e garantendo operazioni senza interruzioni. <br/>- Riduzione del tempo di risoluzione degli incidenti del 30% grazie a flussi di lavoro proattivi per la risoluzione dei problemi e a un'efficace definizione delle priorità delle attività. <br/>- Gestione della manutenzione e del funzionamento di 10 rack di server, compresa l'installazione di 3 nuovi rack, che ha migliorato la velocità di implementazione dei server e la crescita dell'infrastruttura, e manutenzione di 2 rack di rete, garantendo prestazioni di rete affidabili. <br/>- Configurazione di server fisici e virtuali per migliorare l'affidabilità del servizio e ridurre al minimo i tempi di inattività. <br/>- Ha agito come supporto di secondo livello per la risoluzione di problemi complessi relativi a sistemi e database, contribuendo a un aumento del 20% della conformità agli SLA. <br/>- Ha collaborato con team interfunzionali, inclusi quelli di networking e conformità, per affrontare i problemi escalati, favorendo una comunicazione senza soluzione di continuità. <br/>- Ha gestito e mantenuto database per aggiornamenti critici, backup e analisi dei log delle transazioni (JSON e ISO)." },
             { year: "2016 - 2020", title: "Specialista Data Center", comp: "PT. ValueStream International", desc: "Monitoraggio DC 24/7 e raffreddamento di precisione." },
             { year: "2015 - 2016", title: "Ingegnere Wi-Fi", comp: "Koperasi Indosat", desc: "Installazione di apparati per il progetto Indosat Super Wi-Fi." },
             { year: "2012 - 2014", title: "Supporto Tecnico", comp: "PT. Persada", desc: "Implementazione reti wireless aziendali e risoluzione problemi." }
@@ -224,12 +224,12 @@ const translations = {
     AR: {
         hero_sub: "بنية تكنولوجيا المعلومات وعمليات مراكز البيانات", hero_title: "ديزان سنوباري",
         hero_tagline: "الموثوقية | الاتصال | الدقة <br> البحث دائماً عن فرص جديدة",
-        hero_about: "مهندس شبكات يبلغ من العمر 31 عاماً في باندونغ مع 12 عاماً من الخبرة. متخصص في مراكز البيانات، VMware، وشبكات Cisco/Mikrotik.",
+        hero_about: "فني مراكز بيانات ذو خبرة 13 عامًا في مجال الكابلات الهيكلية وتشخيص الأجهزة والعمليات الحيوية. قدرة مثبتة على الحفاظ على وقت تشغيل بنسبة 99.9٪ وتقليل وقت استكشاف الأخطاء وإصلاحها بنسبة 30٪ وتحسين قابلية التوسع في البنية التحتية. ماهر في منصات VMware وحلول التخزين EMC، ويقدم دعمًا فنيًا قائمًا على النتائج في بيئات تعمل على مدار الساعة طوال أيام الأسبوع. شغوف باستخدام التكنولوجيا لتعزيز الكفاءة التشغيلية وحريص على توسيع خبرته في إصلاح لوحات الأنظمة. يعمل بنشاط على تحسين لغته الإنجليزية المنطوقة لتعزيز التواصل المهني والتقني.",
         btn_contact: "اتصل بي", btn_cv: "تحميل السيرة الذاتية",
         label_about: "// نبذة عني", label_history: "// الخبرة العملية", label_skills: "// المهارات", label_school: "// التعليم",
         footer_contact: "اتصل بنا", footer_reach: "تواصل معنا في أي وقت للتعاون أو الاستفسارات.",
         jobs: [
-            { year: "2020 - 2025", title: "دعم عمليات تكنولوجيا المعلومات", comp: "PT. ValueStream", desc: "صيانة UPS/Genset، VMware، وتحليل سجلات المعاملات ISO8583." },
+            { year: "2020 - 2025", title: "دعم عمليات تكنولوجيا المعلومات", comp: "PT. ValueStream", desc: "- صيانة أنظمة الكهرباء ومصادر الطاقة غير المنقطعة والمولدات في مركز البيانات، وتحقيق وقت تشغيل بنسبة 99.9٪ وضمان استمرارية العمليات دون انقطاع. <br/>- تقليل وقت حل المشكلات بنسبة 30٪ من خلال سير عمل استباقي لحل المشكلات وتحديد أولويات المهام بشكل فعال. <br/>- إدارة صيانة وتشغيل 10 حوامل خوادم، بما في ذلك تركيب 3 حوامل جديدة، مما عزز سرعة نشر الخوادم ونمو البنية التحتية وصيانة حوامل شبكة، مما يضمن أداء شبكة موثوقًا. <br/>- تكوين الخوادم الفعلية والافتراضية لتعزيز موثوقية الخدمة وتقليل وقت التعطل. <br/>- عملت كدعم من المستوى الثاني لاستكشاف الأخطاء وإصلاحها في الأنظمة المعقدة وقواعد البيانات، مما ساهم في زيادة الامتثال لاتفاقية مستوى الخدمة بنسبة 20٪. <br/>- تعاونت مع فرق متعددة الوظائف، بما في ذلك الشبكات والامتثال، لمعالجة المشكلات المتصاعدة، وتعزيز التواصل السلس. <br/>- قمت بتشغيل وصيانة قواعد البيانات للتحديثات الهامة والنسخ الاحتياطية وتحليل سجلات المعاملات (JSON و ISO)." },
             { year: "2016 - 2020", title: "أخصائي مراكز البيانات", comp: "PT. ValueStream", desc: "مراقبة مركز البيانات على مدار الساعة وإدارة التبريد." },
             { year: "2015 - 2016", title: "مهندس دعم Wi-Fi", comp: "Koperasi Indosat", desc: "تركيب أجهزة الراديو لمشروع Indosat Super Wi-Fi." },
             { year: "2012 - 2014", title: "الدعم الفني", comp: "PT. Persada", desc: "تنفيذ الشبكات اللاسلكية للشركات واستكشاف الأخطاء." }
