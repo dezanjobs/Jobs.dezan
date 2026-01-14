@@ -275,7 +275,14 @@ nav {
 }
 
 /* --- WORK & EDUCATION ITEMS --- */
-.content-section { padding: 6rem 0; border-top: 1px solid #eee; }
+.content-section {
+	position: relative;
+    z-index: 1; /* Pastikan teks naik ke depan */
+    background: rgba(255, 255, 255, 0.9); /* Latar belakang putih transparan agar teks menonjol */
+    padding: 30px;
+    border-radius: 15px;
+    color: #1a1a1a; /* Warna teks hitam pekat */
+}
 
 .section-label { 
     color: var(--gold); 
