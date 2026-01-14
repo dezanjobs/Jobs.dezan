@@ -327,3 +327,170 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('selectedLang') || 'ID';
     changeLang(savedLang); // Panggil fungsi dengan bahasa tersimpan
 });
+/* ==========================================================
+   DEZAN PREMIUM ADDONS: WORLD-CLASS STAND OUT FEATURES
+   ========================================================== */
+
+// 1. TERMINAL INTRO: Simulasi Hardware Scan
+function startTerminalIntro() {
+    const loader = document.querySelector('.terminal-loader');
+    if (!loader) return;
+
+    const commands = [
+        ">> INITIALIZING DEZAN_OS v3.0...",
+        ">> SCANNING FOR NETWORK NODES...",
+        ">> HARDWARE: DATA CENTER INFRASTRUCTURE FOUND",
+        ">> UPTIME: 12 YEARS VERSATILE EXPERIENCE",
+        ">> STATUS: CONNECTION SECURE...",
+        ">> WELCOME TO DEZAN_SANUBARI_SYSTEM"
+    ];
+
+    let line = 0;
+    const body = loader.querySelector('.terminal-body');
+    
+    const interval = setInterval(() => {
+        if (line < commands.length) {
+            const p = document.createElement('div');
+            p.className = 'command-line';
+            p.innerText = commands[line];
+            body.appendChild(p);
+            line++;
+        } else {
+            clearInterval(interval);
+            // Sembunyikan loader dengan GSAP agar halus
+            gsap.to(loader, {
+                opacity: 0,
+                duration: 1,
+                delay: 1,
+                onComplete: () => {
+                    loader.style.display = 'none';
+                    document.body.classList.remove('loading');
+                }
+            });
+        }
+    }, 400);
+}
+
+// 2. THREE.JS: 3D Network Topology Background
+function init3DNetwork() {
+    const canvasContainer = document.getElementById('canvas-container');
+    if (!canvasContainer) return;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    canvasContainer.appendChild(renderer.domElement);
+
+    // Titik-titik Jaringan (Nodes)
+    const geometry = new THREE.SphereGeometry(0.1, 12, 12);
+    const material = new THREE.MeshBasicMaterial({ color: 0xfdb201 }); // Warna Amber Logo
+    const nodes = new THREE.Group();
+
+    for (let i = 0; i < 80; i++) {
+        const mesh = new THREE.Mesh(geometry, material);
+        mesh.position.set(
+            (Math.random() - 0.5) * 20,
+            (Math.random() - 0.5) * 20,
+            (Math.random() - 0.5) * 20
+        );
+        nodes.add(mesh);
+    }
+    scene.add(nodes);
+    camera.position.z = 10;
+
+    // Interaksi Mouse
+    let mouseX = 0, mouseY = 0;
+    window.addEventListener('mousemove', (e) => {
+        mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+        mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+    });
+
+    function animate() {
+        requestAnimationFrame(animate);
+        nodes.rotation.y += 0.002;
+        nodes.rotation.x += 0.001;
+        
+        // Gerakan halus mengikuti kursor
+        gsap.to(nodes.rotation, {
+            x: mouseY * 0.5,
+            y: mouseX * 0.5,
+            duration: 2
+        });
+        
+        renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+}
+
+// 3. GSAP: Magnetic Buttons & Scroll Triggered Elements
+function initInteractions() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Efek Magnetik pada Tombol
+    const btns = document.querySelectorAll('.btn');
+    btns.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            gsap.to(btn, { x: x * 0.3, y: y * 0.3, duration: 0.3 });
+        });
+        btn.addEventListener('mouseleave', () => {
+            gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: "elastic.out(1, 0.3)" });
+        });
+    });
+
+    // Custom Cursor (Titik Laser)
+    const cursor = document.createElement('div');
+    cursor.className = 'custom-cursor';
+    document.body.appendChild(cursor);
+
+    window.addEventListener('mousemove', (e) => {
+        gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
+    });
+
+    // Sound Design (Klik Mekanik)
+    const clickSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3');
+    clickSound.volume = 0.2;
+    document.addEventListener('click', () => {
+        clickSound.currentTime = 0;
+        clickSound.play().catch(() => {}); // Play hanya jika interaksi user sudah ada
+    });
+}
+
+// 4. Inisialisasi Seluruh Fitur Tambahan
+window.addEventListener('load', () => {
+    startTerminalIntro();
+    init3DNetwork();
+    initInteractions();
+});
+
+// Real-time Status Board
+const statusList = [
+    "STATUS: ANALYZING INFRASTRUCTURE",
+    "STATUS: OPTIMIZING VMWARE CLUSTER",
+    "STATUS: DEZAN IS LEARNING NEW TECH",
+    "STATUS: ALL SYSTEMS OPERATIONAL"
+];
+let statusIdx = 0;
+setInterval(() => {
+    const statusEl = document.querySelector('.status-blink');
+    if(statusEl && statusEl.parentElement) {
+        statusIdx = (statusIdx + 1) % statusList.length;
+        // Opsional: ganti teks di samping dot blink jika ada elemennya
+    }
+}, 5000);
+// Tambahkan ini di akhir sekali
+window.addEventListener('load', () => {
+    startTerminalIntro();
+    init3DNetwork();
+    initInteractions();
+});
