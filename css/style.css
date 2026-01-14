@@ -541,9 +541,8 @@ body[style*="direction: rtl"] .dropdown-content {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Di bawah konten asli agar tidak menutupi teks */
-    pointer-events: none;
-    opacity: 0.3; /* Samar agar konten utama tetap terbaca jelas */
+    z-index: -1; /* Pastikan di belakang semua elemen */
+    pointer-events: none; /* Tambahkan ini agar klik tembus ke tombol */
 }
 
 /* 3. KURSOR LASER (Custom Cursor) */
@@ -554,7 +553,7 @@ body[style*="direction: rtl"] .dropdown-content {
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
-    z-index: 10001;
+    z-index: 99999;
     box-shadow: 0 0 15px var(--amber), 0 0 30px var(--amber);
     transform: translate(-50%, -50%);
     display: none;
