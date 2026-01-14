@@ -488,9 +488,3 @@ setInterval(() => {
         // Opsional: ganti teks di samping dot blink jika ada elemennya
     }
 }, 5000);
-// Tambahkan ini di akhir sekali
-window.addEventListener('load', () => {
-    startTerminalIntro();
-    init3DNetwork();
-    initInteractions();
-});
