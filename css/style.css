@@ -609,43 +609,34 @@ body[style*="direction: rtl"] .terminal-body {
     border-left: none;
     border-right: 2px solid var(--amber);
     text-align: right;
-}/* 1. Kondisi STANDAR: Loader harus muncul dulu */
+}
+/* 1. Kondisi Awal: Loader menutupi layar */
 .terminal-loader {
     position: fixed;
     inset: 0;
     background: #000000;
-    z-index: 10000;
-    display: flex; /* Biarkan flex tanpa !important dulu */
-    align-items: center;
-    justify-content: center;
+    z-index: 10000; /* Sangat tinggi agar menutupi segalanya */
+    display: flex;
     opacity: 1;
-    pointer-events: auto;
+    pointer-events: auto; /* Agar animasi di dalam loader bisa berinteraksi jika perlu */
 }
 
-/* 2. Kondisi KHUSUS: Hanya aktif saat dipicu JavaScript di akhir animasi */
+/* 2. Kondisi Selesai: Loader dibuang ke belakang dan dihilangkan */
 .terminal-loader.hidden-final {
     display: none !important;
     pointer-events: none !important;
-    visibility: hidden !important;
-    z-index: -100 !important; /* Buang ke paling belakang */
+    z-index: -100 !important; /* Pindah ke paling belakang */
 }
 
-/* 3. Lapisan Navigasi (Harus Selalu Siap di Depan) */
+/* 3. Navigasi: Harus berada di depan Canvas 3D */
 header, .navbar, .nav-container {
-    position: fixed; /* Gunakan fixed jika menu ikut saat di-scroll */
-    top: 0;
-    width: 100%;
-    z-index: 10005; 
-}
-
-.dropdown, .lang-current {
     position: relative;
-    z-index: 10006;
-    cursor: pointer !important;
+    z-index: 9999; /* Di bawah loader (saat awal), tapi di atas background 3D */
 }
 
-/* 4. Pastikan Background 3D tidak menghalangi klik */
+/* 4. Background 3D: Harus 'tembus' klik */
 #canvas-container {
-    pointer-events: none !important;
-    z-index: -1 !important;
+    position: fixed;
+    z-index: -1;
+    pointer-events: none !important; /* WAJIB: Agar klik menembus ke tombol menu */
 }
