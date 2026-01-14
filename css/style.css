@@ -610,3 +610,13 @@ body[style*="direction: rtl"] .terminal-body {
     border-right: 2px solid var(--amber);
     text-align: right;
 }
+header, .navbar, .nav-container {
+    position: relative; /* atau fixed/sticky tergantung desain Anda */
+    z-index: 10005;      /* Pastikan angka ini besar */
+}
+
+.dropdown, .lang-current {
+    position: relative;
+    z-index: 10006;     /* Harus lebih tinggi dari background */
+    cursor: pointer !important;
+}
