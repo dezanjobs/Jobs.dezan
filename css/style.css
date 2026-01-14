@@ -609,25 +609,43 @@ body[style*="direction: rtl"] .terminal-body {
     border-left: none;
     border-right: 2px solid var(--amber);
     text-align: right;
+}/* 1. Kondisi STANDAR: Loader harus muncul dulu */
+.terminal-loader {
+    position: fixed;
+    inset: 0;
+    background: #000000;
+    z-index: 10000;
+    display: flex; /* Biarkan flex tanpa !important dulu */
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    pointer-events: auto;
 }
+
+/* 2. Kondisi KHUSUS: Hanya aktif saat dipicu JavaScript di akhir animasi */
+.terminal-loader.hidden-final {
+    display: none !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+    z-index: -100 !important; /* Buang ke paling belakang */
+}
+
+/* 3. Lapisan Navigasi (Harus Selalu Siap di Depan) */
 header, .navbar, .nav-container {
-    position: relative; /* atau fixed/sticky tergantung desain Anda */
-    z-index: 10005;      /* Pastikan angka ini besar */
+    position: fixed; /* Gunakan fixed jika menu ikut saat di-scroll */
+    top: 0;
+    width: 100%;
+    z-index: 10005; 
 }
 
 .dropdown, .lang-current {
     position: relative;
-    z-index: 10006;     /* Harus lebih tinggi dari background */
+    z-index: 10006;
     cursor: pointer !important;
 }
-/* Memaksa background 3D berada di paling belakang dan tidak bisa disentuh */
+
+/* 4. Pastikan Background 3D tidak menghalangi klik */
 #canvas-container {
     pointer-events: none !important;
     z-index: -1 !important;
-}
-
-/* Memaksa Header & Dropdown berada di paling depan */
-header, .navbar, .lang-menu-container {
-    z-index: 99999 !important;
-    pointer-events: auto !important;
 }
