@@ -264,7 +264,6 @@ nav {
     box-shadow: 20px 20px 0px var(--amber);
     will-change: transform, filter;
 }
-}
 
 .about-text p {
     font-size: 1.2rem;
@@ -606,4 +605,36 @@ body[style*="direction: rtl"] .terminal-body {
     border-left: none;
     border-right: 2px solid var(--amber);
     text-align: right;
+}
+/* --- PREMIUM ADDONS (TERMINAL & 3D) --- */
+.terminal-loader {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #000;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0f0;
+}
+
+#canvas-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0; /* Di belakang konten */
+    pointer-events: none;
+}
+
+.status-board {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.8);
+    padding: 10px 20px;
+    border: 1px solid var(--amber);
+    color: var(--amber);
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.7rem;
+    z-index: 100;
 }
