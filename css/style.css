@@ -640,3 +640,23 @@ header, .navbar, .nav-container {
     z-index: -1;
     pointer-events: none !important; /* WAJIB: Agar klik menembus ke tombol menu */
 }
+/* Pelakunya ditemukan: Matikan interaksi glass-nav agar tidak menghalangi menu utama */
+.glass-nav {
+    display: none !important; /* Jika Anda tidak butuh navbar melayang ini */
+    
+    /* ATAU gunakan ini jika ingin tetap tampil tapi tidak menghalangi klik: */
+    /* pointer-events: none !important; */
+    /* z-index: -100 !important; */
+}
+
+/* Pastikan navigasi asli yang ada di dalam container hero bisa diklik */
+header .container {
+    position: relative;
+    z-index: 10007 !important;
+    pointer-events: auto !important;
+}
+
+.nav-links a {
+    cursor: pointer !important;
+    pointer-events: auto !important;
+}
