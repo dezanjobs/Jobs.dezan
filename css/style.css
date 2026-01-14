@@ -502,11 +502,16 @@ body[style*="direction: rtl"] .about-grid {
 body[style*="direction: rtl"] .dropdown-content {
     right: auto;
     left: 0;
-}
+}/* ==========================================================
+   BARIS 504+: UPGRADE PREMIUM (STAND OUT ELEMENTS)
+   Bersih, Tanpa Duplikasi, & Siap Pakai
+   ========================================================== */
+
+/* 1. LAYAR HITAM INTRO (Terminal-Style) */
 .terminal-loader {
     position: fixed;
     inset: 0;
-    background: #000000; /* Hitam pekat hanya untuk intro */
+    background: #000000; 
     z-index: 10000;
     display: flex;
     align-items: center;
@@ -536,9 +541,9 @@ body[style*="direction: rtl"] .dropdown-content {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Di bawah konten asli */
+    z-index: -1; /* Di bawah konten asli agar tidak menutupi teks */
     pointer-events: none;
-    opacity: 0.3; /* Samar agar warna asli web Anda tetap terlihat */
+    opacity: 0.3; /* Samar agar konten utama tetap terbaca jelas */
 }
 
 /* 3. KURSOR LASER (Custom Cursor) */
@@ -571,7 +576,7 @@ body[style*="direction: rtl"] .dropdown-content {
     box-shadow: 0 0 10px var(--amber);
 }
 
-/* 5. EFEK GLITCH PADA LOGO (Saat Hover) */
+/* 5. EFEK GLITCH PADA LOGO */
 .logo:hover img {
     animation: glitch 0.3s cubic-bezier(.25,.46,.45,.94) both infinite;
 }
@@ -585,7 +590,7 @@ body[style*="direction: rtl"] .dropdown-content {
     100% { transform: translate(0); }
 }
 
-/* 6. STATUS BOARD DI POJOK (Real-time Status) */
+/* 6. STATUS BOARD DI POJOK */
 .status-board {
     position: fixed;
     bottom: 20px;
@@ -600,41 +605,9 @@ body[style*="direction: rtl"] .dropdown-content {
     backdrop-filter: blur(5px);
 }
 
-/* Penyesuaian RTL untuk Intro */
+/* Penyesuaian RTL untuk Intro jika user pilih Arab */
 body[style*="direction: rtl"] .terminal-body {
     border-left: none;
     border-right: 2px solid var(--amber);
     text-align: right;
-}
-/* --- PREMIUM ADDONS (TERMINAL & 3D) --- */
-.terminal-loader {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: #000;
-    z-index: 10000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #0f0;
-}
-
-#canvas-container {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: 0; /* Di belakang konten */
-    pointer-events: none;
-}
-
-.status-board {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: rgba(0,0,0,0.8);
-    padding: 10px 20px;
-    border: 1px solid var(--amber);
-    color: var(--amber);
-    font-family: 'Roboto Mono', monospace;
-    font-size: 0.7rem;
-    z-index: 100;
 }
