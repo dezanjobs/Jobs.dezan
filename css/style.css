@@ -620,3 +620,14 @@ header, .navbar, .nav-container {
     z-index: 10006;     /* Harus lebih tinggi dari background */
     cursor: pointer !important;
 }
+/* Memaksa background 3D berada di paling belakang dan tidak bisa disentuh */
+#canvas-container {
+    pointer-events: none !important;
+    z-index: -1 !important;
+}
+
+/* Memaksa Header & Dropdown berada di paling depan */
+header, .navbar, .lang-menu-container {
+    z-index: 99999 !important;
+    pointer-events: auto !important;
+}
