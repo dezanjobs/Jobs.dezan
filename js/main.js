@@ -360,11 +360,13 @@ function startTerminalIntro() {
             // Sembunyikan loader dengan GSAP agar halus
             gsap.to(loader, {
                 opacity: 0,
-                duration: 1,
+                duration: 0.5,
                 delay: 1,
                 onComplete: () => {
                     loader.style.display = 'none';
+					loader.style.pointerEvents = 'none';
                     document.body.classList.remove('loading');
+					console.log("Terminal Loader Berhasil Dimatikan");
                 }
             });
         }
@@ -458,7 +460,7 @@ function initInteractions() {
     });
 
     // Sound Design (Klik Mekanik)
-    const clickSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3');
+    const clickSound = new Audio('assets/mixkit-old-camera-shutter-click-1137.wav');
     clickSound.volume = 0.2;
     document.addEventListener('click', () => {
         clickSound.currentTime = 0;
