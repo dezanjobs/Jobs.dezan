@@ -504,3 +504,106 @@ body[style*="direction: rtl"] .dropdown-content {
     right: auto;
     left: 0;
 }
+.terminal-loader {
+    position: fixed;
+    inset: 0;
+    background: #000000; /* Hitam pekat hanya untuk intro */
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.8s ease;
+}
+
+.terminal-body {
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    border-left: 2px solid var(--amber); /* Menggunakan Amber asli Anda */
+}
+
+.command-line {
+    font-family: 'Roboto Mono', monospace;
+    color: var(--amber);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+
+/* 2. BACKGROUND 3D (Network Topology) */
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Di bawah konten asli */
+    pointer-events: none;
+    opacity: 0.3; /* Samar agar warna asli web Anda tetap terlihat */
+}
+
+/* 3. KURSOR LASER (Custom Cursor) */
+.custom-cursor {
+    width: 10px;
+    height: 10px;
+    background: var(--amber);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 10001;
+    box-shadow: 0 0 15px var(--amber), 0 0 30px var(--amber);
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .custom-cursor { display: block; }
+}
+
+/* 4. PROGRESS BAR KABEL (Top of Page) */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--amber);
+    z-index: 10002;
+    box-shadow: 0 0 10px var(--amber);
+}
+
+/* 5. EFEK GLITCH PADA LOGO (Saat Hover) */
+.logo:hover img {
+    animation: glitch 0.3s cubic-bezier(.25,.46,.45,.94) both infinite;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+/* 6. STATUS BOARD DI POJOK (Real-time Status) */
+.status-board {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(13, 13, 13, 0.8);
+    border: 1px solid var(--amber);
+    padding: 10px 15px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--amber);
+    z-index: 999;
+    backdrop-filter: blur(5px);
+}
+
+/* Penyesuaian RTL untuk Intro */
+body[style*="direction: rtl"] .terminal-body {
+    border-left: none;
+    border-right: 2px solid var(--amber);
+    text-align: right;
+}
