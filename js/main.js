@@ -363,10 +363,15 @@ function startTerminalIntro() {
                 duration: 0.8,
                 delay: 0.5,
                 onComplete: () => {
+					// 1. Tambahkan class untuk memicu CSS 'display: none'
 					loader.classList.add('hidden-final');
-                    loader.style.display = 'none';
+					// 2. Pastikan style inline juga menghilang
+					loader.style.display = 'none';
 					loader.style.pointerEvents = 'none';
-                    document.body.classList.remove('loading');
+    
+					// 3. Hapus class loading dari body
+					document.body.classList.remove('loading');
+    
 					console.log("Terminal Loader Berhasil Dimatikan");
                 }
             });
