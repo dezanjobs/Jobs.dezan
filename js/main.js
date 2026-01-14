@@ -360,9 +360,10 @@ function startTerminalIntro() {
             // Sembunyikan loader dengan GSAP agar halus
             gsap.to(loader, {
                 opacity: 0,
-                duration: 0.5,
-                delay: 1,
+                duration: 0.8,
+                delay: 0.5,
                 onComplete: () => {
+					loader.classList.add('hidden-final');
                     loader.style.display = 'none';
 					loader.style.pointerEvents = 'none';
                     document.body.classList.remove('loading');
