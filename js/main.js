@@ -514,44 +514,6 @@ const skillData = [
             "Infrastructure Management"
         ]
     },
-    {
-        category: "Infrastructure & Virtualization",
-        skills: [
-            "VMware",
-            "VMware ESXi",
-            "VMware vSphere",
-            "VMware vCenter",
-            "VMware Workstation",
-            "Virtualization",
-            "Server Administration",
-            "Dell PowerEdge Servers",
-            "Supermicro Servers",
-            "HPE ProLiant / HPE Enterprise Solutions",
-            "NetApp Storage",
-            "EMC Storage Products"
-        ]
-    },
-    {
-        category: "Networking & Security",
-        skills: [
-            "Network Engineering",
-            "Networking",
-            "Cisco Routers",
-            "MikroTik",
-            "Routing & Switching",
-            "Internet Protocol Suite (TCP/IP)",
-            "Wireless Infrastructure",
-            "Aruba Wireless",
-            "Ruckus Wireless",
-            "BelAir Networks",
-            "Wi-Fi",
-            "VPN (Pritunl)",
-            "Cloudflare",
-            "IP Management",
-            "Teleport Access"
-        ]
-    },
-    {
         category: "Monitoring & Analytics",
         skills: [
             "Zabbix",
@@ -614,7 +576,6 @@ const skillData = [
             "Communication"
         ]
     }
-]
 ];
 // 2. Fungsi untuk Menampilkan ke HTML
 function renderCategorizedSkills() {
