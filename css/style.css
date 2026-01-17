@@ -667,3 +667,49 @@ header .container {
     cursor: pointer !important;
     pointer-events: auto !important;
 }
+/* Layout Grid untuk Skill */
+#skill-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Otomatis jadi 2 kolom di layar besar */
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* Kotak Kategori (Card) */
+.skills-group {
+    background: #ffffff; /* Putih solid agar tulisan tajam */
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 5px solid #d4af37; /* Aksen Kuning Emas */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.skills-group:hover {
+    transform: translateY(-5px);
+}
+
+.skills-group h4 {
+    color: #000;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Wadah Badge Skill */
+.skill-badges-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-badge {
+    background: #f8f9fa;
+    color: #444;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-family: 'Roboto Mono', monospace;
+    border: 1px solid #e0e0e0;
+}
