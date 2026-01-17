@@ -680,14 +680,13 @@ header .container {
 
 /* 2. Styling Card Kategori agar Teks Tajam */
 .skills-group {
-    background: #ffffff !important; /* Putih solid agar partikel kuning tidak menembus */
+    background: #ffffff !important; /* Putih solid */
     padding: 25px;
     border-radius: 12px;
-    border-left: 5px solid #d4af37; /* Aksen Kuning Emas */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-    margin-bottom: 10px;
+    border-left: 5px solid #d4af37;
+    margin-bottom: 20px;
     position: relative;
-    z-index: 10;
+    z-index: 10; /* Berada di atas partikel kuning */
 }
 
 /* 3. Styling Judul Kategori */
