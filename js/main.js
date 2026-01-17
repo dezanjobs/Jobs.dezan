@@ -496,98 +496,67 @@ setInterval(() => {
         // Opsional: ganti teks di samping dot blink jika ada elemennya
     }
 }, 5000);
-// 1. Definisikan Data Skill Anda
+// 1. Definisikan Data Skill Anda (Struktur yang benar)
 const skillData = [
-    [
     {
         category: "Data Center Operations",
         skills: [
-            "Data Center Operations",
-            "Data Center Specialist",
-            "UPS & Generator Operation",
-            "Standby Operations",
-            "Precision Cooling (CRAC)",
-            "Racking & Stacking",
-            "Structured Cabling",
-            "Environmental Monitoring (Environmux)",
-            "DCIM & OpenDCIM",
+            "Data Center Operations", "Data Center Specialist", "UPS & Generator Operation",
+            "Standby Operations", "Precision Cooling (CRAC)", "Racking & Stacking",
+            "Structured Cabling", "Environmental Monitoring (Environmux)", "DCIM & OpenDCIM",
             "Infrastructure Management"
         ]
     },
+    {
         category: "Monitoring & Analytics",
         skills: [
-            "Zabbix",
-            "Nagios Core",
-            "Icinga",
-            "Grafana",
-            "ManageEngine Applications Manager",
-            "Network Performance Monitoring",
-            "Log Analysis",
-            "ISO 8583 Protocol",
-            "JSON Data Handling"
+            "Zabbix", "Nagios Core", "Icinga", "Grafana",
+            "ManageEngine Applications Manager", "Network Performance Monitoring",
+            "Log Analysis", "ISO 8583 Protocol", "JSON Data Handling"
         ]
     },
     {
         category: "Operating Systems",
-        skills: [
-            "Linux",
-            "Ubuntu",
-            "CentOS",
-            "Oracle Enterprise Linux"
-        ]
+        skills: ["Linux", "Ubuntu", "CentOS", "Oracle Enterprise Linux"]
     },
     {
         category: "Database & Transaction Systems",
         skills: [
-            "Oracle Database Administration",
-            "MySQL",
-            "Navicat",
-            "Transaction Monitoring",
-            "Reconciliation Support"
+            "Oracle Database Administration", "MySQL", "Navicat",
+            "Transaction Monitoring", "Reconciliation Support"
         ]
     },
     {
         category: "Hardware & Field Operations",
         skills: [
-            "Server Hardware Diagnostics",
-            "Generator Operation",
-            "Radio Installation",
-            "Field Installation",
-            "Cabling"
+            "Server Hardware Diagnostics", "Generator Operation",
+            "Radio Installation", "Field Installation", "Cabling"
         ]
     },
     {
         category: "Tools & Collaboration",
         skills: [
-            "Redmine",
-            "Trello",
-            "Alfresco Software",
-            "Bitwarden",
-            "System Support",
-            "Technical Support",
-            "IT Asset Management"
+            "Redmine", "Trello", "Alfresco Software", "Bitwarden",
+            "System Support", "Technical Support", "IT Asset Management"
         ]
     },
     {
         category: "Professional Skills",
-        skills: [
-            "Critical Thinking",
-            "Problem Solving",
-            "Communication"
-        ]
+        skills: ["Critical Thinking", "Problem Solving", "Communication"]
     }
 ];
+
 // 2. Fungsi untuk Menampilkan ke HTML
 function renderCategorizedSkills() {
     const skillContainer = document.getElementById('skill-content');
-    if (!skillContainer) {
-        console.error("Elemen skill-content tidak ditemukan!");
-        return;
-    }
+    if (!skillContainer) return;
 
-    skillContainer.innerHTML = ''; // Bersihkan loading/konten lama
+    skillContainer.innerHTML = ''; 
 
     skillData.forEach(item => {
+        // --- BARIS PENGAMAN AGAR TIDAK ERROR MAP ---
+        if (!item || !item.skills) return; 
+
         const groupDiv = document.createElement('div');
         groupDiv.className = 'skills-group';
         
@@ -599,9 +568,8 @@ function renderCategorizedSkills() {
         `;
         skillContainer.appendChild(groupDiv);
     });
-    console.log("Kategori skill berhasil dimuat.");
+    console.log("Kategori skill berhasil dimuat 🚀");
 }
 
-// 3. PANGGIL FUNGSI INI
-// Taruh di sini agar langsung jalan saat file dimuat
+// 3. JALANKAN FUNGSI
 renderCategorizedSkills();
