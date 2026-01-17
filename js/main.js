@@ -8,7 +8,7 @@ const translations = {
         btn_contact: "Hubungi Saya", btn_cv: "Unduh CV", 
         label_about: "// tentang_saya", label_history: "// riwayat_kerja", label_skills: "// keahlian_teknis", label_school: "// pendidikan",
         footer_contact: "Kontak", footer_reach: "Hubungi kapan saja untuk kolaborasi atau pertanyaan.",
-        skills: ["VMware", "Linux", "Mikrotik", "Cisco", "ISO8583", "JSON", "UPS/Genset", "Zabbix", "EMC Storage"],
+        skills: ["ISO 8583","Navicat","Standby Operations","Cloudflare","MySQL","Critical Thinking","System Support","Linux","Oracle Enterprise Linux","Dell PowerEdge Servers","DCIM","Communication","HPE (HP Enterprise Solutions)","Alfresco Software","VMware ESXi","Servers","Generator Operation","IP Management","Networking","VMware","Problem Solving","Grafana","Ubuntu","Virtualization","Zabbix","Network Engineering","Redmine","Data Center Operations","VMware Workstation","VMware vSphere","JSON","Pritunl","Environmux","NetApp Storage","Structured Cabling","OpenDCIM","Teleport","Icinga","Supermicro Servers","MikroTik","VMware vCenter","ManageEngine Applications Manager","Routers","Cisco Routers","Technical Support","CentOS","EMC Storage Products","Bitwarden","Oracle Database Administration","Infrastructure Management","Network Performance Monitoring","Nagios Core","Trello","Ruckus Wireless","Aruba Wireless","BelAir Networks","Radio Installation","IT Asset Management","Field Installation","Internet Protocol Suite (TCP/IP)","Wi-Fi"],
         school: [
             { year: "2014 - 2017", name: "STMIK Indonesia Mandiri Bandung", major: "S1 Teknik Informatika" },
             { year: "2009 - 2012", name: "SMK Angkasa 1 Margahayu", major: "Teknik Komputer dan Jaringan" }
@@ -496,3 +496,145 @@ setInterval(() => {
         // Opsional: ganti teks di samping dot blink jika ada elemennya
     }
 }, 5000);
+// 1. Definisikan Data Skill Anda
+const skillData = [
+    [
+    {
+        category: "Data Center Operations",
+        skills: [
+            "Data Center Operations",
+            "Data Center Specialist",
+            "UPS & Generator Operation",
+            "Standby Operations",
+            "Precision Cooling (CRAC)",
+            "Racking & Stacking",
+            "Structured Cabling",
+            "Environmental Monitoring (Environmux)",
+            "DCIM & OpenDCIM",
+            "Infrastructure Management"
+        ]
+    },
+    {
+        category: "Infrastructure & Virtualization",
+        skills: [
+            "VMware",
+            "VMware ESXi",
+            "VMware vSphere",
+            "VMware vCenter",
+            "VMware Workstation",
+            "Virtualization",
+            "Server Administration",
+            "Dell PowerEdge Servers",
+            "Supermicro Servers",
+            "HPE ProLiant / HPE Enterprise Solutions",
+            "NetApp Storage",
+            "EMC Storage Products"
+        ]
+    },
+    {
+        category: "Networking & Security",
+        skills: [
+            "Network Engineering",
+            "Networking",
+            "Cisco Routers",
+            "MikroTik",
+            "Routing & Switching",
+            "Internet Protocol Suite (TCP/IP)",
+            "Wireless Infrastructure",
+            "Aruba Wireless",
+            "Ruckus Wireless",
+            "BelAir Networks",
+            "Wi-Fi",
+            "VPN (Pritunl)",
+            "Cloudflare",
+            "IP Management",
+            "Teleport Access"
+        ]
+    },
+    {
+        category: "Monitoring & Analytics",
+        skills: [
+            "Zabbix",
+            "Nagios Core",
+            "Icinga",
+            "Grafana",
+            "ManageEngine Applications Manager",
+            "Network Performance Monitoring",
+            "Log Analysis",
+            "ISO 8583 Protocol",
+            "JSON Data Handling"
+        ]
+    },
+    {
+        category: "Operating Systems",
+        skills: [
+            "Linux",
+            "Ubuntu",
+            "CentOS",
+            "Oracle Enterprise Linux"
+        ]
+    },
+    {
+        category: "Database & Transaction Systems",
+        skills: [
+            "Oracle Database Administration",
+            "MySQL",
+            "Navicat",
+            "Transaction Monitoring",
+            "Reconciliation Support"
+        ]
+    },
+    {
+        category: "Hardware & Field Operations",
+        skills: [
+            "Server Hardware Diagnostics",
+            "Generator Operation",
+            "Radio Installation",
+            "Field Installation",
+            "Cabling"
+        ]
+    },
+    {
+        category: "Tools & Collaboration",
+        skills: [
+            "Redmine",
+            "Trello",
+            "Alfresco Software",
+            "Bitwarden",
+            "System Support",
+            "Technical Support",
+            "IT Asset Management"
+        ]
+    },
+    {
+        category: "Professional Skills",
+        skills: [
+            "Critical Thinking",
+            "Problem Solving",
+            "Communication"
+        ]
+    }
+]
+    // Tambahkan kategori lain sesuai kebutuhan
+];
+
+// 2. Fungsi untuk Menampilkan ke HTML
+function renderCategorizedSkills() {
+    const skillContainer = document.getElementById('skill-content');
+    if (!skillContainer) return;
+
+    skillContainer.innerHTML = ''; // Kosongkan dulu
+
+    skillData.forEach(item => {
+        const groupDiv = document.createElement('div');
+        groupDiv.className = 'skills-group'; // Class ini kita beri style di CSS
+        
+        groupDiv.innerHTML = `
+            <h4 class="mono">// ${item.category}</h4>
+            <div class="skill-badges-container">
+                ${item.skills.map(s => `<span class="skill-badge">${s}</span>`).join('')}
+            </div>
+        `;
+        skillContainer.appendChild(groupDiv);
+    });
+}
