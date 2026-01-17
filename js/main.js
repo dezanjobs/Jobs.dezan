@@ -615,19 +615,20 @@ const skillData = [
         ]
     }
 ]
-    // Tambahkan kategori lain sesuai kebutuhan
-];
 
 // 2. Fungsi untuk Menampilkan ke HTML
 function renderCategorizedSkills() {
     const skillContainer = document.getElementById('skill-content');
-    if (!skillContainer) return;
+    if (!skillContainer) {
+        console.error("Elemen skill-content tidak ditemukan!");
+        return;
+    }
 
-    skillContainer.innerHTML = ''; // Kosongkan dulu
+    skillContainer.innerHTML = ''; // Bersihkan loading/konten lama
 
     skillData.forEach(item => {
         const groupDiv = document.createElement('div');
-        groupDiv.className = 'skills-group'; // Class ini kita beri style di CSS
+        groupDiv.className = 'skills-group';
         
         groupDiv.innerHTML = `
             <h4 class="mono">// ${item.category}</h4>
@@ -637,4 +638,9 @@ function renderCategorizedSkills() {
         `;
         skillContainer.appendChild(groupDiv);
     });
+    console.log("Kategori skill berhasil dimuat.");
 }
+
+// 3. PANGGIL FUNGSI INI
+// Taruh di sini agar langsung jalan saat file dimuat
+renderCategorizedSkills();
