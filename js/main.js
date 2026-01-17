@@ -496,7 +496,7 @@ setInterval(() => {
         // Opsional: ganti teks di samping dot blink jika ada elemennya
     }
 }, 5000);
-// 1. Definisikan Data Skill Anda (Struktur yang benar)
+// 1. Definisikan Data Skill Anda (Struktur yang sudah diperbaiki)
 const skillData = [
     {
         category: "Data Center Operations",
@@ -546,7 +546,7 @@ const skillData = [
     }
 ];
 
-// 2. Fungsi untuk Menampilkan ke HTML
+// 2. Fungsi untuk Menampilkan ke HTML (Dengan Pengaman Anti-Error)
 function renderCategorizedSkills() {
     const skillContainer = document.getElementById('skill-content');
     if (!skillContainer) return;
@@ -554,8 +554,8 @@ function renderCategorizedSkills() {
     skillContainer.innerHTML = ''; 
 
     skillData.forEach(item => {
-        // --- BARIS PENGAMAN AGAR TIDAK ERROR MAP ---
-        if (!item || !item.skills) return; 
+        // Pagar pengaman: Jika data kategori rusak/kosong, jangan error, langsung lewati saja.
+        if (!item || !item.skills) return;
 
         const groupDiv = document.createElement('div');
         groupDiv.className = 'skills-group';
