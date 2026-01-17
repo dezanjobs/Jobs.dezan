@@ -615,7 +615,7 @@ const skillData = [
         ]
     }
 ]
-
+]
 // 2. Fungsi untuk Menampilkan ke HTML
 function renderCategorizedSkills() {
     const skillContainer = document.getElementById('skill-content');
