@@ -319,9 +319,10 @@ nav {
 
 /* --- SKILLS TAGS --- */
 #skill-content { 
-    display: flex; 
-    flex-wrap: wrap; 
-    gap: 12px; 
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 20px !important;
+    width: 100%; 
 }
 
 .skill-tag {
@@ -705,16 +706,18 @@ header .container {
     flex-wrap: wrap;
     gap: 10px;
 }
-
+.content-section p, 
+.content-section li,
 .skill-badge {
     background: #f8f9fa !important;
-    color: #333333 !important;
+    color: #1a1a1a !important;
     padding: 6px 14px;
     border-radius: 6px;
     font-size: 0.85rem;
     border: 1px solid #e0e0e0;
     font-family: 'Roboto Mono', monospace;
     transition: all 0.3s ease;
+	opacity: 1 !important;
 }
 
 .skill-badge:hover {
