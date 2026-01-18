@@ -522,9 +522,11 @@ setInterval(() => {
         // Opsional: ganti teks di samping dot blink jika ada elemennya
     }
 }, 5000);
-
 function setLanguage(lang) {
-    // 1. Update teks statis
+    // A. Matikan animasi & transisi sementara agar tidak lag saat pindah RTL/LTR
+    document.body.style.transition = 'none'; 
+    
+    // B. Update teks statis berdasarkan data-i18n
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
@@ -532,12 +534,20 @@ function setLanguage(lang) {
         }
     });
 
-    // 2. Update Arah Teks (Penting untuk Arab)
-    document.documentElement.dir = (lang === 'AR') ? 'rtl' : 'ltr';
+    // C. Update Arah Teks & Atribut Bahasa
+    const isRTL = (lang === 'AR');
+    document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
     document.documentElement.lang = lang.toLowerCase();
 
-    // 3. Jalankan ulang fungsi render skill (agar data kategori di-refresh)
+    // D. Jalankan ulang fungsi render skill (agar kategori di-refresh)
     if (typeof renderCategorizedSkills === "function") {
         renderCategorizedSkills(); 
     }
+
+    // E. Kembalikan transisi setelah 100ms
+    setTimeout(() => {
+        document.body.style.transition = '';
+    }, 100);
+
+    console.log(`Language switched to: ${lang}`);
 }
