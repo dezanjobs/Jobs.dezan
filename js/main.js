@@ -59,7 +59,7 @@ const translations = {
 			{ year: "2012年10月1日 - 2014年12月31日", title: "技術支援", comp: "PT. Persada", desc: "為企業客戶安裝與設定無線電系統、路由器與無線基地台。<br/>執行完整的網路故障排除與維護作業。" },
 			{ year: "2011年7月1日 - 2014年8月31日", title: "實習生", comp: "CV. Media Utama Computer", desc: "提供電腦技術支援，包括硬體與軟體維護。" },
 			{ year: "2011年6月1日 - 2014年6月30日", title: "實習生", comp: "PT. Securindo Packatama Indonesia", desc: "協助電腦技術支援與系統故障排除。" }
-
+		],
 		school: [
 			{ year: "2014 - 2017", name: "STMIK Indonesia Mandiri", major: "電腦科學學士（資訊工程）"},
 			{ year: "2009 - 2012", name: "Angkasa 1 Margahayu 職業高中", major: "電腦與網路工程" }
@@ -79,6 +79,7 @@ const translations = {
 			{ year: "2012年10月1日 - 2014年12月31日", title: "テクニカルサポート", comp: "PT. Persada", desc: "企業向けに無線通信システム、ルーター、アクセスポイントの設置および設定を実施。<br/>ネットワークの総合的なトラブルシューティングおよび保守を担当。" },
 			{ year: "2011年7月1日 - 2014年8月31日", title: "インターン", comp: "CV. Media Utama Computer", desc: "ハードウェアおよびソフトウェア保守を含むコンピュータ技術サポートを提供。" },
 			{ year: "2011年6月1日 - 2014年6月30日", title: "インターン", comp: "PT. Securindo Packatama Indonesia", desc: "コンピュータ技術サポートおよびシステム障害対応を補助。" }
+		],
 		school: [
 			{ year: "2014 - 2017", name: "STMIK Indonesia Mandiri", major: "コンピュータサイエンス学士（情報工学）"},
 			{ year: "2009 - 2012", name: "Angkasa 1 Margahayu 職業高校", major: "コンピュータ・ネットワーク工学" }
@@ -98,6 +99,7 @@ const translations = {
 			{ year: "2012년 10월 1일 - 2014년 12월 31일", title: "기술 지원", comp: "PT. Persada", desc: "기업 고객을 대상으로 무선 통신 시스템, 라우터 및 액세스 포인트 설치 및 구성을 수행함.<br/>네트워크 전반에 대한 장애 분석 및 유지보수를 담당함." },
 			{ year: "2011년 7월 1일 - 2014년 8월 31일", title: "인턴", comp: "CV. Media Utama Computer", desc: "하드웨어 및 소프트웨어 유지보수를 포함한 컴퓨터 기술 지원 제공." },
 			{ year: "2011년 6월 1일 - 2014년 6월 30일", title: "인턴", comp: "PT. Securindo Packatama Indonesia", desc: "컴퓨터 기술 지원 및 시스템 문제 해결 업무 보조." }
+		],
 		school: [
 			{ year: "2014 - 2017", name: "STMIK Indonesia Mandiri", major: "컴퓨터공학 학사(정보공학)"},
 			{ year: "2009 - 2012", name: "Angkasa 1 Margahayu 직업 고등학교", major: "컴퓨터 및 네트워크 공학" }
@@ -117,6 +119,7 @@ const translations = {
 			{ year: "1. Oktober 2012 - 31. Dezember 2014", title: "Technischer Support", comp: "PT. Persada", desc: "Installation und Konfiguration von Funksystemen, Routern und Access Points für Unternehmenskunden.<br/>Durchführung umfassender Netzwerk-Fehlerbehebung und Wartung." },
 			{ year: "1. Juli 2011 - 31. August 2014", title: "Praktikant", comp: "CV. Media Utama Computer", desc: "Bereitstellung von technischem Computersupport einschließlich Hardware- und Softwarewartung." },
 			{ year: "1. Juni 2011 - 30. Juni 2014", title: "Praktikant", comp: "PT. Securindo Packatama Indonesia", desc: "Unterstützung im technischen Computersupport und bei der Systemfehlerbehebung." }
+		],
 		school: [
 			{ year: "2014 - 2017", name: "STMIK Indonesia Mandiri", major: "Bachelor der Informatik (Informatiktechnik)"},
 			{ year: "2009 - 2012", name: "Berufsschule Angkasa 1 Margahayu", major: "Computer- und Netzwerktechnik" }
@@ -136,6 +139,7 @@ const translations = {
 			{ year: "1. Oktober 2012 - 31. Dezember 2014", title: "Technischer Support", comp: "PT. Persada", desc: "Installation und Konfiguration von Funksystemen, Routern und Access Points für Unternehmenskunden.<br/>Durchführung umfassender Netzwerk-Fehlerbehebung und Wartung." },
 			{ year: "1. Juli 2011 - 31. August 2014", title: "Praktikant", comp: "CV. Media Utama Computer", desc: "Bereitstellung von technischem Computersupport einschließlich Hardware- und Softwarewartung." },
 			{ year: "1. Juni 2011 - 30. Juni 2014", title: "Praktikant", comp: "PT. Securindo Packatama Indonesia", desc: "Unterstützung im technischen Computersupport und bei der Systemfehlerbehebung." }
+		],
 		school: [
 			{ year: "2014 - 2017", name: "STMIK Indonesia Mandiri", major: "Bachelor der Informatik (Informatiktechnik)"},
 			{ year: "2009 - 2012", name: "Berufsschule Angkasa 1 Margahayu", major: "Computer- und Netzwerktechnik" }
@@ -155,7 +159,7 @@ const translations = {
 			{ year: "1 de octubre de 2012 - 31 de diciembre de 2014", title: "Soporte Técnico", comp: "PT. Persada", desc: "Instalación y configuración de sistemas de radio, routers y puntos de acceso para clientes empresariales.<br/>Realización de mantenimiento y resolución integral de problemas de red." },
 			{ year: "1 de julio de 2011 - 31 de agosto de 2014", title: "Practicante", comp: "CV. Media Utama Computer", desc: "Prestación de soporte técnico informático, incluido el mantenimiento de hardware y software." },
 			{ year: "1 de junio de 2011 - 30 de junio de 2014", title: "Practicante", comp: "PT. Securindo Packatama Indonesia", desc: "Asistencia en soporte técnico informático y resolución de problemas del sistema." }
-
+		],
 		school: [
 			{ year: "2014 - 2017", name: "STMIK Indonesia Mandiri", major: "Licenciatura en Ciencias de la Computación (Ingeniería Informática)"},
 			{ year: "2009 - 2012", name: "Escuela Vocacional Angkasa 1 Margahayu", major: "Ingeniería en Computación y Redes" }
@@ -175,6 +179,7 @@ const translations = {
 			{ year: "1 de outubro de 2012 - 31 de dezembro de 2014", title: "Suporte Técnico", comp: "PT. Persada", desc: "Instalação e configuração de sistemas de rádio, roteadores e pontos de acesso para clientes corporativos.<br/>Execução de manutenção e troubleshooting completo de rede." },
 			{ year: "1 de julho de 2011 - 31 de agosto de 2014", title: "Estagiário", comp: "CV. Media Utama Computer", desc: "Prestação de suporte técnico em informática, incluindo manutenção de hardware e software." },
 			{ year: "1 de junho de 2011 - 30 de junho de 2014", title: "Estagiário", comp: "PT. Securindo Packatama Indonesia", desc: "Auxílio no suporte técnico de informática e resolução de problemas de sistemas." }
+		],
 		school: [
 			{ year: "2014 - 2017", name: "STMIK Indonesia Mandiri", major: "Bacharel em Ciência da Computação (Engenharia de Informática)"},
 			{ year: "2009 - 2012", name: "Escola Profissional Angkasa 1 Margahayu", major: "Engenharia de Computação e Redes" }
@@ -194,6 +199,7 @@ const translations = {
 			{ year: "1 октября 2012 - 31 декабря 2014", title: "Техническая поддержка", comp: "PT. Persada", desc: "Установка и настройка радиосистем, маршрутизаторов и точек доступа для корпоративных клиентов.<br/>Проведение комплексного обслуживания и устранения сетевых неисправностей." },
 			{ year: "1 июля 2011 - 31 августа 2014", title: "Стажёр", comp: "CV. Media Utama Computer", desc: "Оказание компьютерной технической поддержки, включая обслуживание аппаратного и программного обеспечения." },
 			{ year: "1 июня 2011 - 30 июня 2014", title: "Стажёр", comp: "PT. Securindo Packatama Indonesia", desc: "Помощь в компьютерной технической поддержке и устранении системных неисправностей." }
+		],
 		school: [
 			{ year: "2014 - 2017", name: "STMIK Indonesia Mandiri", major: "Бакалавр компьютерных наук (Инженерия информатики)"},
 			{ year: "2009 - 2012", name: "Профессиональная школа Angkasa 1 Margahayu", major: "Компьютерная и сетевая инженерия" }
@@ -213,6 +219,7 @@ const translations = {
 			{ year: "1 oktober 2012 - 31 december 2014", title: "Technische ondersteuning", comp: "PT. Persada", desc: "Installatie en configuratie van radiosystemen, routers en access points voor zakelijke klanten.<br/>Uitvoering van uitgebreide netwerkproblemenanalyse en onderhoud." },
 			{ year: "1 juli 2011 - 31 augustus 2014", title: "Stagiair", comp: "CV. Media Utama Computer", desc: "Verlenen van technische computerondersteuning, inclusief hardware- en softwareonderhoud." },
 			{ year: "1 juni 2011 - 30 juni 2014", title: "Stagiair", comp: "PT. Securindo Packatama Indonesia", desc: "Ondersteuning bij technische computerondersteuning en systeemprobleemoplossing." }
+		],
 		school: [
 			{ year: "2014 - 2017", name: "STMIK Indonesia Mandiri", major: "Bachelor in Computerwetenschappen (Informatica Engineering)"},
 			{ year: "2009 - 2012", name: "Beroepsschool Angkasa 1 Margahayu", major: "Computer- en Netwerktechniek" }
@@ -232,6 +239,7 @@ const translations = {
 			{ year: "1 ottobre 2012 - 31 dicembre 2014", title: "Supporto Tecnico", comp: "PT. Persada", desc: "Installazione e configurazione di sistemi radio, router e access point per clienti aziendali.<br/>Esecuzione di manutenzione e troubleshooting di rete completi." },
 			{ year: "1 luglio 2011 - 31 agosto 2014", title: "Tirocinante", comp: "CV. Media Utama Computer", desc: "Fornitura di supporto tecnico informatico, inclusa la manutenzione hardware e software." },
 			{ year: "1 giugno 2011 - 30 giugno 2014", title: "Tirocinante", comp: "PT. Securindo Packatama Indonesia", desc: "Assistenza nel supporto tecnico informatico e nella risoluzione dei problemi di sistema." }
+		],
 		school: [
 			{ year: "2014 - 2017", name: "STMIK Indonesia Mandiri", major: "Laurea in Informatica (Ingegneria Informatica)"},
 			{ year: "2009 - 2012", name: "Istituto Professionale Angkasa 1 Margahayu", major: "Ingegneria Informatica e delle Reti" }
@@ -251,6 +259,7 @@ const translations = {
 			{ year: "1 أكتوبر 2012 - 31 ديسمبر 2014", title: "الدعم الفني", comp: "PT. Persada", desc: "تركيب وتهيئة أنظمة الراديو وأجهزة التوجيه ونقاط الوصول لعملاء الشركات.<br/>تنفيذ أعمال الصيانة الشاملة واستكشاف أخطاء الشبكة." },
 			{ year: "1 يوليو 2011 - 31 أغسطس 2014", title: "متدرب", comp: "CV. Media Utama Computer", desc: "تقديم الدعم الفني للحاسوب، بما في ذلك صيانة الأجهزة والبرمجيات." },
 			{ year: "1 يونيو 2011 - 30 يونيو 2014", title: "متدرب", comp: "PT. Securindo Packatama Indonesia", desc: "المساعدة في الدعم الفني للحاسوب ومعالجة مشكلات الأنظمة." }
+		],	
 		school: [
 			{ year: "2014 - 2017", name: "STMIK Indonesia Mandiri", major: "بكالوريوس علوم الحاسوب (هندسة المعلوماتية)"},
 			{ year: "2009 - 2012", name: "المدرسة المهنية Angkasa 1 Margahayu", major: "هندسة الحاسوب والشبكات" }
