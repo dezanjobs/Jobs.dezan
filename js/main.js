@@ -522,37 +522,6 @@ setInterval(() => {
         // Opsional: ganti teks di samping dot blink jika ada elemennya
     }
 }, 5000);
-function setLanguage(lang) {
-    // 1. Beri tanda pada body bahwa kita sedang pindah bahasa (matikan animasi)
-    document.body.classList.add('switching-language');
-    
-    // 2. Update semua teks data-i18n
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) {
-            el.innerHTML = translations[lang][key];
-        }
-    });
-
-    // 3. Update Arah dan Atribut Bahasa
-    const isRTL = (lang === 'AR');
-    document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
-    document.documentElement.lang = lang.toLowerCase();
-
-    // 4. Refresh Skill (Pastikan data skillData sudah benar/tidak error)
-    if (typeof renderCategorizedSkills === "function") {
-        try {
-            renderCategorizedSkills();
-        } catch (e) {
-            console.error("Gagal render skill:", e);
-        }
-    }
-
-    // 5. Selesaikan transisi setelah jeda singkat
-    setTimeout(() => {
-        document.body.classList.remove('switching-language');
-    }, 300);
-}
 window.onload = () => {
     setLanguage('EN'); // Paksa EN setiap kali refresh
 };
