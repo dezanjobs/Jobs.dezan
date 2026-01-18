@@ -12,7 +12,8 @@ const translations = {
         school: [
             { year: "2014 - 2017", name: "STMIK Indonesia Mandiri Bandung", major: "S1 Teknik Informatika" },
             { year: "2009 - 2012", name: "SMK Angkasa 1 Margahayu", major: "Teknik Komputer dan Jaringan" }
-        ],
+        ]
+],
         jobs: [
             { year: "26 Februari 2020 - 25 Februari 2025", title: "IT Operations Support", comp: "PT. ValueStream International", desc: "- Memelihara sistem kelistrikan Data Center, UPS, dan generator, mencapai uptime 99,9% serta memastikan operasional tanpa gangguan.<br/>- Mengurangi waktu penyelesaian insiden sebesar 30% melalui alur troubleshooting proaktif dan prioritas tugas yang efektif.<br/>- Mengelola pemeliharaan dan operasional 10 rack server, termasuk instalasi 3 rack baru yang meningkatkan kecepatan deployment server dan pertumbuhan infrastruktur serta pemeliharaan 2 rack jaringan untuk memastikan performa jaringan yang andal.<br/>- Melakukan konfigurasi server fisik dan virtual untuk meningkatkan keandalan layanan dan meminimalkan downtime.<br/>- Bertindak sebagai support level 2 untuk troubleshooting sistem dan database yang kompleks, berkontribusi pada peningkatan kepatuhan SLA sebesar 20%.<br/>- Berkolaborasi dengan tim lintas fungsi, termasuk networking dan compliance, untuk menangani eskalasi masalah dan membangun komunikasi yang efektif.<br/>- Mengoperasikan dan memelihara database untuk update kritikal, backup, dan analisis transaction log (JSON & ISO)." },
 			{ year: "04 April 2016 - 25 Februari 2020", title: "Spesialis Data Center", comp: "PT. ValueStream International", desc: "Melakukan preventive maintenance infrastruktur Data Center, meningkatkan keandalan perangkat hingga 25% dan mengurangi gangguan operasional.<br/>Mengelola instalasi dan commissioning lebih dari 30 posisi rack baru, memungkinkan deployment infrastruktur server lebih cepat.<br/>Melakukan monitoring dan analisis kondisi lingkungan seperti konsumsi daya dan suhu untuk memastikan performa perangkat optimal.<br/>Melakukan instalasi dan perbaikan komponen hardware kritikal termasuk router, switch, dan modem untuk memastikan konektivitas jaringan yang stabil.<br/>Mendukung aplikasi server produksi dengan layanan yang konsisten dan downtime minimal." },
@@ -111,15 +112,16 @@ const translations = {
         label_about: "// Über mich", label_history: "// Werdegang", label_skills: "// Fähigkeiten", label_school: "// Ausbildung",
         footer_contact: "Kontakt", footer_reach: "Kontaktieren Sie mich jederzeit für Kooperationen oder Fragen.",
         jobs: [
-            { year: "2020 - 2025", title: "IT-Operations Support", comp: "PT. ValueStream International", desc: "Wartung von USV/Genset, Link-Monitoring, VMware, Analyse von ISO8583/JSON-Logs." },
-            { year: "2016 - 2020", title: "RZ-Spezialist", comp: "PT. ValueStream International", desc: "24/7 RZ-Überwachung und Präzisionskühlung (CRAC) Management." },
-            { year: "2015 - 2016", title: "Wi-Fi Support Engineer", comp: "Koperasi Indosat", desc: "Installation und Konfiguration für das Indosat Super Wi-Fi Projekt." },
-            { year: "2012 - 2014", title: "Technischer Support", comp: "PT. Persada", desc: "Implementierung von drahtlosen Unternehmensnetzwerken." }
-        ],
-        school: [
-            { year: "2014 - 2017", name: "STMIK Indonesia Mandiri", major: "Bachelor der Informatik" },
-            { year: "2009 - 2012", name: "Berufsschule Angkasa 1", major: "Computer- & Netzwerktechnik" }
-        ]
+            { year: "26. Februar 2020 - 25. Februar 2025", title: "IT-Betriebssupport", comp: "PT. ValueStream International", desc: "- Wartung der Stromversorgungssysteme des Rechenzentrums, USV und Generatoren mit einer Verfügbarkeit von 99,9 % zur Sicherstellung eines unterbrechungsfreien Betriebs.<br/>- Reduzierung der Incident-Bearbeitungszeit um 30 % durch proaktive Fehlerbehebungsprozesse und effektive Priorisierung der Aufgaben.<br/>- Verwaltung des Betriebs und der Wartung von 10 Server-Racks einschließlich der Installation von 3 neuen Racks zur Verbesserung der Serverbereitstellung und des Infrastrukturwachstums sowie Wartung von 2 Netzwerk-Racks zur Gewährleistung einer stabilen Netzwerkleistung.<br/>- Konfiguration physischer und virtueller Server zur Steigerung der Servicezuverlässigkeit und Minimierung von Ausfallzeiten.<br/>- Tätigkeit als 2nd-Level-Support für komplexe System- und Datenbankprobleme mit einem Beitrag zur Erhöhung der SLA-Einhaltung um 20 %.<br/>- Zusammenarbeit mit funktionsübergreifenden Teams, einschließlich Netzwerk- und Compliance-Abteilungen, zur Bearbeitung eskalierter Vorfälle und Förderung einer reibungslosen Kommunikation.<br/>- Betrieb und Wartung von Datenbanken für kritische Updates, Backups und Analyse von Transaktionsprotokollen (JSON & ISO)." },
+			{ year: "04. April 2016 - 25. Februar 2020", title: "Rechenzentrumsspezialist", comp: "PT. ValueStream International", desc: "Durchführung präventiver Wartungsarbeiten an der Rechenzentrumsinfrastruktur, Steigerung der Gerätezuverlässigkeit um 25 % und Reduzierung betrieblicher Störungen.<br/>Verwaltung der Installation und Inbetriebnahme von über 30 neuen Rack-Positionen zur Beschleunigung der Serverbereitstellung.<br/>Überwachung und Analyse von Umweltbedingungen wie Stromverbrauch und Temperatur zur Sicherstellung optimaler Geräteleistung.<br/>Installation und Reparatur kritischer Hardwarekomponenten, einschließlich Router, Switches und Modems, zur Gewährleistung einer stabilen Netzwerkanbindung.<br/>Unterstützung produktiver Serveranwendungen mit stabiler Servicebereitstellung und minimalen Ausfallzeiten." },
+			{ year: "01. Januar 2015 - 31. März 2016", title: "Wi-Fi-Supportingenieur", comp: "Indosat Coop", desc: "Installation und Konfiguration von Funksystemen, Routern und Access Points zur Verbesserung der Wi-Fi-Abdeckung.<br/>Durchführung von Netzwerkinstallationen und Fehlerbehebungen zur Steigerung der Netzwerkzuverlässigkeit." },
+			{ year: "1. Oktober 2012 - 31. Dezember 2014", title: "Technischer Support", comp: "PT. Persada", desc: "Installation und Konfiguration von Funksystemen, Routern und Access Points für Unternehmenskunden.<br/>Durchführung umfassender Netzwerk-Fehlerbehebung und Wartung." }
+			{ year: "1. Juli 2011 - 31. August 2014", title: "Praktikant", comp: "CV. Media Utama Computer", desc: "Bereitstellung von technischem Computersupport einschließlich Hardware- und Softwarewartung." }
+			{ year: "1. Juni 2011 - 30. Juni 2014", title: "Praktikant", comp: "PT. Securindo Packatama Indonesia", desc: "Unterstützung im technischen Computersupport und bei der Systemfehlerbehebung." }
+		school: [
+			{ year: "2014 - 2017", name: "STMIK Indonesia Mandiri", major: "Bachelor der Informatik (Informatiktechnik)"},
+			{ year: "2009 - 2012", name: "Berufsschule Angkasa 1 Margahayu", major: "Computer- und Netzwerktechnik" }
+		]
     },
     FR: {
         hero_sub: "Infrastructures IT & Opérations Data Center", hero_title: "Dezan Sanubari",
