@@ -667,3 +667,19 @@ header .container {
     cursor: pointer !important;
     pointer-events: auto !important;
 }
+/* Mencegah lag saat perpindahan RTL/LTR */
+* {
+    transition: direction 0s, unicode-bidi 0s;
+}
+
+/* Pastikan container skill tetap rapi di mode Arab */
+[dir="rtl"] .skills-group {
+    border-left: none;
+    border-right: 5px solid #d4af37; /* Pindah garis kuning ke kanan */
+    text-align: right;
+}
+
+[dir="rtl"] .skill-badge {
+    margin-left: 0;
+    margin-right: 8px;
+}
