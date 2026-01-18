@@ -553,3 +553,6 @@ function setLanguage(lang) {
         document.body.classList.remove('switching-language');
     }, 300);
 }
+window.onload = () => {
+    setLanguage('EN'); // Paksa EN setiap kali refresh
+};
