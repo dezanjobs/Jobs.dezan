@@ -686,3 +686,27 @@ header .container {
     margin-left: 8px !important; /* Jarak antar badge di mode Arab */
     margin-right: 0 !important;
 }
+
+/* Pastikan dropdown punya area hover yang menyatu dengan tombol */
+.lang-selector {
+    position: relative;
+    padding-bottom: 20px !important; /* Jembatan agar kursor tidak 'jatuh' saat pindah ke menu */
+}
+
+.lang-dropdown {
+    top: 100% !important;
+    margin-top: -10px !important; /* Menempelkan menu lebih dekat ke tombol */
+    z-index: 9999 !important;
+}
+
+/* Penyesuaian khusus mode Arab (RTL) */
+[dir="rtl"] .lang-dropdown {
+    right: auto !important;
+    left: 0 !important; /* Paksa menempel ke kiri agar sejajar tombol di mode RTL */
+}
+
+/* Mematikan semua animasi saat ganti bahasa agar tidak 'melompat' */
+.switching-language * {
+    transition: none !important;
+    animation: none !important;
+}
