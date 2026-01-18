@@ -667,19 +667,22 @@ header .container {
     cursor: pointer !important;
     pointer-events: auto !important;
 }
-/* Mencegah lag saat perpindahan RTL/LTR */
-* {
-    transition: direction 0s, unicode-bidi 0s;
+/* Memberikan area transisi agar menu tidak langsung tertutup */
+.lang-dropdown {
+    padding-top: 15px; /* Sedikit diperlebar agar kursor tidak terputus saat bergerak ke bawah */
+    margin-top: -5px;
+    z-index: 9999; /* Pastikan selalu di depan elemen lain */
 }
 
-/* Pastikan container skill tetap rapi di mode Arab */
-[dir="rtl"] .skills-group {
-    border-left: none;
-    border-right: 5px solid #d4af37; /* Pindah garis kuning ke kanan */
+/* Penyesuaian khusus mode Arab (RTL) */
+[dir="rtl"] .lang-dropdown {
+    left: 0 !important;   /* Menempel di kiri layar pada mode Arab */
+    right: auto !important;
     text-align: right;
 }
 
+/* Memperbaiki posisi badge skill agar tidak berantakan di mode Arab */
 [dir="rtl"] .skill-badge {
-    margin-left: 0;
-    margin-right: 8px;
+    margin-left: 8px !important; /* Jarak antar badge di mode Arab */
+    margin-right: 0 !important;
 }
