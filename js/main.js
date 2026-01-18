@@ -522,3 +522,22 @@ setInterval(() => {
         // Opsional: ganti teks di samping dot blink jika ada elemennya
     }
 }, 5000);
+
+function setLanguage(lang) {
+    // 1. Update teks statis
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
+        }
+    });
+
+    // 2. Update Arah Teks (Penting untuk Arab)
+    document.documentElement.dir = (lang === 'AR') ? 'rtl' : 'ltr';
+    document.documentElement.lang = lang.toLowerCase();
+
+    // 3. Jalankan ulang fungsi render skill (agar data kategori di-refresh)
+    if (typeof renderCategorizedSkills === "function") {
+        renderCategorizedSkills(); 
+    }
+}
