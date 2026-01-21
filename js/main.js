@@ -523,26 +523,36 @@ setInterval(() => {
     }
 }, 5000);
 function setLanguage(lang) {
-    // ... kode update teks Anda yang sudah ada ...
-
-    // Atur Arah: Jika AR maka RTL (Kiri), jika bukan maka LTR (Kanan)
-    if (lang === 'AR') {
-        document.documentElement.dir = 'rtl';
-    } else {
-        document.documentElement.dir = 'ltr';
-    }
+    // 1. Beri tanda pada body bahwa kita sedang pindah bahasa (matikan animasi)
+    document.body.classList.add('switching-language');
     
+    // 2. Update semua teks data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
+        }
+    });
+
+    // 3. Update Arah dan Atribut Bahasa
+    const isRTL = (lang === 'AR');
+    document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
     document.documentElement.lang = lang.toLowerCase();
 
-    // Update label di tombol
-    const label = document.getElementById('current-lang');
-    if (label) label.innerText = lang;
+    // 4. Refresh Skill (Pastikan data skillData sudah benar/tidak error)
+    if (typeof renderCategorizedSkills === "function") {
+        try {
+            renderCategorizedSkills();
+        } catch (e) {
+            console.error("Gagal render skill:", e);
+        }
+    }
 
-    // Render ulang skill agar posisi label kategori (garis kuning) ikut pindah
-    if (typeof renderCategorizedSkills === "function") renderCategorizedSkills();
+    // 5. Selesaikan transisi setelah jeda singkat
+    setTimeout(() => {
+        document.body.classList.remove('switching-language');
+    }, 300);
 }
-
-// PAKSA REFRESH KEMBALI KE INGGRIS (Kanan)
-window.addEventListener('DOMContentLoaded', () => {
-    setLanguage('EN');
-});
+window.onload = () => {
+    setLanguage('EN'); // Paksa EN setiap kali refresh
+};
