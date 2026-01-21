@@ -667,51 +667,47 @@ header .container {
     cursor: pointer !important;
     pointer-events: auto !important;
 }
-/* --- PERBAIKAN DROPDOWN BAHASA --- */
+/* --- PENGATURAN POSISI DROPDOWN --- */
 
-/* Parent container */
-.dropdown {
-    position: relative;
-    /* Jembatan agar kursor tidak terputus saat bergerak dari tombol ke menu */
-    padding-bottom: 20px !important; 
-    display: inline-block;
-}
-
-/* Kotak menu pilihan */
-.dropdown-content {
-    display: none; /* Default sembunyi */
+/* 1. Posisi Default (Untuk EN, ID, dan bahasa lainnya - di sebelah KANAN) */
+.nav-links li.dropdown .dropdown-content {
+    display: none;
     position: absolute;
     top: 100%;
-    margin-top: -10px !important; /* Rapatkan ke atas agar tidak ada celah maut */
-    background-color: #ffffff;
-    min-width: 150px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    z-index: 10000 !important;
+    right: 0;        /* Default nempel di kanan tombol */
+    left: auto;     /* Pastikan kiri tidak mengunci */
+    margin-top: -10px !important;
+    background: #ffffff;
+    min-width: 180px;
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 99999;
     border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-/* Munculkan saat hover */
-.dropdown:hover .dropdown-content {
-    display: block !important;
-}
-
-/* KHUSUS MODE ARAB (RTL) */
-/* Di link dezanjobs.github.io, tombol pindah ke pojok kiri saat Arab */
-/* Maka menu harus dipaksa menempel di kiri layar agar sejajar tombol */
-[dir="rtl"] .dropdown-content {
-    left: 0 !important;
+/* 2. Khusus Saat Mode ARAB (Hanya jika dir="rtl" aktif - pindah ke KIRI) */
+[dir="rtl"] .nav-links li.dropdown .dropdown-content {
+    left: 0 !important;   /* Paksa nempel di kiri karena tombol pindah ke kiri */
     right: auto !important;
     text-align: right;
 }
 
-/* Skill Badge di Mode Arab */
-[dir="rtl"] .skill-badge {
-    margin-left: 8px !important;
-    margin-right: 0 !important;
+/* 3. Jembatan Hover agar tidak mudah tertutup */
+.nav-links li.dropdown {
+    position: relative;
+    padding-bottom: 25px !important;
 }
 
-/* Mematikan transisi saat ganti bahasa agar layout tidak bergetar */
-.switching-language * {
-    transition: none !important;
-    animation: none !important;
+.nav-links li.dropdown:hover .dropdown-content {
+    display: block !important;
+}
+
+/* Styling Link di dalamnya */
+.dropdown-content a {
+    color: #333 !important;
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
 }
