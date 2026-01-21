@@ -667,47 +667,46 @@ header .container {
     cursor: pointer !important;
     pointer-events: auto !important;
 }
-/* --- PENGATURAN POSISI DROPDOWN --- */
-
-/* 1. Posisi Default (Untuk EN, ID, dan bahasa lainnya - di sebelah KANAN) */
-.nav-links li.dropdown .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;        /* Default nempel di kanan tombol */
-    left: auto;     /* Pastikan kiri tidak mengunci */
-    margin-top: -10px !important;
-    background: #ffffff;
-    min-width: 180px;
-    max-height: 400px;
-    overflow-y: auto;
-    z-index: 99999;
-    border-radius: 4px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+/* Memberikan area transisi agar menu tidak langsung tertutup */
+.lang-dropdown {
+    padding-top: 15px; /* Sedikit diperlebar agar kursor tidak terputus saat bergerak ke bawah */
+    margin-top: -5px;
+    z-index: 9999; /* Pastikan selalu di depan elemen lain */
 }
 
-/* 2. Khusus Saat Mode ARAB (Hanya jika dir="rtl" aktif - pindah ke KIRI) */
-[dir="rtl"] .nav-links li.dropdown .dropdown-content {
-    left: 0 !important;   /* Paksa nempel di kiri karena tombol pindah ke kiri */
+/* Penyesuaian khusus mode Arab (RTL) */
+[dir="rtl"] .lang-dropdown {
+    left: 0 !important;   /* Menempel di kiri layar pada mode Arab */
     right: auto !important;
     text-align: right;
 }
 
-/* 3. Jembatan Hover agar tidak mudah tertutup */
-.nav-links li.dropdown {
+/* Memperbaiki posisi badge skill agar tidak berantakan di mode Arab */
+[dir="rtl"] .skill-badge {
+    margin-left: 8px !important; /* Jarak antar badge di mode Arab */
+    margin-right: 0 !important;
+}
+
+/* Pastikan dropdown punya area hover yang menyatu dengan tombol */
+.lang-selector {
     position: relative;
-    padding-bottom: 25px !important;
+    padding-bottom: 20px !important; /* Jembatan agar kursor tidak 'jatuh' saat pindah ke menu */
 }
 
-.nav-links li.dropdown:hover .dropdown-content {
-    display: block !important;
+.lang-dropdown {
+    top: 100% !important;
+    margin-top: -10px !important; /* Menempelkan menu lebih dekat ke tombol */
+    z-index: 9999 !important;
 }
 
-/* Styling Link di dalamnya */
-.dropdown-content a {
-    color: #333 !important;
-    padding: 10px 15px;
-    display: block;
-    text-decoration: none;
-    border-bottom: 1px solid #eee;
+/* Penyesuaian khusus mode Arab (RTL) */
+[dir="rtl"] .lang-dropdown {
+    right: auto !important;
+    left: 0 !important; /* Paksa menempel ke kiri agar sejajar tombol di mode RTL */
+}
+
+/* Mematikan semua animasi saat ganti bahasa agar tidak 'melompat' */
+.switching-language * {
+    transition: none !important;
+    animation: none !important;
 }
