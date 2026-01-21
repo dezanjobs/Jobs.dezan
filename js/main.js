@@ -18,8 +18,8 @@ const translations = {
 			{ year: "04 April 2016 - 25 Februari 2020", title: "Spesialis Data Center", comp: "PT. ValueStream International", desc: "Melakukan preventive maintenance infrastruktur Data Center, meningkatkan keandalan perangkat hingga 25% dan mengurangi gangguan operasional.<br/>Mengelola instalasi dan commissioning lebih dari 30 posisi rack baru, memungkinkan deployment infrastruktur server lebih cepat.<br/>Melakukan monitoring dan analisis kondisi lingkungan seperti konsumsi daya dan suhu untuk memastikan performa perangkat optimal.<br/>Melakukan instalasi dan perbaikan komponen hardware kritikal termasuk router, switch, dan modem untuk memastikan konektivitas jaringan yang stabil.<br/>Mendukung aplikasi server produksi dengan layanan yang konsisten dan downtime minimal." },
 			{ year: "01 Januari 2015 - 31 Maret 2016", title: "Engineer Support Wi-Fi", comp: "Indosat Coop", desc: "Melakukan instalasi dan konfigurasi sistem radio, router, dan access point untuk meningkatkan cakupan Wi-Fi.<br/>Melakukan instalasi jaringan dan troubleshooting untuk meningkatkan keandalan jaringan." },
 			{ year: "1 Oktober 2012 - 31 Desember 2014", title: "Technical Support", comp: "PT. Persada", desc: "Melakukan instalasi dan konfigurasi sistem radio, router, dan access point untuk klien enterprise.<br/>Melakukan troubleshooting dan pemeliharaan jaringan secara menyeluruh." },
-			{ year: "1 Juli 2011 - 31 Agustus 2014", title: "Magang", comp: "CV. Media Utama Computer", desc: "Memberikan dukungan teknis komputer termasuk pemeliharaan perangkat keras dan perangkat lunak." },
-			{ year: "1 Juni 2011 - 30 Juni 2014", title: "Magang", comp: "PT. Securindo Packatama Indonesia", desc: "Membantu dukungan teknis komputer dan troubleshooting sistem." }
+			{ year: "1 Juli 2011 - 31 Agustus 2011", title: "Magang", comp: "CV. Media Utama Computer", desc: "Memberikan dukungan teknis komputer termasuk pemeliharaan perangkat keras dan perangkat lunak." },
+			{ year: "1 Juni 2011 - 30 Juni 2011", title: "Magang", comp: "PT. Securindo Packatama Indonesia", desc: "Membantu dukungan teknis komputer dan troubleshooting sistem." }
         ]
     },
     EN: {
@@ -35,8 +35,8 @@ const translations = {
             { year: "04 April 2016 - 25 February 2020", title: "Datacenter Specialist", comp: "PT. ValueStream International", desc: "Conducted preventive maintenance of Data Center infrastructure, increasing equipment reliability by 25% and reducing operational disruptions.<br/>Managed installation and commissioning of 30+ new rack positions, enabling faster deployment of server infrastructure.<br/>Monitored and analyzed environmental conditions, such as power usage and temperature, to ensure optimal equipment performance.<br/>Installed and repaired critical hardware components, including routers, switches, and modems, ensuring robust network connectivity.<br/>Supported production server applications with consistent service delivery and minimal downtime." },
             { year: "01 January 2015 - 31 March 2016", title: "Wi-Fi Support Engineer", comp: "Indosat Coop", desc: "Installed and configured radio systems, routers, and access points, enabling enhanced Wi-Fi coverage.<br/>Performed network installations and troubleshooting, increasing network reliability." },
             { year: "01 October 2012 - 31 December 2014", title: "Technical Support", comp: "PT. Persada", desc: "Installed and configured radio systems, routers, and access points for enterprise clients.<br/>Conducted comprehensive network troubleshooting and maintenance." },
-			{ year: "1 July 2011 - 31 August 2014", title: "Interm", comp: "CV. Media Utama Computer", desc: "Provided computer technical support, including hardware and software maintenance." },
-			{ year: "1 June 2011 - 30 June 2014", title: "Interm", comp: "PT. Securindo Packatama Indonesia", desc: "Assisted with computer technical support and system troubleshooting." }
+			{ year: "1 July 2011 - 31 August 2011", title: "Interm", comp: "CV. Media Utama Computer", desc: "Provided computer technical support, including hardware and software maintenance." },
+			{ year: "1 June 2011 - 30 June 2011", title: "Interm", comp: "PT. Securindo Packatama Indonesia", desc: "Assisted with computer technical support and system troubleshooting." }
         ],
         school: [
             { year: "2014 - 2017", name: "STMIK Indonesia Mandiri", major: "Bachelor of Computer Science (Informatics Engineering)"},
@@ -57,8 +57,8 @@ const translations = {
 			{ year: "2016年4月4日 - 2020年2月25日", title: "資料中心專員", comp: "PT. ValueStream International", desc: "執行資料中心基礎設施的預防性維護，使設備可靠度提升 25%，並降低營運中斷風險。<br/>管理超過 30 個新機櫃位置的安裝與啟用，加速伺服器部署。<br/>監控並分析電力使用與溫度等環境狀況，確保設備最佳效能。<br/>安裝與維修關鍵硬體設備，包括路由器、交換器與數據機，以確保網路穩定性。<br/>支援正式環境伺服器應用，提供穩定服務並將停機時間降至最低。" },
 			{ year: "2015年1月1日 - 2016年3月31日", title: "Wi-Fi 支援工程師", comp: "Indosat Coop", desc: "安裝與設定無線電系統、路由器與無線基地台，以提升 Wi-Fi 覆蓋範圍。<br/>執行網路安裝與故障排除，提高網路穩定性。" },
 			{ year: "2012年10月1日 - 2014年12月31日", title: "技術支援", comp: "PT. Persada", desc: "為企業客戶安裝與設定無線電系統、路由器與無線基地台。<br/>執行完整的網路故障排除與維護作業。" },
-			{ year: "2011年7月1日 - 2014年8月31日", title: "實習生", comp: "CV. Media Utama Computer", desc: "提供電腦技術支援，包括硬體與軟體維護。" },
-			{ year: "2011年6月1日 - 2014年6月30日", title: "實習生", comp: "PT. Securindo Packatama Indonesia", desc: "協助電腦技術支援與系統故障排除。" }
+			{ year: "2011年7月1日 - 2011年8月31日", title: "實習生", comp: "CV. Media Utama Computer", desc: "提供電腦技術支援，包括硬體與軟體維護。" },
+			{ year: "2011年6月1日 - 2011年6月30日", title: "實習生", comp: "PT. Securindo Packatama Indonesia", desc: "協助電腦技術支援與系統故障排除。" }
 		],
 		school: [
 			{ year: "2014 - 2017", name: "STMIK Indonesia Mandiri", major: "電腦科學學士（資訊工程）"},
@@ -77,8 +77,8 @@ const translations = {
 			{ year: "2016年4月4日 - 2020年2月25日", title: "データセンター担当", comp: "PT. ValueStream International", desc: "データセンターインフラの予防保守を実施し、設備信頼性を25％向上、運用障害を低減。<br/>30以上の新規ラック設置およびコミッショニングを管理し、サーバー展開の迅速化を実現。<br/>電力使用量や温度などの環境条件を監視・分析し、最適な設備性能を維持。<br/>ルーター、スイッチ、モデムなどの重要ハードウェアの設置および修理を実施し、安定したネットワーク接続を確保。<br/>本番サーバーアプリケーションを支援し、安定したサービス提供と最小限のダウンタイムを維持。" },
 			{ year: "2015年1月1日 - 2016年3月31日", title: "Wi-Fiサポートエンジニア", comp: "Indosat Coop", desc: "無線通信システム、ルーター、アクセスポイントの設置および設定を行い、Wi-Fiカバレッジを向上。<br/>ネットワーク構築およびトラブルシューティングを実施し、ネットワーク信頼性を向上。" },
 			{ year: "2012年10月1日 - 2014年12月31日", title: "テクニカルサポート", comp: "PT. Persada", desc: "企業向けに無線通信システム、ルーター、アクセスポイントの設置および設定を実施。<br/>ネットワークの総合的なトラブルシューティングおよび保守を担当。" },
-			{ year: "2011年7月1日 - 2014年8月31日", title: "インターン", comp: "CV. Media Utama Computer", desc: "ハードウェアおよびソフトウェア保守を含むコンピュータ技術サポートを提供。" },
-			{ year: "2011年6月1日 - 2014年6月30日", title: "インターン", comp: "PT. Securindo Packatama Indonesia", desc: "コンピュータ技術サポートおよびシステム障害対応を補助。" }
+			{ year: "2011年7月1日 - 2011年8月31日", title: "インターン", comp: "CV. Media Utama Computer", desc: "ハードウェアおよびソフトウェア保守を含むコンピュータ技術サポートを提供。" },
+			{ year: "2011年6月1日 - 2011年6月30日", title: "インターン", comp: "PT. Securindo Packatama Indonesia", desc: "コンピュータ技術サポートおよびシステム障害対応を補助。" }
 		],
 		school: [
 			{ year: "2014 - 2017", name: "STMIK Indonesia Mandiri", major: "コンピュータサイエンス学士（情報工学）"},
@@ -97,8 +97,8 @@ const translations = {
 			{ year: "2016년 4월 4일 - 2020년 2월 25일", title: "데이터센터 전문가", comp: "PT. ValueStream International", desc: "데이터센터 인프라에 대한 예방 정비를 수행하여 장비 신뢰도를 25% 향상시키고 운영 장애를 감소시킴.<br/>30개 이상의 신규 랙 설치 및 커미셔닝을 관리하여 서버 인프라 구축 속도를 향상시킴.<br/>전력 사용량 및 온도 등 환경 조건을 모니터링 및 분석하여 장비 성능을 최적 상태로 유지함.<br/>라우터, 스위치, 모뎀 등 핵심 하드웨어 장비를 설치 및 수리하여 안정적인 네트워크 연결을 보장함.<br/>운영 서버 애플리케이션을 지원하여 안정적인 서비스 제공과 최소한의 다운타임을 유지함." },
 			{ year: "2015년 1월 1일 - 2016년 3월 31일", title: "Wi-Fi 지원 엔지니어", comp: "Indosat Coop", desc: "무선 통신 시스템, 라우터 및 액세스 포인트를 설치 및 구성하여 Wi-Fi 커버리지를 확장함.<br/>네트워크 설치 및 장애 조치를 수행하여 네트워크 안정성을 향상시킴." },
 			{ year: "2012년 10월 1일 - 2014년 12월 31일", title: "기술 지원", comp: "PT. Persada", desc: "기업 고객을 대상으로 무선 통신 시스템, 라우터 및 액세스 포인트 설치 및 구성을 수행함.<br/>네트워크 전반에 대한 장애 분석 및 유지보수를 담당함." },
-			{ year: "2011년 7월 1일 - 2014년 8월 31일", title: "인턴", comp: "CV. Media Utama Computer", desc: "하드웨어 및 소프트웨어 유지보수를 포함한 컴퓨터 기술 지원 제공." },
-			{ year: "2011년 6월 1일 - 2014년 6월 30일", title: "인턴", comp: "PT. Securindo Packatama Indonesia", desc: "컴퓨터 기술 지원 및 시스템 문제 해결 업무 보조." }
+			{ year: "2011년 7월 1일 - 2011년 8월 31일", title: "인턴", comp: "CV. Media Utama Computer", desc: "하드웨어 및 소프트웨어 유지보수를 포함한 컴퓨터 기술 지원 제공." },
+			{ year: "2011년 6월 1일 - 2011년 6월 30일", title: "인턴", comp: "PT. Securindo Packatama Indonesia", desc: "컴퓨터 기술 지원 및 시스템 문제 해결 업무 보조." }
 		],
 		school: [
 			{ year: "2014 - 2017", name: "STMIK Indonesia Mandiri", major: "컴퓨터공학 학사(정보공학)"},
@@ -117,8 +117,8 @@ const translations = {
 			{ year: "04. April 2016 - 25. Februar 2020", title: "Rechenzentrumsspezialist", comp: "PT. ValueStream International", desc: "Durchführung präventiver Wartungsarbeiten an der Rechenzentrumsinfrastruktur, Steigerung der Gerätezuverlässigkeit um 25 % und Reduzierung betrieblicher Störungen.<br/>Verwaltung der Installation und Inbetriebnahme von über 30 neuen Rack-Positionen zur Beschleunigung der Serverbereitstellung.<br/>Überwachung und Analyse von Umweltbedingungen wie Stromverbrauch und Temperatur zur Sicherstellung optimaler Geräteleistung.<br/>Installation und Reparatur kritischer Hardwarekomponenten, einschließlich Router, Switches und Modems, zur Gewährleistung einer stabilen Netzwerkanbindung.<br/>Unterstützung produktiver Serveranwendungen mit stabiler Servicebereitstellung und minimalen Ausfallzeiten." },
 			{ year: "01. Januar 2015 - 31. März 2016", title: "Wi-Fi-Supportingenieur", comp: "Indosat Coop", desc: "Installation und Konfiguration von Funksystemen, Routern und Access Points zur Verbesserung der Wi-Fi-Abdeckung.<br/>Durchführung von Netzwerkinstallationen und Fehlerbehebungen zur Steigerung der Netzwerkzuverlässigkeit." },
 			{ year: "1. Oktober 2012 - 31. Dezember 2014", title: "Technischer Support", comp: "PT. Persada", desc: "Installation und Konfiguration von Funksystemen, Routern und Access Points für Unternehmenskunden.<br/>Durchführung umfassender Netzwerk-Fehlerbehebung und Wartung." },
-			{ year: "1. Juli 2011 - 31. August 2014", title: "Praktikant", comp: "CV. Media Utama Computer", desc: "Bereitstellung von technischem Computersupport einschließlich Hardware- und Softwarewartung." },
-			{ year: "1. Juni 2011 - 30. Juni 2014", title: "Praktikant", comp: "PT. Securindo Packatama Indonesia", desc: "Unterstützung im technischen Computersupport und bei der Systemfehlerbehebung." }
+			{ year: "1. Juli 2011 - 31. August 2011", title: "Praktikant", comp: "CV. Media Utama Computer", desc: "Bereitstellung von technischem Computersupport einschließlich Hardware- und Softwarewartung." },
+			{ year: "1. Juni 2011 - 30. Juni 2011", title: "Praktikant", comp: "PT. Securindo Packatama Indonesia", desc: "Unterstützung im technischen Computersupport und bei der Systemfehlerbehebung." }
 		],
 		school: [
 			{ year: "2014 - 2017", name: "STMIK Indonesia Mandiri", major: "Bachelor der Informatik (Informatiktechnik)"},
@@ -137,8 +137,8 @@ const translations = {
 			{ year: "04. April 2016 - 25. Februar 2020", title: "Rechenzentrumsspezialist", comp: "PT. ValueStream International", desc: "Durchführung präventiver Wartungsarbeiten an der Rechenzentrumsinfrastruktur, Steigerung der Gerätezuverlässigkeit um 25 % und Reduzierung betrieblicher Störungen.<br/>Verwaltung der Installation und Inbetriebnahme von über 30 neuen Rack-Positionen zur Beschleunigung der Serverbereitstellung.<br/>Überwachung und Analyse von Umweltbedingungen wie Stromverbrauch und Temperatur zur Sicherstellung optimaler Geräteleistung.<br/>Installation und Reparatur kritischer Hardwarekomponenten, einschließlich Router, Switches und Modems, zur Gewährleistung einer stabilen Netzwerkanbindung.<br/>Unterstützung produktiver Serveranwendungen mit stabiler Servicebereitstellung und minimalen Ausfallzeiten." },
 			{ year: "01. Januar 2015 - 31. März 2016", title: "Wi-Fi-Supportingenieur", comp: "Indosat Coop", desc: "Installation und Konfiguration von Funksystemen, Routern und Access Points zur Verbesserung der Wi-Fi-Abdeckung.<br/>Durchführung von Netzwerkinstallationen und Fehlerbehebungen zur Steigerung der Netzwerkzuverlässigkeit." },
 			{ year: "1. Oktober 2012 - 31. Dezember 2014", title: "Technischer Support", comp: "PT. Persada", desc: "Installation und Konfiguration von Funksystemen, Routern und Access Points für Unternehmenskunden.<br/>Durchführung umfassender Netzwerk-Fehlerbehebung und Wartung." },
-			{ year: "1. Juli 2011 - 31. August 2014", title: "Praktikant", comp: "CV. Media Utama Computer", desc: "Bereitstellung von technischem Computersupport einschließlich Hardware- und Softwarewartung." },
-			{ year: "1. Juni 2011 - 30. Juni 2014", title: "Praktikant", comp: "PT. Securindo Packatama Indonesia", desc: "Unterstützung im technischen Computersupport und bei der Systemfehlerbehebung." }
+			{ year: "1. Juli 2011 - 31. August 2011", title: "Praktikant", comp: "CV. Media Utama Computer", desc: "Bereitstellung von technischem Computersupport einschließlich Hardware- und Softwarewartung." },
+			{ year: "1. Juni 2011 - 30. Juni 2011", title: "Praktikant", comp: "PT. Securindo Packatama Indonesia", desc: "Unterstützung im technischen Computersupport und bei der Systemfehlerbehebung." }
 		],
 		school: [
 			{ year: "2014 - 2017", name: "STMIK Indonesia Mandiri", major: "Bachelor der Informatik (Informatiktechnik)"},
@@ -157,8 +157,8 @@ const translations = {
 			{ year: "04 de abril de 2016 - 25 de febrero de 2020", title: "Especialista en Data Center", comp: "PT. ValueStream International", desc: "Ejecución de mantenimiento preventivo de la infraestructura del Data Center, aumentando la confiabilidad del equipo en un 25 % y reduciendo interrupciones operativas.<br/>Gestión de la instalación y puesta en marcha de más de 30 nuevas posiciones de racks, permitiendo un despliegue más rápido de la infraestructura de servidores.<br/>Monitoreo y análisis de condiciones ambientales como consumo eléctrico y temperatura para garantizar un rendimiento óptimo.<br/>Instalación y reparación de componentes de hardware críticos, incluidos routers, switches y módems, asegurando una conectividad de red sólida.<br/>Soporte a aplicaciones de servidores de producción con una entrega de servicio constante y un tiempo de inactividad mínimo." },
 			{ year: "01 de enero de 2015 - 31 de marzo de 2016", title: "Ingeniero de Soporte Wi-Fi", comp: "Indosat Coop", desc: "Instalación y configuración de sistemas de radio, routers y puntos de acceso, mejorando la cobertura Wi-Fi.<br/>Ejecución de instalaciones de red y resolución de problemas para aumentar la confiabilidad de la red." },
 			{ year: "1 de octubre de 2012 - 31 de diciembre de 2014", title: "Soporte Técnico", comp: "PT. Persada", desc: "Instalación y configuración de sistemas de radio, routers y puntos de acceso para clientes empresariales.<br/>Realización de mantenimiento y resolución integral de problemas de red." },
-			{ year: "1 de julio de 2011 - 31 de agosto de 2014", title: "Practicante", comp: "CV. Media Utama Computer", desc: "Prestación de soporte técnico informático, incluido el mantenimiento de hardware y software." },
-			{ year: "1 de junio de 2011 - 30 de junio de 2014", title: "Practicante", comp: "PT. Securindo Packatama Indonesia", desc: "Asistencia en soporte técnico informático y resolución de problemas del sistema." }
+			{ year: "1 de julio de 2011 - 31 de agosto de 2011", title: "Practicante", comp: "CV. Media Utama Computer", desc: "Prestación de soporte técnico informático, incluido el mantenimiento de hardware y software." },
+			{ year: "1 de junio de 2011 - 30 de junio de 2011", title: "Practicante", comp: "PT. Securindo Packatama Indonesia", desc: "Asistencia en soporte técnico informático y resolución de problemas del sistema." }
 		],
 		school: [
 			{ year: "2014 - 2017", name: "STMIK Indonesia Mandiri", major: "Licenciatura en Ciencias de la Computación (Ingeniería Informática)"},
@@ -177,8 +177,8 @@ const translations = {
 			{ year: "04 de abril de 2016 - 25 de fevereiro de 2020", title: "Especialista em Data Center", comp: "PT. ValueStream International", desc: "Execução de manutenção preventiva da infraestrutura do Data Center, aumentando a confiabilidade dos equipamentos em 25% e reduzindo interrupções operacionais.<br/>Gerenciamento da instalação e comissionamento de mais de 30 novas posições de racks, possibilitando implantação mais rápida da infraestrutura de servidores.<br/>Monitoramento e análise das condições ambientais, como consumo de energia e temperatura, para garantir desempenho ideal.<br/>Instalação e reparo de componentes críticos de hardware, incluindo roteadores, switches e modems, assegurando conectividade de rede estável.<br/>Suporte a aplicações de servidores de produção com entrega de serviço consistente e tempo mínimo de inatividade." },
 			{ year: "01 de janeiro de 2015 - 31 de março de 2016", title: "Engenheiro de Suporte Wi-Fi", comp: "Indosat Coop", desc: "Instalação e configuração de sistemas de rádio, roteadores e pontos de acesso, ampliando a cobertura Wi-Fi.<br/>Realização de instalações de rede e troubleshooting para aumentar a confiabilidade da rede." },
 			{ year: "1 de outubro de 2012 - 31 de dezembro de 2014", title: "Suporte Técnico", comp: "PT. Persada", desc: "Instalação e configuração de sistemas de rádio, roteadores e pontos de acesso para clientes corporativos.<br/>Execução de manutenção e troubleshooting completo de rede." },
-			{ year: "1 de julho de 2011 - 31 de agosto de 2014", title: "Estagiário", comp: "CV. Media Utama Computer", desc: "Prestação de suporte técnico em informática, incluindo manutenção de hardware e software." },
-			{ year: "1 de junho de 2011 - 30 de junho de 2014", title: "Estagiário", comp: "PT. Securindo Packatama Indonesia", desc: "Auxílio no suporte técnico de informática e resolução de problemas de sistemas." }
+			{ year: "1 de julho de 2011 - 31 de agosto de 2011", title: "Estagiário", comp: "CV. Media Utama Computer", desc: "Prestação de suporte técnico em informática, incluindo manutenção de hardware e software." },
+			{ year: "1 de junho de 2011 - 30 de junho de 2011", title: "Estagiário", comp: "PT. Securindo Packatama Indonesia", desc: "Auxílio no suporte técnico de informática e resolução de problemas de sistemas." }
 		],
 		school: [
 			{ year: "2014 - 2017", name: "STMIK Indonesia Mandiri", major: "Bacharel em Ciência da Computação (Engenharia de Informática)"},
@@ -197,8 +197,8 @@ const translations = {
 			{ year: "04 апреля 2016 - 25 февраля 2020", title: "Специалист дата-центра", comp: "PT. ValueStream International", desc: "Проведение профилактического обслуживания инфраструктуры дата-центра, повышение надежности оборудования на 25% и снижение операционных сбоев.<br/>Управление установкой и вводом в эксплуатацию более 30 новых стоек, что обеспечило более быстрое развертывание серверной инфраструктуры.<br/>Мониторинг и анализ параметров окружающей среды, таких как энергопотребление и температура, для обеспечения оптимальной работы оборудования.<br/>Установка и ремонт критически важного аппаратного обеспечения, включая маршрутизаторы, коммутаторы и модемы, для обеспечения стабильного сетевого соединения.<br/>Поддержка серверных приложений продуктивной среды с минимальными простоями." },
 			{ year: "01 января 2015 - 31 марта 2016", title: "Инженер поддержки Wi-Fi", comp: "Indosat Coop", desc: "Установка и настройка радиосистем, маршрутизаторов и точек доступа для расширения покрытия Wi-Fi.<br/>Выполнение сетевых установок и устранения неисправностей для повышения надежности сети." },
 			{ year: "1 октября 2012 - 31 декабря 2014", title: "Техническая поддержка", comp: "PT. Persada", desc: "Установка и настройка радиосистем, маршрутизаторов и точек доступа для корпоративных клиентов.<br/>Проведение комплексного обслуживания и устранения сетевых неисправностей." },
-			{ year: "1 июля 2011 - 31 августа 2014", title: "Стажёр", comp: "CV. Media Utama Computer", desc: "Оказание компьютерной технической поддержки, включая обслуживание аппаратного и программного обеспечения." },
-			{ year: "1 июня 2011 - 30 июня 2014", title: "Стажёр", comp: "PT. Securindo Packatama Indonesia", desc: "Помощь в компьютерной технической поддержке и устранении системных неисправностей." }
+			{ year: "1 июля 2011 - 31 августа 2011", title: "Стажёр", comp: "CV. Media Utama Computer", desc: "Оказание компьютерной технической поддержки, включая обслуживание аппаратного и программного обеспечения." },
+			{ year: "1 июня 2011 - 30 июня 2011", title: "Стажёр", comp: "PT. Securindo Packatama Indonesia", desc: "Помощь в компьютерной технической поддержке и устранении системных неисправностей." }
 		],
 		school: [
 			{ year: "2014 - 2017", name: "STMIK Indonesia Mandiri", major: "Бакалавр компьютерных наук (Инженерия информатики)"},
@@ -217,8 +217,8 @@ const translations = {
 			{ year: "04 april 2016 - 25 februari 2020", title: "Datacenterspecialist", comp: "PT. ValueStream International", desc: "Uitvoering van preventief onderhoud aan de datacenterinfrastructuur, verhoging van de betrouwbaarheid van apparatuur met 25% en vermindering van operationele verstoringen.<br/>Beheer van installatie en ingebruikname van meer dan 30 nieuwe rackposities, waardoor snellere serverimplementatie mogelijk werd.<br/>Monitoring en analyse van omgevingscondities zoals stroomverbruik en temperatuur om optimale prestaties te waarborgen.<br/>Installatie en reparatie van kritische hardwarecomponenten, waaronder routers, switches en modems, voor stabiele netwerkconnectiviteit.<br/>Ondersteuning van productie-serverapplicaties met consistente dienstverlening en minimale downtime." },
 			{ year: "01 januari 2015 - 31 maart 2016", title: "Wi-Fi Support Engineer", comp: "Indosat Coop", desc: "Installatie en configuratie van radiosystemen, routers en access points ter verbetering van Wi-Fi-dekking.<br/>Uitvoering van netwerkinstallaties en probleemoplossing om de netwerkbetrouwbaarheid te verhogen." },
 			{ year: "1 oktober 2012 - 31 december 2014", title: "Technische ondersteuning", comp: "PT. Persada", desc: "Installatie en configuratie van radiosystemen, routers en access points voor zakelijke klanten.<br/>Uitvoering van uitgebreide netwerkproblemenanalyse en onderhoud." },
-			{ year: "1 juli 2011 - 31 augustus 2014", title: "Stagiair", comp: "CV. Media Utama Computer", desc: "Verlenen van technische computerondersteuning, inclusief hardware- en softwareonderhoud." },
-			{ year: "1 juni 2011 - 30 juni 2014", title: "Stagiair", comp: "PT. Securindo Packatama Indonesia", desc: "Ondersteuning bij technische computerondersteuning en systeemprobleemoplossing." }
+			{ year: "1 juli 2011 - 31 augustus 2011", title: "Stagiair", comp: "CV. Media Utama Computer", desc: "Verlenen van technische computerondersteuning, inclusief hardware- en softwareonderhoud." },
+			{ year: "1 juni 2011 - 30 juni 2011", title: "Stagiair", comp: "PT. Securindo Packatama Indonesia", desc: "Ondersteuning bij technische computerondersteuning en systeemprobleemoplossing." }
 		],
 		school: [
 			{ year: "2014 - 2017", name: "STMIK Indonesia Mandiri", major: "Bachelor in Computerwetenschappen (Informatica Engineering)"},
@@ -237,8 +237,8 @@ const translations = {
 			{ year: "04 aprile 2016 - 25 febbraio 2020", title: "Specialista Data Center", comp: "PT. ValueStream International", desc: "Esecuzione della manutenzione preventiva dell’infrastruttura del Data Center, aumentando l’affidabilità delle apparecchiature del 25% e riducendo le interruzioni operative.<br/>Gestione dell’installazione e messa in servizio di oltre 30 nuove posizioni rack, consentendo un’implementazione più rapida dell’infrastruttura server.<br/>Monitoraggio e analisi delle condizioni ambientali come consumo energetico e temperatura per garantire prestazioni ottimali.<br/>Installazione e riparazione di componenti hardware critici, inclusi router, switch e modem, assicurando una connettività di rete stabile.<br/>Supporto alle applicazioni server di produzione con erogazione costante del servizio e tempi di inattività minimi." },
 			{ year: "01 gennaio 2015 - 31 marzo 2016", title: "Ingegnere di Supporto Wi-Fi", comp: "Indosat Coop", desc: "Installazione e configurazione di sistemi radio, router e access point per migliorare la copertura Wi-Fi.<br/>Esecuzione di installazioni di rete e troubleshooting per aumentare l’affidabilità della rete." },
 			{ year: "1 ottobre 2012 - 31 dicembre 2014", title: "Supporto Tecnico", comp: "PT. Persada", desc: "Installazione e configurazione di sistemi radio, router e access point per clienti aziendali.<br/>Esecuzione di manutenzione e troubleshooting di rete completi." },
-			{ year: "1 luglio 2011 - 31 agosto 2014", title: "Tirocinante", comp: "CV. Media Utama Computer", desc: "Fornitura di supporto tecnico informatico, inclusa la manutenzione hardware e software." },
-			{ year: "1 giugno 2011 - 30 giugno 2014", title: "Tirocinante", comp: "PT. Securindo Packatama Indonesia", desc: "Assistenza nel supporto tecnico informatico e nella risoluzione dei problemi di sistema." }
+			{ year: "1 luglio 2011 - 31 agosto 2011", title: "Tirocinante", comp: "CV. Media Utama Computer", desc: "Fornitura di supporto tecnico informatico, inclusa la manutenzione hardware e software." },
+			{ year: "1 giugno 2011 - 30 giugno 2011", title: "Tirocinante", comp: "PT. Securindo Packatama Indonesia", desc: "Assistenza nel supporto tecnico informatico e nella risoluzione dei problemi di sistema." }
 		],
 		school: [
 			{ year: "2014 - 2017", name: "STMIK Indonesia Mandiri", major: "Laurea in Informatica (Ingegneria Informatica)"},
@@ -257,8 +257,8 @@ const translations = {
 			{ year: "04 أبريل 2016 - 25 فبراير 2020", title: "أخصائي مركز بيانات", comp: "PT. ValueStream International", desc: "تنفيذ أعمال الصيانة الوقائية للبنية التحتية لمركز البيانات، مما أدى إلى زيادة موثوقية المعدات بنسبة 25٪ وتقليل الأعطال التشغيلية.<br/>إدارة تركيب وتشغيل أكثر من 30 موقع رف جديد، مما ساعد على تسريع نشر البنية التحتية للخوادم.<br/>مراقبة وتحليل الظروف البيئية مثل استهلاك الطاقة ودرجة الحرارة لضمان الأداء الأمثل للمعدات.<br/>تركيب وإصلاح مكونات الأجهزة الحيوية، بما في ذلك أجهزة التوجيه والمحولات والمودمات، لضمان اتصال شبكي مستقر.<br/>دعم تطبيقات خوادم الإنتاج مع الحفاظ على استقرار الخدمة وتقليل فترات التوقف." },
 			{ year: "01 يناير 2015 - 31 مارس 2016", title: "مهندس دعم Wi-Fi", comp: "Indosat Coop", desc: "تركيب وتهيئة أنظمة الراديو وأجهزة التوجيه ونقاط الوصول لتحسين تغطية Wi-Fi.<br/>تنفيذ أعمال تركيب الشبكات ومعالجة الأعطال لرفع موثوقية الشبكة." },
 			{ year: "1 أكتوبر 2012 - 31 ديسمبر 2014", title: "الدعم الفني", comp: "PT. Persada", desc: "تركيب وتهيئة أنظمة الراديو وأجهزة التوجيه ونقاط الوصول لعملاء الشركات.<br/>تنفيذ أعمال الصيانة الشاملة واستكشاف أخطاء الشبكة." },
-			{ year: "1 يوليو 2011 - 31 أغسطس 2014", title: "متدرب", comp: "CV. Media Utama Computer", desc: "تقديم الدعم الفني للحاسوب، بما في ذلك صيانة الأجهزة والبرمجيات." },
-			{ year: "1 يونيو 2011 - 30 يونيو 2014", title: "متدرب", comp: "PT. Securindo Packatama Indonesia", desc: "المساعدة في الدعم الفني للحاسوب ومعالجة مشكلات الأنظمة." }
+			{ year: "1 يوليو 2011 - 31 أغسطس 2011", title: "متدرب", comp: "CV. Media Utama Computer", desc: "تقديم الدعم الفني للحاسوب، بما في ذلك صيانة الأجهزة والبرمجيات." },
+			{ year: "1 يونيو 2011 - 30 يونيو 2011", title: "متدرب", comp: "PT. Securindo Packatama Indonesia", desc: "المساعدة في الدعم الفني للحاسوب ومعالجة مشكلات الأنظمة." }
 		],	
 		school: [
 			{ year: "2014 - 2017", name: "STMIK Indonesia Mandiri", major: "بكالوريوس علوم الحاسوب (هندسة المعلوماتية)"},
