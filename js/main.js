@@ -523,39 +523,26 @@ setInterval(() => {
     }
 }, 5000);
 function setLanguage(lang) {
-    // 1. Matikan transisi agar tidak ada 'efek melompat' saat posisi tombol pindah
-    document.body.style.transition = 'none';
+    // ... kode update teks Anda yang sudah ada ...
+
+    // Atur Arah: Jika AR maka RTL (Kiri), jika bukan maka LTR (Kanan)
+    if (lang === 'AR') {
+        document.documentElement.dir = 'rtl';
+    } else {
+        document.documentElement.dir = 'ltr';
+    }
     
-    // 2. Update teks berdasarkan data-key atau data-i18n
-    document.querySelectorAll('[data-key], [data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-key') || el.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) {
-            el.innerHTML = translations[lang][key];
-        }
-    });
-
-    // 3. Update Label Tombol Navigasi (misal dari "ID" ke "EN")
-    const currentLangLabel = document.getElementById('current-lang');
-    if (currentLangLabel) currentLangLabel.innerText = lang;
-
-    // 4. Atur Arah Teks (Penting agar dropdown tidak kabur)
-    const isRTL = (lang === 'AR'); // Tambahkan kode bahasa lain jika ada yang RTL
-    document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
     document.documentElement.lang = lang.toLowerCase();
 
-    // 5. Jalankan ulang render skill agar garis kuning menyesuaikan posisi
-    if (typeof renderCategorizedSkills === "function") {
-        renderCategorizedSkills();
-    }
+    // Update label di tombol
+    const label = document.getElementById('current-lang');
+    if (label) label.innerText = lang;
 
-    // 6. Hidupkan kembali transisi setelah layout stabil
-    setTimeout(() => {
-        document.body.style.transition = '';
-    }, 50);
+    // Render ulang skill agar posisi label kategori (garis kuning) ikut pindah
+    if (typeof renderCategorizedSkills === "function") renderCategorizedSkills();
 }
 
-// --- PAKSA DEFAULT BAHASA INGGRIS SAAT REFRESH ---
-// Tambahkan ini di baris paling bawah file main.js Anda
+// PAKSA REFRESH KEMBALI KE INGGRIS (Kanan)
 window.addEventListener('DOMContentLoaded', () => {
-    setLanguage('EN'); 
+    setLanguage('EN');
 });
