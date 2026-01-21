@@ -522,39 +522,40 @@ setInterval(() => {
         // Opsional: ganti teks di samping dot blink jika ada elemennya
     }
 }, 5000);
-// --- 1. Fungsi Set Language yang Stabil ---
 function setLanguage(lang) {
-    // Matikan transisi agar tidak ada lag saat elemen pindah posisi dari kanan ke kiri
+    // 1. Matikan transisi agar tidak ada 'efek melompat' saat posisi tombol pindah
     document.body.style.transition = 'none';
     
-    // Update teks berdasarkan data-i18n
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
+    // 2. Update teks berdasarkan data-key atau data-i18n
+    document.querySelectorAll('[data-key], [data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-key') || el.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
             el.innerHTML = translations[lang][key];
         }
     });
 
-    // Update Label Bahasa di Tombol Navigasi
+    // 3. Update Label Tombol Navigasi (misal dari "ID" ke "EN")
     const currentLangLabel = document.getElementById('current-lang');
     if (currentLangLabel) currentLangLabel.innerText = lang;
 
-    // Update Arah Teks (RTL untuk Arab)
-    const isRTL = (lang === 'AR');
+    // 4. Atur Arah Teks (Penting agar dropdown tidak kabur)
+    const isRTL = (lang === 'AR'); // Tambahkan kode bahasa lain jika ada yang RTL
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
     document.documentElement.lang = lang.toLowerCase();
 
-    // Jalankan ulang fungsi render (Skill & History)
-    if (typeof renderCategorizedSkills === "function") renderCategorizedSkills();
+    // 5. Jalankan ulang render skill agar garis kuning menyesuaikan posisi
+    if (typeof renderCategorizedSkills === "function") {
+        renderCategorizedSkills();
+    }
 
-    // Hidupkan kembali transisi setelah jeda singkat
+    // 6. Hidupkan kembali transisi setelah layout stabil
     setTimeout(() => {
         document.body.style.transition = '';
     }, 50);
 }
 
-// --- 2. PAKSA DEFAULT KE INGGRIS SAAT REFRESH ---
-// Letakkan ini di baris paling bawah file main.js
+// --- PAKSA DEFAULT BAHASA INGGRIS SAAT REFRESH ---
+// Tambahkan ini di baris paling bawah file main.js Anda
 window.addEventListener('DOMContentLoaded', () => {
     setLanguage('EN'); 
 });
