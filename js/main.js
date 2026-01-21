@@ -522,11 +522,12 @@ setInterval(() => {
         // Opsional: ganti teks di samping dot blink jika ada elemennya
     }
 }, 5000);
+// --- 1. Fungsi Set Language yang Stabil ---
 function setLanguage(lang) {
-    // 1. Beri tanda pada body bahwa kita sedang pindah bahasa (matikan animasi)
-    document.body.classList.add('switching-language');
+    // Matikan transisi agar tidak ada lag saat elemen pindah posisi dari kanan ke kiri
+    document.body.style.transition = 'none';
     
-    // 2. Update semua teks data-i18n
+    // Update teks berdasarkan data-i18n
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
@@ -534,25 +535,26 @@ function setLanguage(lang) {
         }
     });
 
-    // 3. Update Arah dan Atribut Bahasa
+    // Update Label Bahasa di Tombol Navigasi
+    const currentLangLabel = document.getElementById('current-lang');
+    if (currentLangLabel) currentLangLabel.innerText = lang;
+
+    // Update Arah Teks (RTL untuk Arab)
     const isRTL = (lang === 'AR');
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
     document.documentElement.lang = lang.toLowerCase();
 
-    // 4. Refresh Skill (Pastikan data skillData sudah benar/tidak error)
-    if (typeof renderCategorizedSkills === "function") {
-        try {
-            renderCategorizedSkills();
-        } catch (e) {
-            console.error("Gagal render skill:", e);
-        }
-    }
+    // Jalankan ulang fungsi render (Skill & History)
+    if (typeof renderCategorizedSkills === "function") renderCategorizedSkills();
 
-    // 5. Selesaikan transisi setelah jeda singkat
+    // Hidupkan kembali transisi setelah jeda singkat
     setTimeout(() => {
-        document.body.classList.remove('switching-language');
-    }, 300);
+        document.body.style.transition = '';
+    }, 50);
 }
-window.onload = () => {
-    setLanguage('EN'); // Paksa EN setiap kali refresh
-};
+
+// --- 2. PAKSA DEFAULT KE INGGRIS SAAT REFRESH ---
+// Letakkan ini di baris paling bawah file main.js
+window.addEventListener('DOMContentLoaded', () => {
+    setLanguage('EN'); 
+});
